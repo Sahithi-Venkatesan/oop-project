@@ -86,6 +86,10 @@ public class MainWindow extends JFrame {
 		JPanel precautions = new JPanel();
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
+		JLabel precaution_bg = new JLabel("");
+		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
+		precautions.add(precaution_bg);
+		
 		JPanel faqs = new JPanel();
 		tabbedPane.addTab("     FAQs    ", null, faqs, null);
 		
