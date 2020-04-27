@@ -81,7 +81,7 @@ public class MainWindow extends JFrame {
 		
 		JLabel bg_image = new JLabel("New label");
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
-		bg_image.setIcon(new ImageIcon("/home/sahithi/virus.jpeg"));
+		bg_image.setIcon(new ImageIcon("virus.jpeg"));
 		bg_image.setPreferredSize(new Dimension(1920, 1080));
 		bg_image.setMaximumSize(new Dimension(1920, 1080));
 		about.add(bg_image);
@@ -340,46 +340,200 @@ public class MainWindow extends JFrame {
 		testing_centres.add(p11);
 		
 		JButton b1 = new JButton("Directions");
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p1.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		b1.setBounds(1512, 120, 110, 27);
 		testing_centres.add(b1);
 		
 		JButton btn2 = new JButton("Directions");
+		btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p2.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn2.setBounds(1512, 180, 110, 27);
 		testing_centres.add(btn2);
 		
 		JButton btn3 = new JButton("Directions");
+		btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p3.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn3.setBounds(1512, 235, 110, 27);
 		testing_centres.add(btn3);
 		
 		JButton btn4 = new JButton("Directions");
+		btn4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p4.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn4.setBounds(1512, 290, 110, 27);
 		testing_centres.add(btn4);
 		
 		JButton btn5 = new JButton("Directions");
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p5.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn5.setBounds(1512, 332, 110, 27);
 		testing_centres.add(btn5);
 		
 		JButton btn6 = new JButton("Directions");
+		btn6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p6.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn6.setBounds(1512, 379, 110, 27);
 		testing_centres.add(btn6);
 		
 		JButton btn7 = new JButton("Directions");
+		btn7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p7.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn7.setBounds(1512, 427, 110, 27);
 		testing_centres.add(btn7);
 		
 		JButton btn8 = new JButton("Directions");
+		btn8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p8.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn8.setBounds(1512, 486, 110, 27);
 		testing_centres.add(btn8);
 		
 		JButton btn9 = new JButton("Directions");
+		btn9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p9.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn9.setBounds(1512, 533, 110, 27);
 		testing_centres.add(btn9);
 		
 		JButton btn10 = new JButton("Directions");
+		btn10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p10.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn10.setBounds(1512, 585, 110, 27);
 		testing_centres.add(btn10);
 		
 		JButton btn11 = new JButton("Directions");
+		btn11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				try 
+				{
+                    File file = new java.io.File("files/p11.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
 		btn11.setBounds(1512, 635, 110, 27);
 		testing_centres.add(btn11);
 		
@@ -387,7 +541,7 @@ public class MainWindow extends JFrame {
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
 		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
+		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
 		precautions.add(precaution_bg);
 		
 		JPanel faqs = new JPanel();
