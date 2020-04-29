@@ -627,6 +627,21 @@ public class MainWindow extends JFrame {
 		JButton connect_button = new JButton("Submit");
 		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		connect_button.setBounds(237, 389, 142, 37);
+		connect_button.addActionListener(new ActionListener()
+		{
+		  public void actionPerformed(ActionEvent event)
+		  {
+		    
+		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cmail_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
+		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+		    else if(cmobile_tf.getText().length()!=9)
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);
+                       
+		    else
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+                       		    
+		  }
+		});
 		contact.add(connect_button);
 		
 		JLabel discuss_name = new JLabel("Name:");
@@ -659,7 +674,7 @@ public class MainWindow extends JFrame {
 		contact.add(dopinion_tf);
 		dopinion_tf.setColumns(10);
 		
-		JButton discuss_submit = new JButton("Submit");
+		JButton discuss_submit = new JButton("Post");
 		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		discuss_submit.setBounds(261, 646, 118, 37);
 		contact.add(discuss_submit);
