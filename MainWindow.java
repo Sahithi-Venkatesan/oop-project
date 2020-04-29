@@ -1,10 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.awt.*;
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+
 import java.awt.FlowLayout;
 import java.awt.Dimension;
 import javax.swing.JLabel;
@@ -25,6 +28,14 @@ import java.awt.event.ActionEvent;
 public class MainWindow extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField cname_tf;
+	private JTextField cmobile_tf;
+	private JTextField cmail_tf;
+	private JTextField cconcern_tf;
+	private JTextField dname_tf;
+	private JTextField dlocation_tf;
+	private JTextField dopinion_tf;
+	private JTextField chat_tf;
 
 	/**
 	 * Launch the application.
@@ -81,12 +92,13 @@ public class MainWindow extends JFrame {
 		
 		JLabel bg_image = new JLabel("New label");
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
-		bg_image.setIcon(new ImageIcon("virus.jpeg"));
+		bg_image.setIcon(new ImageIcon("/home/sahithi/virus.jpeg"));
 		bg_image.setPreferredSize(new Dimension(1920, 1080));
 		bg_image.setMaximumSize(new Dimension(1920, 1080));
 		about.add(bg_image);
 		
 		JPanel testing_centres = new JPanel();
+		testing_centres.setBackground(new Color(255, 228, 225));
 		tabbedPane.addTab("Testing Centres", null, testing_centres, null);
 		testing_centres.setLayout(null);
 		
@@ -537,17 +549,163 @@ public class MainWindow extends JFrame {
 		btn11.setBounds(1512, 635, 110, 27);
 		testing_centres.add(btn11);
 		
+		JLabel lblNewLabel_8 = new JLabel("*Important Note:");
+		lblNewLabel_8.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_8.setBounds(649, 821, 144, 15);
+		testing_centres.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("All the information provided has been taken from verified sources");
+		lblNewLabel_9.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_9.setBounds(780, 820, 481, 16);
+		testing_centres.add(lblNewLabel_9);
+		
 		JPanel precautions = new JPanel();
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
 		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
+		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
 		precautions.add(precaution_bg);
 		
 		JPanel faqs = new JPanel();
 		tabbedPane.addTab("     FAQs    ", null, faqs, null);
 		
 		JPanel contact = new JPanel();
+		contact.setBackground(new Color(255, 228, 225));
 		tabbedPane.addTab("Connect With Us", null, contact, null);
+		contact.setLayout(null);
+		
+		JLabel connect_heading = new JLabel("Connect With Us");
+		connect_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
+		connect_heading.setBounds(73, 6, 231, 37);
+		contact.add(connect_heading);
+		
+		JLabel discussion_heading = new JLabel("Discussion Forum");
+		discussion_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
+		discussion_heading.setBounds(73, 462, 247, 37);
+		contact.add(discussion_heading);
+		
+		JLabel name_connect = new JLabel("Name:");
+		name_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		name_connect.setBounds(83, 55, 80, 19);
+		contact.add(name_connect);
+		
+		JLabel mobile_connect = new JLabel("Mobile No:");
+		mobile_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		mobile_connect.setBounds(83, 108, 101, 20);
+		contact.add(mobile_connect);
+		
+		JLabel email_connect = new JLabel("Email (Optional):");
+		email_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		email_connect.setBounds(83, 161, 153, 20);
+		contact.add(email_connect);
+		
+		cname_tf = new JTextField();
+		cname_tf.setBounds(263, 49, 239, 27);
+		contact.add(cname_tf);
+		cname_tf.setColumns(10);
+		
+		cmobile_tf = new JTextField();
+		cmobile_tf.setBounds(263, 103, 239, 27);
+		contact.add(cmobile_tf);
+		cmobile_tf.setColumns(10);
+		
+		cmail_tf = new JTextField();
+		cmail_tf.setBounds(263, 156, 239, 27);
+		contact.add(cmail_tf);
+		cmail_tf.setColumns(10);
+		
+		JLabel concern_heading = new JLabel("Your Concern:");
+		concern_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		concern_heading.setBounds(83, 193, 133, 19);
+		contact.add(concern_heading);
+		
+		cconcern_tf = new JTextField();
+		cconcern_tf.setBounds(73, 211, 429, 156);
+		contact.add(cconcern_tf);
+		cconcern_tf.setColumns(10);
+		
+		JButton connect_button = new JButton("Submit");
+		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		connect_button.setBounds(237, 389, 142, 37);
+		contact.add(connect_button);
+		
+		JLabel discuss_name = new JLabel("Name:");
+		discuss_name.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_name.setBounds(83, 511, 80, 19);
+		contact.add(discuss_name);
+		
+		JLabel discuss_location = new JLabel("Location:");
+		discuss_location.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_location.setBounds(83, 542, 101, 27);
+		contact.add(discuss_location);
+		
+		dname_tf = new JTextField();
+		dname_tf.setBounds(237, 505, 281, 27);
+		contact.add(dname_tf);
+		dname_tf.setColumns(10);
+		
+		dlocation_tf = new JTextField();
+		dlocation_tf.setBounds(237, 540, 281, 27);
+		contact.add(dlocation_tf);
+		dlocation_tf.setColumns(10);
+		
+		JLabel discuss_opinion = new JLabel("Your Opinion:");
+		discuss_opinion.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_opinion.setBounds(83, 581, 133, 27);
+		contact.add(discuss_opinion);
+		
+		dopinion_tf = new JTextField();
+		dopinion_tf.setBounds(237, 579, 591, 55);
+		contact.add(dopinion_tf);
+		dopinion_tf.setColumns(10);
+		
+		JButton discuss_submit = new JButton("Submit");
+		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_submit.setBounds(261, 646, 118, 37);
+		contact.add(discuss_submit);
+		
+		chat_tf = new JTextField();
+		chat_tf.setBounds(6, 717, 1789, 211);
+		contact.add(chat_tf);
+		chat_tf.setColumns(10);
+		
+		JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
+		info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info1.setBounds(734, 37, 633, 27);
+		contact.add(info1);
+		
+		JLabel info2 = new JLabel("or related issues, please feel free to drop in.");
+		info2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info2.setBounds(734, 69, 633, 27);
+		contact.add(info2);
+		
+		JLabel info3 = new JLabel("All your concerns will be conveyed to the MHRD or the MoFHW and we will ");
+		info3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info3.setBounds(733, 108, 618, 20);
+		contact.add(info3);
+		
+		JLabel info4 = new JLabel("ensure that they respond quick. ");
+		info4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info4.setBounds(734, 136, 457, 37);
+		contact.add(info4);
+		
+		JLabel info5 = new JLabel("We're happy to help you anytime :)");
+		info5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 20));
+		info5.setBounds(734, 185, 633, 48);
+		contact.add(info5);
+		
+		JLabel info6 = new JLabel("Also, feel free to share your opinion with people around related to COVID-19 ");
+		info6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info6.setBounds(734, 245, 672, 27);
+		contact.add(info6);
+		
+		JLabel info7 = new JLabel("issues in the discussion forum below.");
+		info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		info7.setBounds(734, 274, 403, 27);
+		contact.add(info7);
+		
+		
+		
+			
 	}
 }
