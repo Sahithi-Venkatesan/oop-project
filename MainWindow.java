@@ -634,8 +634,10 @@ public class MainWindow extends JFrame {
 		    
 		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cmail_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
 		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+			  
 		    else if(cmobile_tf.getText().length()!=9)
-		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);              
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+			  
 		    else
 		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
                        		    
