@@ -24,6 +24,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
+import java.awt.event.AdjustmentListener;
+import java.awt.event.AdjustmentEvent;
 
 public class MainWindow extends JFrame {
 
@@ -74,13 +76,13 @@ public class MainWindow extends JFrame {
 		tabbedPane.setBounds(6, 54, 1914, 1026);
 		contentPane.add(tabbedPane);
 		
-		JPanel about = new JPanel();
-		about.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		about.setPreferredSize(new Dimension(320, 50));
-		FlowLayout flowLayout = (FlowLayout) about.getLayout();
-		flowLayout.setVgap(50);
-		flowLayout.setHgap(320);
-		tabbedPane.addTab("    About Us    ", null, about, null);
+		JPanel home = new JPanel();
+		home.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		home.setPreferredSize(new Dimension(320, 50));
+		FlowLayout fl_home = (FlowLayout) home.getLayout();
+		fl_home.setVgap(50);
+		fl_home.setHgap(320);
+		tabbedPane.addTab("Home", null, home, null);
 		
 		JLabel Header = new JLabel("Fight Corona With Drishti  ");
 		Header.setBounds(new Rectangle(0, 0, 1920, 50));
@@ -88,14 +90,19 @@ public class MainWindow extends JFrame {
 		Header.setBackground(SystemColor.desktop);
 		Header.setForeground(SystemColor.desktop);
 		Header.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 42));
-		about.add(Header);
+		home.add(Header);
 		
 		JLabel bg_image = new JLabel("New label");
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
 		bg_image.setIcon(new ImageIcon("/home/sahithi/virus.jpeg"));
 		bg_image.setPreferredSize(new Dimension(1920, 1080));
 		bg_image.setMaximumSize(new Dimension(1920, 1080));
-		about.add(bg_image);
+		home.add(bg_image);
+		
+		JPanel about = new JPanel();
+		about.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		tabbedPane.addTab("About Us", null, about, null);
+		about.setLayout(null);
 		
 		JPanel testing_centres = new JPanel();
 		testing_centres.setBackground(new Color(255, 228, 225));
