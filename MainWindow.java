@@ -79,13 +79,11 @@ public class MainWindow extends JFrame {
 		JPanel home = new JPanel();
 		home.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		home.setPreferredSize(new Dimension(320, 50));
-		FlowLayout fl_home = (FlowLayout) home.getLayout();
-		fl_home.setVgap(50);
-		fl_home.setHgap(320);
 		tabbedPane.addTab("Home", null, home, null);
+		home.setLayout(null);
 		
 		JLabel Header = new JLabel("Fight Corona With Drishti  ");
-		Header.setBounds(new Rectangle(0, 0, 1920, 50));
+		Header.setBounds(new Rectangle(654, 50, 605, 52));
 		Header.setMaximumSize(new Dimension(1920, 50));
 		Header.setBackground(SystemColor.desktop);
 		Header.setForeground(SystemColor.desktop);
@@ -93,11 +91,22 @@ public class MainWindow extends JFrame {
 		home.add(Header);
 		
 		JLabel bg_image = new JLabel("New label");
+		bg_image.setBounds(-3, 152, 1920, 1080);
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
 		bg_image.setIcon(new ImageIcon("/home/sahithi/virus.jpeg"));
 		bg_image.setPreferredSize(new Dimension(1920, 1080));
 		bg_image.setMaximumSize(new Dimension(1920, 1080));
 		home.add(bg_image);
+		
+		JPanel logo = new JPanel();
+		logo.setBounds(460, 6, 134, 134);
+		home.add(logo);
+		logo.setLayout(null);
+		
+		JLabel lblNewLabel_10 = new JLabel("New label");
+		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
+		lblNewLabel_10.setBounds(6, 0, 146, 134);
+		logo.add(lblNewLabel_10);
 		
 		JPanel about = new JPanel();
 		about.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
