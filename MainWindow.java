@@ -1,8 +1,7 @@
-import java.awt.*;
-import javax.swing.*;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.*;
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -29,6 +28,8 @@ import java.awt.event.AdjustmentListener;
 import java.awt.event.AdjustmentEvent;
 
 import java.io.*;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class MainWindow extends JFrame {
 
@@ -41,6 +42,8 @@ public class MainWindow extends JFrame {
 	private JTextField dlocation_tf;
 	private JTextField dopinion_tf;
 	private JTextField chat_tf;
+	private JTextField tf_username;
+	private JPasswordField tf_password;
 
 	/**
 	 * Launch the application.
@@ -101,7 +104,7 @@ public class MainWindow extends JFrame {
 		Header.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 42));
 		home.add(Header);
 		
-		JLabel bg_image = new JLabel("New label");
+		JLabel bg_image = new JLabel("");
 		bg_image.setBounds(-3, 152, 1920, 1080);
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
 		bg_image.setIcon(new ImageIcon("virus.jpeg"));
@@ -114,7 +117,7 @@ public class MainWindow extends JFrame {
 		home.add(logo);
 		logo.setLayout(null);
 		
-		JLabel lblNewLabel_10 = new JLabel("New label");
+		JLabel lblNewLabel_10 = new JLabel("");
 		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
 		lblNewLabel_10.setBounds(6, 0, 146, 134);
 		logo.add(lblNewLabel_10);
@@ -700,7 +703,7 @@ public class MainWindow extends JFrame {
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
 		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
+		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
 		precautions.add(precaution_bg);
 		
 		JPanel contact = new JPanel();
@@ -853,6 +856,78 @@ public class MainWindow extends JFrame {
 		info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		info7.setBounds(734, 274, 403, 27);
 		contact.add(info7);
+		
+		JPanel donate = new JPanel();
+		tabbedPane.addTab("Donate Now", null, donate, null);
+		donate.setLayout(null);
+		
+		JPanel description_pane = new JPanel();
+		description_pane.setBounds(191, 101, 568, 733);
+		donate.add(description_pane);
+		description_pane.setLayout(null);
+		
+		JLabel lblNewLabel_13 = new JLabel("");
+		lblNewLabel_13.setIcon(new ImageIcon("logo_drishti.png"));
+		lblNewLabel_13.setBounds(22, 69, 140, 134);
+		description_pane.add(lblNewLabel_13);
+		
+		JLabel lblWeAreProudly = new JLabel("We are proudly non-profit, non-corporate and  ");
+		lblWeAreProudly.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
+		lblWeAreProudly.setBounds(174, 194, 363, 29);
+		description_pane.add(lblWeAreProudly);
+		
+		JLabel lblNewLabel_14 = new JLabel("non-compromised. Thousands of people like you are lending ");
+		lblNewLabel_14.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
+		lblNewLabel_14.setBounds(72, 225, 461, 19);
+		description_pane.add(lblNewLabel_14);
+		
+		JLabel lblNewLabel_15 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
+		lblNewLabel_15.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
+		lblNewLabel_15.setBounds(72, 242, 461, 29);
+		description_pane.add(lblNewLabel_15);
+		
+		JPanel form_pane = new JPanel();
+		form_pane.setBounds(816, 101, 848, 791);
+		donate.add(form_pane);
+		
+		JPanel admin = new JPanel();
+		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		tabbedPane.addTab("Admin Login", null, admin, null);
+		admin.setLayout(null);
+		
+		JLabel lblNewLabel_16 = new JLabel("Admin Login");
+		lblNewLabel_16.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 30));
+		lblNewLabel_16.setBounds(837, 30, 268, 39);
+		admin.add(lblNewLabel_16);
+		
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		lblUsername.setBounds(734, 138, 113, 47);
+		admin.add(lblUsername);
+		
+		tf_username = new JTextField();
+		tf_username.setBounds(859, 138, 399, 47);
+		admin.add(tf_username);
+		tf_username.setColumns(10);
+		
+		JLabel label_password = new JLabel("Password:");
+		label_password.setDisplayedMnemonic('*');
+		label_password.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		label_password.setBounds(734, 207, 113, 39);
+		admin.add(label_password);
+		
+		JButton btnNewButton = new JButton("Submit ");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
+		btnNewButton.setBounds(897, 310, 159, 47);
+		admin.add(btnNewButton);
+		
+		tf_password = new JPasswordField();
+		tf_password.setBounds(859, 197, 399, 49);
+		admin.add(tf_password);
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
