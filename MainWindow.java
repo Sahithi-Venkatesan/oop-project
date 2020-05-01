@@ -70,10 +70,9 @@ public class MainWindow extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(6, 54, 1914, 1026);
 		tabbedPane.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tabbedPane.setAlignmentX(Component.LEFT_ALIGNMENT);
-		tabbedPane.setSize(new Dimension(1920, 0));
-		tabbedPane.setBounds(6, 54, 1914, 1026);
 		contentPane.add(tabbedPane);
 		
 		JPanel home = new JPanel();
@@ -104,7 +103,7 @@ public class MainWindow extends JFrame {
 		logo.setLayout(null);
 		
 		JLabel lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
+		lblNewLabel_10.setIcon(new ImageIcon("/home/sahithi/Downloads/logo_drishti.png"));
 		lblNewLabel_10.setBounds(6, 0, 146, 134);
 		logo.add(lblNewLabel_10);
 		
@@ -735,6 +734,16 @@ public class MainWindow extends JFrame {
 		info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		info7.setBounds(734, 274, 403, 27);
 		contact.add(info7);
+		
+		JPanel logo_panel = new JPanel();
+		logo_panel.setBounds(50, 0, 162, 46);
+		contentPane.add(logo_panel);
+		logo_panel.setLayout(null);
+		
+		JLabel logo_icon = new JLabel("");
+		logo_icon.setIcon(new ImageIcon("small_logo.png"));
+		logo_icon.setBounds(0, 0, 56, 46);
+		logo_panel.add(logo_icon);
 		
 		
 		
