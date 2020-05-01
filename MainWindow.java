@@ -104,7 +104,7 @@ public class MainWindow extends JFrame {
 		Header.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 42));
 		home.add(Header);
 		
-		JLabel bg_image = new JLabel("");
+		JLabel bg_image = new JLabel("New label");
 		bg_image.setBounds(-3, 152, 1920, 1080);
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
 		bg_image.setIcon(new ImageIcon("virus.jpeg"));
@@ -117,7 +117,7 @@ public class MainWindow extends JFrame {
 		home.add(logo);
 		logo.setLayout(null);
 		
-		JLabel lblNewLabel_10 = new JLabel("");
+		JLabel lblNewLabel_10 = new JLabel("New label");
 		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
 		lblNewLabel_10.setBounds(6, 0, 146, 134);
 		logo.add(lblNewLabel_10);
@@ -703,7 +703,7 @@ public class MainWindow extends JFrame {
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
 		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
+		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
 		precautions.add(precaution_bg);
 		
 		JPanel contact = new JPanel();
@@ -867,7 +867,7 @@ public class MainWindow extends JFrame {
 		description_pane.setLayout(null);
 		
 		JLabel lblNewLabel_13 = new JLabel("");
-		lblNewLabel_13.setIcon(new ImageIcon("logo_drishti.png"));
+		lblNewLabel_13.setIcon(new ImageIcon("/home/sahithi/Documents/4th Sem/OOP/Project/logo_drishti.png"));
 		lblNewLabel_13.setBounds(22, 69, 140, 134);
 		description_pane.add(lblNewLabel_13);
 		
@@ -885,6 +885,16 @@ public class MainWindow extends JFrame {
 		lblNewLabel_15.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
 		lblNewLabel_15.setBounds(72, 242, 461, 29);
 		description_pane.add(lblNewLabel_15);
+		
+		JLabel lblNewLabel_17 = new JLabel("contribute our share to and help India fight this.  All your ");
+		lblNewLabel_17.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
+		lblNewLabel_17.setBounds(72, 267, 465, 19);
+		description_pane.add(lblNewLabel_17);
+		
+		JLabel lblNewLabel_18 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
+		lblNewLabel_18.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
+		lblNewLabel_18.setBounds(72, 283, 490, 29);
+		description_pane.add(lblNewLabel_18);
 		
 		JPanel form_pane = new JPanel();
 		form_pane.setBounds(816, 101, 848, 791);
