@@ -1,3 +1,4 @@
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.*;
@@ -31,7 +32,11 @@ import java.io.*;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 
-public class MainWindow extends JFrame {
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import java.util.Arrays;
+
+ public class MainWindow extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField cname_tf;
@@ -721,6 +726,7 @@ public class MainWindow extends JFrame {
 		discussion_heading.setBounds(73, 462, 247, 37);
 		contact.add(discussion_heading);
 		
+		
 		JLabel name_connect = new JLabel("Name:");
 		name_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		name_connect.setBounds(83, 55, 80, 19);
@@ -910,7 +916,7 @@ public class MainWindow extends JFrame {
 		lblNewLabel_16.setBounds(837, 30, 268, 39);
 		admin.add(lblNewLabel_16);
 		
-		JLabel lblUsername = new JLabel("Username:");
+		JLabel lblUsername = new JLabel("Username:");//Drishtiadmin@2020
 		lblUsername.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
 		lblUsername.setBounds(734, 138, 113, 47);
 		admin.add(lblUsername);
@@ -920,24 +926,69 @@ public class MainWindow extends JFrame {
 		admin.add(tf_username);
 		tf_username.setColumns(10);
 		
-		JLabel label_password = new JLabel("Password:");
+		JLabel label_password = new JLabel("Password:");//dri_439
 		label_password.setDisplayedMnemonic('*');
 		label_password.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
 		label_password.setBounds(734, 207, 113, 39);
 		admin.add(label_password);
 		
-		JButton btnNewButton = new JButton("Submit ");
+		tf_password = new JPasswordField();
+		tf_password.setEchoChar('*');
+		tf_password.setBounds(859, 197, 399, 49);
+		admin.add(tf_password);
+		
+		JTable table = new JTable();		
+		
+		DefaultTableModel model = (DefaultTableModel)table.getModel();
+		model.addColumn("Name");
+		model.addColumn("Contact");
+		model.addColumn("Email id");
+		model.addColumn("Concern");
+      
+		table.getColumnModel().getColumn(0).setPreferredWidth(1000);
+		table.getColumnModel().getColumn(1).setPreferredWidth(1000);
+		table.getColumnModel().getColumn(2).setPreferredWidth(1000);
+		table.getColumnModel().getColumn(3).setPreferredWidth(4000);
+		table.setModel(model);
+						
+		JButton view = new JButton("View ");
+		Object [] row = new Object[10];
+		view.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent event) {
+		
+		row[0]=cname_tf.getText();
+		row[1]=cmobile_tf.getText();
+		row[2]=cmail_tf.getText();
+		row[3]=cconcern_tf.getText();
+    
+		model.addRow(row);
+		}
+		});
+		
+		
+		JButton btnNewButton = new JButton("Login ");
+		
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent event) {
+			char ch[]=tf_password.getPassword();
+			char pass[]=new char[]{'d','r','i','_','4','3','9'};
+			if(tf_username.getText().equals("Drishtiadmin@2020") && Arrays.equals(ch,pass)){
+				JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
+				JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(597, 430, 764, 415);
+		admin.add(scrollPane);
+		view.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
+		view.setBounds(1060, 310, 159, 47);
+				admin.add(view);
 			}
+		else
+		JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+		
+		}
 		});
 		btnNewButton.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
 		btnNewButton.setBounds(897, 310, 159, 47);
 		admin.add(btnNewButton);
-		
-		tf_password = new JPasswordField();
-		tf_password.setBounds(859, 197, 399, 49);
-		admin.add(tf_password);
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
