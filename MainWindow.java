@@ -1,7 +1,8 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.*;
 import javax.swing.*;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -26,6 +27,8 @@ import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.event.AdjustmentListener;
 import java.awt.event.AdjustmentEvent;
+
+import java.io.*;
 
 public class MainWindow extends JFrame {
 
@@ -53,6 +56,15 @@ public class MainWindow extends JFrame {
 				}
 			}
 		});
+	}
+	
+	public void openWebPage(String url){
+		   try {         
+		     java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+		   }
+		   catch (java.io.IOException e) {
+		       System.out.println(e.getMessage());
+		   }
 	}
 
 	/**
@@ -92,7 +104,7 @@ public class MainWindow extends JFrame {
 		JLabel bg_image = new JLabel("New label");
 		bg_image.setBounds(-3, 152, 1920, 1080);
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
-		bg_image.setIcon(new ImageIcon("/home/sahithi/virus.jpeg"));
+		bg_image.setIcon(new ImageIcon("virus.jpeg"));
 		bg_image.setPreferredSize(new Dimension(1920, 1080));
 		bg_image.setMaximumSize(new Dimension(1920, 1080));
 		home.add(bg_image);
@@ -103,7 +115,7 @@ public class MainWindow extends JFrame {
 		logo.setLayout(null);
 		
 		JLabel lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setIcon(new ImageIcon("/home/sahithi/Downloads/logo_drishti.png"));
+		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
 		lblNewLabel_10.setBounds(6, 0, 146, 134);
 		logo.add(lblNewLabel_10);
 		
@@ -574,15 +586,122 @@ public class MainWindow extends JFrame {
 		lblNewLabel_9.setBounds(780, 820, 481, 16);
 		testing_centres.add(lblNewLabel_9);
 		
+		JPanel faqs = new JPanel();
+		tabbedPane.addTab("     FAQs    ", null, faqs, null);
+		faqs.setLayout(null);
+		
+		JLabel heading_faqs = new JLabel("Frequently Asked Questions");
+		heading_faqs.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
+		heading_faqs.setBounds(741, 6, 384, 47);
+		faqs.add(heading_faqs);
+		
+		JButton knowmore_btn = new JButton("Click here to know more");
+		knowmore_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				openWebPage("https://drive.google.com/file/d/1G6FcnM0bYR-4Vs8yElbmXl_e6v1UEBEQ/view?usp=sharing");
+			}
+		});
+		knowmore_btn.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		knowmore_btn.setBounds(741, 612, 375, 65);
+		faqs.add(knowmore_btn);
+		
+		JLabel faq1 = new JLabel("What are the symptoms of COVID 19?");
+		faq1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		faq1.setBounds(70, 109, 322, 35);
+		faqs.add(faq1);
+		
+		JLabel faq2 = new JLabel("The  most  common  symptoms  of  COVID-19  are  fever,  tiredness,  and dry   cough.   Some   patients   may   have   aches   and   pains, nasal congestion, runny nose, sore throat or diarrhea.These symptoms are ");
+		faq2.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq2.setBounds(80, 137, 1764, 20);
+		faqs.add(faq2);
+		
+		JLabel faq3 = new JLabel("mild  and  begin  gradually.  Some  people  become  infected  but don’t  develop  any  symptoms  and  don't  feel  unwell.  Most  people (about   80%)   recover   from   the   disease   without   needing   special");
+		faq3.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq3.setBounds(80, 156, 1707, 27);
+		faqs.add(faq3);
+		
+		JLabel faq4 = new JLabel("treatment.  Around  1  out  of  every  6  people  who  gets COVID-19 becomes  seriously  ill  and  develops  difficulty  breathing.  Older  people, and those with underlying medical problems like high blood ");
+		faq4.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq4.setBounds(80, 183, 1707, 27);
+		faqs.add(faq4);
+		
+		JLabel faq5 = new JLabel("pressure, heart problems or diabetes, are more likely to develop serious illness. People with fever, cough and difficulty breathing should seek medical attention.");
+		faq5.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq5.setBounds(80, 209, 1707, 27);
+		faqs.add(faq5);
+		
+		JLabel faq6 = new JLabel("How does COVID 19 spread?");
+		faq6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		faq6.setBounds(70, 248, 278, 27);
+		faqs.add(faq6);
+		
+		JLabel faq7 = new JLabel("People  can  catch  COVID-19  from  others  who  have  the virus.  The disease can spread from person to person through small droplets from the  nose  or  mouth  which  are  spread  when  a  person  with  ");
+		faq7.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq7.setBounds(80, 276, 1695, 20);
+		faqs.add(faq7);
+		
+		JLabel faq8 = new JLabel("COVID-19 coughs  or  exhales.  These  droplets  land  on  objects  and  surfaces around  the  person.  Other  people  then  catch  COVID-19  by  touching these  objects  or  surfaces,  then  touching  their  eyes, ");
+		faq8.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq8.setBounds(80, 294, 1695, 27);
+		faqs.add(faq8);
+		
+		JLabel faq9 = new JLabel("nose  or  mouth. People  can  also  catch  COVID-19  if  they  breathe  in  droplets  from  a person  with  COVID-19  who  coughs  out  or  exhales  droplets.  This  is why  it  is  important  to  stay  more  than   ");
+		faq9.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq9.setBounds(80, 319, 1712, 27);
+		faqs.add(faq9);
+		
+		JLabel faq10 = new JLabel("1  meter  (3  feet)  away  from  a person who is sick.");
+		faq10.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq10.setBounds(80, 344, 462, 20);
+		faqs.add(faq10);
+		
+		JLabel faq11 = new JLabel("Can the virus that causes COVID-19 be transmitted through the air? ");
+		faq11.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		faq11.setBounds(70, 395, 723, 20);
+		faqs.add(faq11);
+		
+		JLabel faq12 = new JLabel("Studies to date suggest that the virus that causes COVID-19 is mainly transmitted   through   contact   with   respiratory   droplets   rather   than through  the  air. ");
+		faq12.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq12.setBounds(80, 415, 1326, 27);
+		faqs.add(faq12);
+		
+		JLabel faq13 = new JLabel("Can COVID-19 be caught from a person who has no symptoms?");
+		faq13.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		faq13.setBounds(70, 480, 873, 27);
+		faqs.add(faq13);
+		
+		JLabel faq14 = new JLabel("The  main  way  the  disease  spreads  is  through  respiratory  droplets expelled by someone who is coughing. The risk of catching COVID-19 from  someone  with  no  symptoms  at  all  is  very  low.However, ");
+		faq14.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq14.setBounds(80, 503, 1707, 27);
+		faqs.add(faq14);
+		
+		JLabel faq15 = new JLabel("many people   with   COVID-19   experience   only   mild   symptoms.   This   is particularly  true  at  the  early  stages  of  the  disease.  It  is  therefore  possible to catch COVID-19  from someone  who  has, for");
+		faq15.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq15.setBounds(80, 526, 1707, 27);
+		faqs.add(faq15);
+		
+		JLabel faq16 = new JLabel("example, just a mild cough and does not feel ill. ");
+		faq16.setFont(new Font("DejaVu Math TeX Gyre", Font.ITALIC, 16));
+		faq16.setBounds(80, 553, 839, 20);
+		faqs.add(faq16);
+		
+		JLabel lblNewLabel_11 = new JLabel("*Important Note:");
+		lblNewLabel_11.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
+		lblNewLabel_11.setBounds(668, 752, 120, 27);
+		faqs.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_12 = new JLabel("All the information provided has been taken from verified sources");
+		lblNewLabel_12.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
+		lblNewLabel_12.setBounds(785, 752, 454, 27);
+		faqs.add(lblNewLabel_12);
+		
 		JPanel precautions = new JPanel();
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
 		
 		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("/home/sahithi/Downloads/precautions.jpg"));
+		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
 		precautions.add(precaution_bg);
-		
-		JPanel faqs = new JPanel();
-		tabbedPane.addTab("     FAQs    ", null, faqs, null);
 		
 		JPanel contact = new JPanel();
 		contact.setBackground(new Color(255, 228, 225));
