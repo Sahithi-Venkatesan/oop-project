@@ -1,8 +1,11 @@
+import java.awt.*;
+import javax.swing.*;
+import java.io.*;
+import java .awt.event.*;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.*;
-import javax.swing.*;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -28,7 +31,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.AdjustmentListener;
 import java.awt.event.AdjustmentEvent;
 
-import java.io.*;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 
@@ -56,23 +58,28 @@ import java.util.Arrays;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try 
+				{
 					MainWindow frame = new MainWindow();
 					frame.setVisible(true);
-				} catch (Exception e) {
+				} 
+				catch(Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-	
+	//Method to open a url in web browser
 	public void openWebPage(String url){
-		   try {         
+		    try 
+		   	{         
 		     java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
-		   }
-		   catch (java.io.IOException e) {
+		   	}
+		    catch(java.io.IOException e) 
+		    {
 		       System.out.println(e.getMessage());
-		   }
+		    }
 	}
 
 	/**
@@ -595,6 +602,7 @@ import java.util.Arrays;
 		testing_centres.add(lblNewLabel_9);
 		
 		JPanel faqs = new JPanel();
+		faqs.setBackground(new Color(255, 255, 204));
 		tabbedPane.addTab("     FAQs    ", null, faqs, null);
 		faqs.setLayout(null);
 		
@@ -864,49 +872,79 @@ import java.util.Arrays;
 		contact.add(info7);
 		
 		JPanel donate = new JPanel();
+		donate.setBackground(new Color(204, 255, 204));
 		tabbedPane.addTab("Donate Now", null, donate, null);
 		donate.setLayout(null);
 		
 		JPanel description_pane = new JPanel();
-		description_pane.setBounds(191, 101, 568, 733);
+		description_pane.setBackground(new Color(204, 255, 204));
+		description_pane.setBounds(69, 101, 735, 733);
 		donate.add(description_pane);
 		description_pane.setLayout(null);
 		
 		JLabel lblNewLabel_13 = new JLabel("");
 		lblNewLabel_13.setIcon(new ImageIcon("/home/sahithi/Documents/4th Sem/OOP/Project/logo_drishti.png"));
-		lblNewLabel_13.setBounds(22, 69, 140, 134);
+		lblNewLabel_13.setBounds(22, 193, 140, 150);
 		description_pane.add(lblNewLabel_13);
 		
 		JLabel lblWeAreProudly = new JLabel("We are proudly non-profit, non-corporate and  ");
-		lblWeAreProudly.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
-		lblWeAreProudly.setBounds(174, 194, 363, 29);
+		lblWeAreProudly.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		lblWeAreProudly.setBounds(174, 314, 574, 29);
 		description_pane.add(lblWeAreProudly);
 		
 		JLabel lblNewLabel_14 = new JLabel("non-compromised. Thousands of people like you are lending ");
-		lblNewLabel_14.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_14.setBounds(72, 225, 461, 19);
+		lblNewLabel_14.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel_14.setBounds(22, 345, 690, 39);
 		description_pane.add(lblNewLabel_14);
 		
 		JLabel lblNewLabel_15 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
-		lblNewLabel_15.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_15.setBounds(72, 242, 461, 29);
+		lblNewLabel_15.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel_15.setBounds(22, 381, 690, 29);
 		description_pane.add(lblNewLabel_15);
 		
 		JLabel lblNewLabel_17 = new JLabel("contribute our share to and help India fight this.  All your ");
-		lblNewLabel_17.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_17.setBounds(72, 267, 465, 19);
+		lblNewLabel_17.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel_17.setBounds(22, 410, 690, 30);
 		description_pane.add(lblNewLabel_17);
 		
 		JLabel lblNewLabel_18 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
-		lblNewLabel_18.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 18));
-		lblNewLabel_18.setBounds(72, 283, 490, 29);
+		lblNewLabel_18.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		lblNewLabel_18.setBounds(6, 437, 723, 39);
 		description_pane.add(lblNewLabel_18);
 		
 		JPanel form_pane = new JPanel();
-		form_pane.setBounds(816, 101, 848, 791);
+		form_pane.setBackground(new Color(204, 255, 204));
+		form_pane.setBounds(863, 101, 801, 791);
 		donate.add(form_pane);
+		form_pane.setLayout(null);
+		
+		JLabel header_donation = new JLabel("We can’t help everyone, but everyone can help someone. ");
+		header_donation.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		header_donation.setBounds(128, 127, 688, 57);
+		form_pane.add(header_donation);
+		
+		JLabel lblNewLabel_19 = new JLabel("Rebuilding lives for futures.");
+		lblNewLabel_19.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		lblNewLabel_19.setBounds(295, 196, 310, 51);
+		form_pane.add(lblNewLabel_19);
+		
+		JLabel lblNewLabel_20 = new JLabel("Don’t delay,  give today! ");
+		lblNewLabel_20.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		lblNewLabel_20.setBounds(305, 259, 277, 51);
+		form_pane.add(lblNewLabel_20);
+		
+		JButton btnNewButton_1 = new JButton("Donate Now! ");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				openWebPage("https://pmnrf.gov.in/en/online-donation");
+			}
+		});
+		btnNewButton_1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
+		btnNewButton_1.setBounds(318, 385, 216, 76);
+		form_pane.add(btnNewButton_1);
 		
 		JPanel admin = new JPanel();
+		admin.setBackground(new Color(255, 204, 204));
 		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
 		tabbedPane.addTab("Admin Login", null, admin, null);
 		admin.setLayout(null);
@@ -968,24 +1006,30 @@ import java.util.Arrays;
 		
 		JButton btnNewButton = new JButton("Login ");
 		
-		btnNewButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent event) {
-			char ch[]=tf_password.getPassword();
-			char pass[]=new char[]{'d','r','i','_','4','3','9'};
-			if(tf_username.getText().equals("Drishtiadmin@2020") && Arrays.equals(ch,pass)){
-				JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-				JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(597, 430, 764, 415);
-		admin.add(scrollPane);
-		view.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
-		view.setBounds(1060, 310, 159, 47);
-				admin.add(view);
+		btnNewButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent event)
+			{
+				char ch[]=tf_password.getPassword();
+				char pass[]=new char[]{'d','r','i','_','4','3','9'};
+
+				if(tf_username.getText().equals("Drishtiadmin@2020") && Arrays.equals(ch,pass))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
+					JScrollPane scrollPane = new JScrollPane(table);
+					scrollPane.setBounds(597, 430, 764, 415);
+					admin.add(scrollPane);
+					view.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
+					view.setBounds(1060, 310, 159, 47);
+					admin.add(view);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				}
 			}
-		else
-		JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-		
-		}
 		});
+
 		btnNewButton.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
 		btnNewButton.setBounds(897, 310, 159, 47);
 		admin.add(btnNewButton);
@@ -999,9 +1043,6 @@ import java.util.Arrays;
 		logo_icon.setIcon(new ImageIcon("small_logo.png"));
 		logo_icon.setBounds(0, 0, 56, 46);
 		logo_panel.add(logo_icon);
-		
-		
-		
 			
 	}
 }
