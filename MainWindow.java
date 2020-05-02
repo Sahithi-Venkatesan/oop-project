@@ -44,11 +44,11 @@ import java.util.Arrays;
 	private JTextField cname_tf;
 	private JTextField cmobile_tf;
 	private JTextField cmail_tf;
-	private JTextField cconcern_tf;
+	private JTextArea cconcern_tf;  //Changed from JTextField as JTextField is only for single line entry
 	private JTextField dname_tf;
 	private JTextField dlocation_tf;
 	private JTextField dopinion_tf;
-	private JTextField chat_tf;
+	private JTextArea chat_tf;      //Changed from JTextField as JTextField is only for single line entry
 	private JTextField tf_username;
 	private JPasswordField tf_password;
 
@@ -116,7 +116,7 @@ import java.util.Arrays;
 		Header.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 42));
 		home.add(Header);
 		
-		JLabel bg_image = new JLabel("New label");
+		JLabel bg_image = new JLabel("");
 		bg_image.setBounds(-3, 152, 1920, 1080);
 		bg_image.setMinimumSize(new Dimension(1920, 1080));
 		bg_image.setIcon(new ImageIcon("virus.jpeg"));
@@ -129,10 +129,10 @@ import java.util.Arrays;
 		home.add(logo);
 		logo.setLayout(null);
 		
-		JLabel lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setIcon(new ImageIcon("logo_drishti.png"));
-		lblNewLabel_10.setBounds(6, 0, 146, 134);
-		logo.add(lblNewLabel_10);
+		JLabel logolabel = new JLabel("");
+		logolabel.setIcon(new ImageIcon("logo_drishti.png"));
+		logolabel.setBounds(6, 0, 146, 134);
+		logo.add(logolabel);
 		
 		JPanel about = new JPanel();
 		about.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -154,45 +154,45 @@ import java.util.Arrays;
 		private_centres.setBounds(1192, 41, 325, 21);
 		testing_centres.add(private_centres);
 		
-		JLabel lblNewLabel = new JLabel("Gandhi Medical College, Secunderabad");
-		lblNewLabel.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel.setBounds(143, 157, 294, 21);
-		testing_centres.add(lblNewLabel);
+		JLabel l1 = new JLabel("Gandhi Medical College, Secunderabad");
+		l1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l1.setBounds(143, 157, 294, 21);
+		testing_centres.add(l1);
 		
-		JLabel lblNewLabel_1 = new JLabel("Osmania Medical College, Hyderabad");
-		lblNewLabel_1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_1.setBounds(143, 220, 272, 27);
-		testing_centres.add(lblNewLabel_1);
+		JLabel l2 = new JLabel("Osmania Medical College, Hyderabad");
+		l2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l2.setBounds(143, 220, 272, 27);
+		testing_centres.add(l2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Sir Roland Ross Institute, Nallakunta");
-		lblNewLabel_2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_2.setBounds(143, 295, 272, 21);
-		testing_centres.add(lblNewLabel_2);
+		JLabel l3 = new JLabel("Sir Roland Ross Institute, Nallakunta");
+		l3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l3.setBounds(143, 295, 272, 21);
+		testing_centres.add(l3);
 		
-		JLabel lblNewLabel_3 = new JLabel("Nizam's Institute of Medical Sciences, Hyderabad");
-		lblNewLabel_3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3.setBounds(104, 358, 363, 27);
-		testing_centres.add(lblNewLabel_3);
+		JLabel l4 = new JLabel("Nizam's Institute of Medical Sciences, Hyderabad");
+		l4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l4.setBounds(104, 358, 363, 27);
+		testing_centres.add(l4);
 		
-		JLabel lblNewLabel_4 = new JLabel("Institute of Preventive Medicine, Hyderabad");
-		lblNewLabel_4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_4.setBounds(130, 427, 331, 27);
-		testing_centres.add(lblNewLabel_4);
+		JLabel l5 = new JLabel("Institute of Preventive Medicine, Hyderabad");
+		l5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l5.setBounds(130, 427, 331, 27);
+		testing_centres.add(l5);
 		
-		JLabel lblNewLabel_5 = new JLabel("ESIC Medical College, Hyderabad");
-		lblNewLabel_5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_5.setBounds(174, 502, 263, 21);
-		testing_centres.add(lblNewLabel_5);
+		JLabel l6 = new JLabel("ESIC Medical College, Hyderabad");
+		l6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l6.setBounds(174, 502, 263, 21);
+		testing_centres.add(l6);
 		
-		JLabel lblNewLabel_6 = new JLabel("CCMB, Hyderabad");
-		lblNewLabel_6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_6.setBounds(208, 571, 207, 21);
-		testing_centres.add(lblNewLabel_6);
+		JLabel l7 = new JLabel("CCMB, Hyderabad");
+		l7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l7.setBounds(208, 571, 207, 21);
+		testing_centres.add(l7);
 		
-		JLabel lblNewLabel_7 = new JLabel("Centre for DNA Fingerprinting and Diagnostics, Hyderabad");
-		lblNewLabel_7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_7.setBounds(71, 640, 437, 21);
-		testing_centres.add(lblNewLabel_7);
+		JLabel l8 = new JLabel("Centre for DNA Fingerprinting and Diagnostics, Hyderabad");
+		l8.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		l8.setBounds(71, 640, 437, 21);
+		testing_centres.add(l8);
 		
 		JButton g1 = new JButton("Directions");
 		g1.addActionListener(new ActionListener() {
@@ -411,8 +411,8 @@ import java.util.Arrays;
 		b1.setBounds(1512, 120, 110, 27);
 		testing_centres.add(b1);
 		
-		JButton btn2 = new JButton("Directions");
-		btn2.addActionListener(new ActionListener() {
+		JButton b2 = new JButton("Directions");
+		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -426,11 +426,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn2.setBounds(1512, 180, 110, 27);
-		testing_centres.add(btn2);
+		b2.setBounds(1512, 180, 110, 27);
+		testing_centres.add(b2);
 		
-		JButton btn3 = new JButton("Directions");
-		btn3.addActionListener(new ActionListener() {
+		JButton b3 = new JButton("Directions");
+		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				try 
@@ -444,11 +444,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn3.setBounds(1512, 235, 110, 27);
-		testing_centres.add(btn3);
+		b3.setBounds(1512, 235, 110, 27);
+		testing_centres.add(b3);
 		
-		JButton btn4 = new JButton("Directions");
-		btn4.addActionListener(new ActionListener() {
+		JButton b4 = new JButton("Directions");
+		b4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				try 
@@ -462,11 +462,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn4.setBounds(1512, 290, 110, 27);
-		testing_centres.add(btn4);
+		b4.setBounds(1512, 290, 110, 27);
+		testing_centres.add(b4);
 		
-		JButton btn5 = new JButton("Directions");
-		btn5.addActionListener(new ActionListener() {
+		JButton b5 = new JButton("Directions");
+		b5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
 				try 
@@ -480,11 +480,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn5.setBounds(1512, 332, 110, 27);
-		testing_centres.add(btn5);
+		b5.setBounds(1512, 332, 110, 27);
+		testing_centres.add(b5);
 		
-		JButton btn6 = new JButton("Directions");
-		btn6.addActionListener(new ActionListener() {
+		JButton b6 = new JButton("Directions");
+		b6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -498,11 +498,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn6.setBounds(1512, 379, 110, 27);
-		testing_centres.add(btn6);
+		b6.setBounds(1512, 379, 110, 27);
+		testing_centres.add(b6);
 		
-		JButton btn7 = new JButton("Directions");
-		btn7.addActionListener(new ActionListener() {
+		JButton b7 = new JButton("Directions");
+		b7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -516,11 +516,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn7.setBounds(1512, 427, 110, 27);
-		testing_centres.add(btn7);
+		b7.setBounds(1512, 427, 110, 27);
+		testing_centres.add(b7);
 		
-		JButton btn8 = new JButton("Directions");
-		btn8.addActionListener(new ActionListener() {
+		JButton b8 = new JButton("Directions");
+		b8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -534,11 +534,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn8.setBounds(1512, 486, 110, 27);
-		testing_centres.add(btn8);
+		b8.setBounds(1512, 486, 110, 27);
+		testing_centres.add(b8);
 		
-		JButton btn9 = new JButton("Directions");
-		btn9.addActionListener(new ActionListener() {
+		JButton b9 = new JButton("Directions");
+		b9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -552,11 +552,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn9.setBounds(1512, 533, 110, 27);
-		testing_centres.add(btn9);
+		b9.setBounds(1512, 533, 110, 27);
+		testing_centres.add(b9);
 		
-		JButton btn10 = new JButton("Directions");
-		btn10.addActionListener(new ActionListener() {
+		JButton b10 = new JButton("Directions");
+		b10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -570,11 +570,11 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn10.setBounds(1512, 585, 110, 27);
-		testing_centres.add(btn10);
+		b10.setBounds(1512, 585, 110, 27);
+		testing_centres.add(b10);
 		
-		JButton btn11 = new JButton("Directions");
-		btn11.addActionListener(new ActionListener() {
+		JButton b11 = new JButton("Directions");
+		b11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
 				try 
@@ -588,18 +588,18 @@ import java.util.Arrays;
                 }
 			}
 		});
-		btn11.setBounds(1512, 635, 110, 27);
-		testing_centres.add(btn11);
+		b11.setBounds(1512, 635, 110, 27);
+		testing_centres.add(b11);
 		
-		JLabel lblNewLabel_8 = new JLabel("*Important Note:");
-		lblNewLabel_8.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_8.setBounds(649, 821, 144, 15);
-		testing_centres.add(lblNewLabel_8);
+		JLabel imp_label = new JLabel("*Important Note:");
+		imp_label.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		imp_label.setBounds(649, 821, 144, 15);
+		testing_centres.add(imp_label);
 		
-		JLabel lblNewLabel_9 = new JLabel("All the information provided has been taken from verified sources");
-		lblNewLabel_9.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_9.setBounds(780, 820, 481, 16);
-		testing_centres.add(lblNewLabel_9);
+		JLabel note_label = new JLabel("All the information provided has been taken from verified sources");
+		note_label.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
+		note_label.setBounds(780, 820, 481, 16);
+		testing_centres.add(note_label);
 		
 		JPanel faqs = new JPanel();
 		faqs.setBackground(new Color(255, 255, 204));
@@ -702,15 +702,15 @@ import java.util.Arrays;
 		faq16.setBounds(80, 553, 839, 20);
 		faqs.add(faq16);
 		
-		JLabel lblNewLabel_11 = new JLabel("*Important Note:");
-		lblNewLabel_11.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
-		lblNewLabel_11.setBounds(668, 752, 120, 27);
-		faqs.add(lblNewLabel_11);
+		JLabel imp_label2 = new JLabel("*Important Note:");
+		imp_label2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
+		imp_label2.setBounds(668, 752, 120, 27);
+		faqs.add(imp_label2);
 		
-		JLabel lblNewLabel_12 = new JLabel("All the information provided has been taken from verified sources");
-		lblNewLabel_12.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
-		lblNewLabel_12.setBounds(785, 752, 454, 27);
-		faqs.add(lblNewLabel_12);
+		JLabel note_label2 = new JLabel("All the information provided has been taken from verified sources");
+		note_label2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 12));
+		note_label2.setBounds(785, 752, 454, 27);
+		faqs.add(note_label2);
 		
 		JPanel precautions = new JPanel();
 		tabbedPane.addTab("    Precautions     ", null, precautions, null);
@@ -770,7 +770,7 @@ import java.util.Arrays;
 		concern_heading.setBounds(83, 193, 133, 19);
 		contact.add(concern_heading);
 		
-		cconcern_tf = new JTextField();
+		cconcern_tf = new JTextArea();
 		cconcern_tf.setBounds(73, 211, 429, 156);
 		contact.add(cconcern_tf);
 		cconcern_tf.setColumns(10);
@@ -831,7 +831,7 @@ import java.util.Arrays;
 		discuss_submit.setBounds(261, 646, 118, 37);
 		contact.add(discuss_submit);
 		
-		chat_tf = new JTextField();
+		chat_tf = new JTextArea();
 		chat_tf.setBounds(6, 717, 1789, 211);
 		contact.add(chat_tf);
 		chat_tf.setColumns(10);
@@ -882,35 +882,35 @@ import java.util.Arrays;
 		donate.add(description_pane);
 		description_pane.setLayout(null);
 		
-		JLabel lblNewLabel_13 = new JLabel("");
-		lblNewLabel_13.setIcon(new ImageIcon("/home/sahithi/Documents/4th Sem/OOP/Project/logo_drishti.png"));
-		lblNewLabel_13.setBounds(22, 193, 140, 150);
-		description_pane.add(lblNewLabel_13);
+		JLabel logo_donate = new JLabel("");
+		logo_donate.setIcon(new ImageIcon("/home/sahithi/Documents/4th Sem/OOP/Project/logo_drishti.png"));
+		logo_donate.setBounds(22, 193, 140, 150);
+		description_pane.add(logo_donate);
 		
-		JLabel lblWeAreProudly = new JLabel("We are proudly non-profit, non-corporate and  ");
-		lblWeAreProudly.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		lblWeAreProudly.setBounds(174, 314, 574, 29);
-		description_pane.add(lblWeAreProudly);
+		JLabel info_label1 = new JLabel("We are proudly non-profit, non-corporate and  ");
+		info_label1.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label1.setBounds(174, 314, 574, 29);
+		description_pane.add(info_label1);
 		
-		JLabel lblNewLabel_14 = new JLabel("non-compromised. Thousands of people like you are lending ");
-		lblNewLabel_14.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel_14.setBounds(22, 345, 690, 39);
-		description_pane.add(lblNewLabel_14);
+		JLabel info_label2 = new JLabel("non-compromised. Thousands of people like you are lending ");
+		info_label2.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label2.setBounds(22, 345, 690, 39);
+		description_pane.add(info_label2);
 		
-		JLabel lblNewLabel_15 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
-		lblNewLabel_15.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel_15.setBounds(22, 381, 690, 29);
-		description_pane.add(lblNewLabel_15);
+		JLabel info_label3 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
+		info_label3.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label3.setBounds(22, 381, 690, 29);
+		description_pane.add(info_label3);
 		
-		JLabel lblNewLabel_17 = new JLabel("contribute our share to and help India fight this.  All your ");
-		lblNewLabel_17.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel_17.setBounds(22, 410, 690, 30);
-		description_pane.add(lblNewLabel_17);
+		JLabel info_label4 = new JLabel("contribute our share to and help India fight this.  All your ");
+		info_label4.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label4.setBounds(22, 410, 690, 30);
+		description_pane.add(info_label4);
 		
-		JLabel lblNewLabel_18 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
-		lblNewLabel_18.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel_18.setBounds(6, 437, 723, 39);
-		description_pane.add(lblNewLabel_18);
+		JLabel info_label5 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
+		info_label5.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label5.setBounds(6, 437, 723, 39);
+		description_pane.add(info_label5);
 		
 		JPanel form_pane = new JPanel();
 		form_pane.setBackground(new Color(204, 255, 204));
@@ -923,25 +923,25 @@ import java.util.Arrays;
 		header_donation.setBounds(128, 127, 688, 57);
 		form_pane.add(header_donation);
 		
-		JLabel lblNewLabel_19 = new JLabel("Rebuilding lives for futures.");
-		lblNewLabel_19.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
-		lblNewLabel_19.setBounds(295, 196, 310, 51);
-		form_pane.add(lblNewLabel_19);
+		JLabel quote1 = new JLabel("Rebuilding lives for futures.");
+		quote1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		quote1.setBounds(295, 196, 310, 51);
+		form_pane.add(quote1);
 		
-		JLabel lblNewLabel_20 = new JLabel("Don’t delay,  give today! ");
-		lblNewLabel_20.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
-		lblNewLabel_20.setBounds(305, 259, 277, 51);
-		form_pane.add(lblNewLabel_20);
+		JLabel quote2 = new JLabel("Don’t delay,  give today! ");
+		quote2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		quote2.setBounds(305, 259, 277, 51);
+		form_pane.add(quote2);
 		
-		JButton btnNewButton_1 = new JButton("Donate Now! ");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton quote3 = new JButton("Donate Now! ");
+		quote3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				openWebPage("https://pmnrf.gov.in/en/online-donation");
 			}
 		});
-		btnNewButton_1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
-		btnNewButton_1.setBounds(318, 385, 216, 76);
-		form_pane.add(btnNewButton_1);
+		quote3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
+		quote3.setBounds(318, 385, 216, 76);
+		form_pane.add(quote3);
 		
 		JPanel admin = new JPanel();
 		admin.setBackground(new Color(255, 204, 204));
@@ -949,26 +949,26 @@ import java.util.Arrays;
 		tabbedPane.addTab("Admin Login", null, admin, null);
 		admin.setLayout(null);
 		
-		JLabel lblNewLabel_16 = new JLabel("Admin Login");
-		lblNewLabel_16.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 30));
-		lblNewLabel_16.setBounds(837, 30, 268, 39);
-		admin.add(lblNewLabel_16);
+		JLabel admin_heading = new JLabel("Admin Login");
+		admin_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 30));
+		admin_heading.setBounds(837, 30, 268, 39);
+		admin.add(admin_heading);
 		
-		JLabel lblUsername = new JLabel("Username:");//Drishtiadmin@2020
-		lblUsername.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		lblUsername.setBounds(734, 138, 113, 47);
-		admin.add(lblUsername);
+		JLabel admin_usr = new JLabel("Username:");//Drishtiadmin@2020
+		admin_usr.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		admin_usr.setBounds(734, 138, 113, 47);
+		admin.add(admin_usr);
 		
 		tf_username = new JTextField();
 		tf_username.setBounds(859, 138, 399, 47);
 		admin.add(tf_username);
 		tf_username.setColumns(10);
 		
-		JLabel label_password = new JLabel("Password:");//dri_439
-		label_password.setDisplayedMnemonic('*');
-		label_password.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		label_password.setBounds(734, 207, 113, 39);
-		admin.add(label_password);
+		JLabel admin_pass = new JLabel("Password:");//dri_439
+		admin_pass.setDisplayedMnemonic('*');
+		admin_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		admin_pass.setBounds(734, 207, 113, 39);
+		admin.add(admin_pass);
 		
 		tf_password = new JPasswordField();
 		tf_password.setEchoChar('*');
@@ -1004,9 +1004,9 @@ import java.util.Arrays;
 		});
 		
 		
-		JButton btnNewButton = new JButton("Login ");
+		JButton admin_login = new JButton("Login ");
 		
-		btnNewButton.addActionListener(new ActionListener() 
+		admin_login.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent event)
 			{
@@ -1030,9 +1030,9 @@ import java.util.Arrays;
 			}
 		});
 
-		btnNewButton.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
-		btnNewButton.setBounds(897, 310, 159, 47);
-		admin.add(btnNewButton);
+		admin_login.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
+		admin_login.setBounds(897, 310, 159, 47);
+		admin.add(admin_login);
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
