@@ -129,6 +129,13 @@ public class MainWindow extends JFrame {
 		tabbedPane.addTab("About Us", null, about, null);
 		about.setLayout(null);
 		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBackground(Color.BLACK);
+		lblNewLabel.setIcon(new ImageIcon("about.png"));
+		lblNewLabel.setBounds(0, 0, 1853, 939);
+		about.add(lblNewLabel);
+		
 		JPanel testing_centres = new JPanel();
 		testing_centres.setBackground(new Color(255, 228, 225));
 		tabbedPane.addTab("Testing Centres", null, testing_centres, null);

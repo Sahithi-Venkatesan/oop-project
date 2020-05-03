@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+//import java.awt.ButtonGroup;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -25,7 +29,7 @@ public class Createaccount extends JFrame {
 	private JTextField fname;
 	private JTextField lname;
 	private JTextField mailtf;
-	ButtonGroup butgrp;
+	//ButtonGroup butgrp;
 	
 
 	public Createaccount() {
@@ -55,7 +59,7 @@ public class Createaccount extends JFrame {
 		
 		JLabel pass = new JLabel("Password: ");
 		pass.setDisplayedMnemonic('*');
-		pass.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
+		pass.setFont(new Font("Create OneSegoe UI Emoji", Font.PLAIN, 18));
 		pass.setBounds(734, 716, 113, 39);
 		contentPane.add(pass);
 		
@@ -135,6 +139,21 @@ public class Createaccount extends JFrame {
 		label_gender.setBounds(736, 414, 87, 20);
 		contentPane.add(label_gender);
 		
+		
+		JLabel label_age = new JLabel("Age: ");
+		label_age.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
+		label_age.setBounds(734, 471, 46, 24);
+		contentPane.add(label_age);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Select", "15-19", "20-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90"}));
+		comboBox.setBackground(new Color(255, 255, 255));
+		comboBox.setToolTipText("Select");
+		comboBox.setBounds(857, 467, 101, 28);
+		contentPane.add(comboBox);
+
+		/*
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Male");
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
 		rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
@@ -156,19 +175,7 @@ public class Createaccount extends JFrame {
 		butgrp.add(rdbtnNewRadioButton);
 		butgrp.add(rdbtnNewRadioButton_1);
 		butgrp.add(rdbtnNewRadioButton_2);
-		
-		JLabel label_age = new JLabel("Age: ");
-		label_age.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
-		label_age.setBounds(734, 471, 46, 24);
-		contentPane.add(label_age);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Select", "15-19", "20-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90"}));
-		comboBox.setBackground(new Color(255, 255, 255));
-		comboBox.setToolTipText("Select");
-		comboBox.setBounds(857, 467, 101, 28);
-		contentPane.add(comboBox);
+		*/
 		
 		JLabel label_location = new JLabel("Location: ");
 		label_location.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
@@ -208,6 +215,12 @@ public class Createaccount extends JFrame {
 		comboBox_1.setBounds(857, 546, 189, 32);
 		contentPane.add(comboBox_1);
 		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 15));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Male","Female","Other"} ));
+		comboBox_2.setBounds(859, 413, 187, 25);
+		contentPane.add(comboBox_2);
+
 	}
 
 	public static void main(String[] args) {
