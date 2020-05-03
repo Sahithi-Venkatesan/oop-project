@@ -25,6 +25,7 @@ public class Createaccount extends JFrame {
 	private JTextField fname;
 	private JTextField lname;
 	private JTextField mailtf;
+	ButtonGroup butgrp;
 	
 
 	public Createaccount() {
@@ -151,6 +152,10 @@ public class Createaccount extends JFrame {
 		rdbtnNewRadioButton_2.setBackground(new Color(255, 255, 255));
 		rdbtnNewRadioButton_2.setBounds(1005, 414, 80, 23);
 		contentPane.add(rdbtnNewRadioButton_2);
+		
+		butgrp.add(rdbtnNewRadioButton);
+		butgrp.add(rdbtnNewRadioButton_1);
+		butgrp.add(rdbtnNewRadioButton_2);
 		
 		JLabel label_age = new JLabel("Age: ");
 		label_age.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
