@@ -38,7 +38,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JTable;
 import java.util.Arrays;
 
- public class MainWindow extends JFrame {
+ @SuppressWarnings("serial")
+public class MainWindow extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField cname_tf;
@@ -46,11 +47,13 @@ import java.util.Arrays;
 	private JTextField cmail_tf;
 	private JTextArea cconcern_tf;  //Changed from JTextField as JTextField is only for single line entry
 	private JTextField dname_tf;
-	private JTextField dlocation_tf;
-	private JTextField dopinion_tf;
+	private JPasswordField pa_tf;
+	private JTextArea dopinion_tf;
 	private JTextArea chat_tf;      //Changed from JTextField as JTextField is only for single line entry
 	private JTextField tf_username;
 	private JPasswordField tf_password;
+	String nameid,mobileid,mailid,concernid;
+	private JProgressBar pb;
 
 	/**
 	 * Launch the application.
@@ -751,16 +754,19 @@ import java.util.Arrays;
 		contact.add(email_connect);
 		
 		cname_tf = new JTextField();
+		cname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cname_tf.setBounds(263, 49, 239, 27);
 		contact.add(cname_tf);
 		cname_tf.setColumns(10);
 		
 		cmobile_tf = new JTextField();
+		cmobile_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cmobile_tf.setBounds(263, 103, 239, 27);
 		contact.add(cmobile_tf);
 		cmobile_tf.setColumns(10);
 		
 		cmail_tf = new JTextField();
+		cmail_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cmail_tf.setBounds(263, 156, 239, 27);
 		contact.add(cmail_tf);
 		cmail_tf.setColumns(10);
@@ -771,6 +777,7 @@ import java.util.Arrays;
 		contact.add(concern_heading);
 		
 		cconcern_tf = new JTextArea();
+		cconcern_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		cconcern_tf.setBounds(73, 211, 429, 156);
 		contact.add(cconcern_tf);
 		cconcern_tf.setColumns(10);
@@ -796,45 +803,105 @@ import java.util.Arrays;
 		});
 		contact.add(connect_button);
 		
-		JLabel discuss_name = new JLabel("Name:");
+		JLabel discuss_name = new JLabel("Username: ");
 		discuss_name.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_name.setBounds(83, 511, 80, 19);
+		discuss_name.setBounds(83, 511, 116, 19);
 		contact.add(discuss_name);
 		
-		JLabel discuss_location = new JLabel("Location:");
+		JLabel discuss_location = new JLabel("Password:");
+		discuss_location.setDisplayedMnemonic('*');
 		discuss_location.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		discuss_location.setBounds(83, 542, 101, 27);
 		contact.add(discuss_location);
 		
-		dname_tf = new JTextField();
+		dname_tf = new JTextField();		
+		dname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		dname_tf.setBounds(237, 505, 281, 27);
 		contact.add(dname_tf);
 		dname_tf.setColumns(10);
 		
-		dlocation_tf = new JTextField();
-		dlocation_tf.setBounds(237, 540, 281, 27);
-		contact.add(dlocation_tf);
-		dlocation_tf.setColumns(10);
+		pa_tf = new JPasswordField();		
+		pa_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		pa_tf.setBounds(237, 540, 281, 27);
+		pa_tf.setColumns(10);
+		contact.add(pa_tf);
+		
 		
 		JLabel discuss_opinion = new JLabel("Your Opinion:");
 		discuss_opinion.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		discuss_opinion.setBounds(83, 581, 133, 27);
 		contact.add(discuss_opinion);
 		
-		dopinion_tf = new JTextField();
+		dopinion_tf = new JTextArea();
+		dopinion_tf.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		dopinion_tf.setBounds(237, 579, 591, 55);
-		contact.add(dopinion_tf);
+		contact.add(dopinion_tf);		
 		dopinion_tf.setColumns(10);
 		
-		JButton discuss_submit = new JButton("Post");
-		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_submit.setBounds(261, 646, 118, 37);
-		contact.add(discuss_submit);
-		
 		chat_tf = new JTextArea();
+		chat_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		chat_tf.setBounds(6, 717, 1789, 211);
-		contact.add(chat_tf);
 		chat_tf.setColumns(10);
+		
+		pb = new JProgressBar(1,100);    
+        pb.setValue(0); 
+        pb.setStringPainted(true); 
+        pb.setBounds(830,505,200,25);
+        pb.setVisible(false);
+        contact.add(pb); 
+        
+  
+		
+		JButton discuss_submit = new JButton(" Post ");
+		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_submit.setBounds(263, 646, 116, 37);
+		discuss_submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+				int i = 0; 
+				pb.setVisible(true);
+		        try { 
+		            while (i <= 100) { 		              
+		                pb.setString("posting"); 		                
+		                Thread.sleep(100); 
+		                pb.paintImmediately(0,0,200,25);
+		                pb.setValue(i);
+		                i=i+10; 
+		            } 
+		            pb.setVisible(false);
+		        } 
+		        catch (Exception e) { 
+		        } 
+				chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
+				}
+			}
+				
+			});
+		contact.add(discuss_submit);
+	
+		contact.add(chat_tf);
+		
+		JLabel createacc= new JLabel("Don't have an account?! ");
+		createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		createacc.setBounds(462, 646, 208, 37);
+		contact.add(createacc);
+		
+		
+		JButton create=new JButton("Create One ");			//new frame: Createaccount.java
+		create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		create.setBounds(682, 646, 184, 37);
+		create.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				
+				Createaccount ca=new Createaccount();
+				ca.setVisible(true);
+			}
+		});
+		contact.add(create);
+		
 		
 		JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
 		info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -950,61 +1017,37 @@ import java.util.Arrays;
 		admin.setLayout(null);
 		
 		JLabel admin_heading = new JLabel("Admin Login");
-		admin_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 30));
-		admin_heading.setBounds(837, 30, 268, 39);
+		admin_heading.setFont(new Font("Segoe UI Emoji", Font.BOLD, 32));
+		admin_heading.setBounds(859, 31, 308, 39);
 		admin.add(admin_heading);
 		
 		JLabel admin_usr = new JLabel("Username:");//Drishtiadmin@2020
-		admin_usr.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		admin_usr.setBounds(734, 138, 113, 47);
+		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+		admin_usr.setBounds(734, 311, 150, 47);
 		admin.add(admin_usr);
 		
 		tf_username = new JTextField();
-		tf_username.setBounds(859, 138, 399, 47);
+		tf_username.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
+		tf_username.setBounds(883, 311, 393, 47);
 		admin.add(tf_username);
 		tf_username.setColumns(10);
 		
 		JLabel admin_pass = new JLabel("Password:");//dri_439
 		admin_pass.setDisplayedMnemonic('*');
-		admin_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		admin_pass.setBounds(734, 207, 113, 39);
+		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+		admin_pass.setBounds(734, 385, 141, 39);
 		admin.add(admin_pass);
 		
 		tf_password = new JPasswordField();
+		tf_password.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
 		tf_password.setEchoChar('*');
-		tf_password.setBounds(859, 197, 399, 49);
+		tf_password.setBounds(883, 380, 399, 49);
 		admin.add(tf_password);
 		
-		JTable table = new JTable();		
-		
-		DefaultTableModel model = (DefaultTableModel)table.getModel();
-		model.addColumn("Name");
-		model.addColumn("Contact");
-		model.addColumn("Email id");
-		model.addColumn("Concern");
-      
-		table.getColumnModel().getColumn(0).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(1).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(2).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(3).setPreferredWidth(4000);
-		table.setModel(model);
-						
-		JButton view = new JButton("View ");
-		Object [] row = new Object[10];
-		view.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent event) {
-		
-		row[0]=cname_tf.getText();
-		row[1]=cmobile_tf.getText();
-		row[2]=cmail_tf.getText();
-		row[3]=cconcern_tf.getText();
-    
-		model.addRow(row);
-		}
-		});
 		
 		
-		JButton admin_login = new JButton("Login ");
+		
+		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
 		
 		admin_login.addActionListener(new ActionListener() 
 		{
@@ -1016,12 +1059,15 @@ import java.util.Arrays;
 				if(tf_username.getText().equals("Drishtiadmin@2020") && Arrays.equals(ch,pass))
 				{
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-					JScrollPane scrollPane = new JScrollPane(table);
-					scrollPane.setBounds(597, 430, 764, 415);
-					admin.add(scrollPane);
-					view.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
-					view.setBounds(1060, 310, 159, 47);
-					admin.add(view);
+					
+					 nameid=cname_tf.getText();
+					 mobileid=cmail_tf.getText();
+					 mailid	=cmobile_tf.getText();
+				     concernid=cconcern_tf.getText();
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);
+					
+					adlog.setVisible(true);
+					
 				}
 				else
 				{
@@ -1030,9 +1076,14 @@ import java.util.Arrays;
 			}
 		});
 
-		admin_login.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 18));
-		admin_login.setBounds(897, 310, 159, 47);
+		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+		admin_login.setBounds(936, 483, 141, 39);
 		admin.add(admin_login);
+		
+		JLabel adminicon = new JLabel("New label");
+		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
+		adminicon.setBounds(899, 81, 200, 200);
+		admin.add(adminicon);
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
@@ -1046,3 +1097,4 @@ import java.util.Arrays;
 			
 	}
 }
+

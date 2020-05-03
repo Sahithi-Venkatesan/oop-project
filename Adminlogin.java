@@ -1,5 +1,5 @@
 
-package javaproject;
+
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -91,7 +91,7 @@ public class Adminlogin extends JFrame {
 			JLabel adminimg = new JLabel("");
 			adminimg.setBounds(62, 115, 197, 183);
 			adminimg.setMinimumSize(new Dimension(162,157));
-			adminimg.setIcon(new ImageIcon("C:\\Users\\RAJENDRA REDDY\\adminicon.png"));
+			adminimg.setIcon(new ImageIcon("adminicon.png"));
 			adminimg.setPreferredSize(new Dimension(162,157));
 			adminimg.setMaximumSize(new Dimension(162,157));
 			
@@ -99,4 +99,6 @@ public class Adminlogin extends JFrame {
 	
 		
 	}
+
 }
+
