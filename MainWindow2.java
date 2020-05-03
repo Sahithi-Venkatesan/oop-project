@@ -1047,7 +1047,7 @@ import java.util.Arrays;
 		
 		
 		
-		JButton admin_login = new JButton("Login ");			//new frame: Adminlogin.java
+		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
 		
 		admin_login.addActionListener(new ActionListener() 
 		{
