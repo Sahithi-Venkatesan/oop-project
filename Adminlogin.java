@@ -1,6 +1,3 @@
-
-
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -44,13 +41,14 @@ public class Adminlogin extends JFrame {
 		setBounds(100, 100, 450, 300);
 		setSize(1920,1080);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(224, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Welcome Admin !");
+		lblNewLabel.setBackground(new Color(224, 255, 255));
 		lblNewLabel.setFont(new Font("Perpetua Titling MT", Font.BOLD, 25));
 		lblNewLabel.setBounds(52, 31, 259, 78);
 		contentPane.add(lblNewLabel);

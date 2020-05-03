@@ -100,6 +100,8 @@ public class MainWindow extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBackground(new Color(240, 248, 255));
+		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabbedPane.setBounds(6, 54, 1914, 1026);
 		tabbedPane.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		tabbedPane.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -108,34 +110,19 @@ public class MainWindow extends JFrame {
 		JPanel home = new JPanel();
 		home.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		home.setPreferredSize(new Dimension(320, 50));
-		tabbedPane.addTab("Home", null, home, null);
+		tabbedPane.addTab("Home", null, home, "");
 		home.setLayout(null);
 		
-		JLabel Header = new JLabel("Fight Corona With Drishti  ");
-		Header.setBounds(new Rectangle(654, 50, 605, 52));
-		Header.setMaximumSize(new Dimension(1920, 50));
-		Header.setBackground(SystemColor.desktop);
-		Header.setForeground(SystemColor.desktop);
-		Header.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 42));
-		home.add(Header);
+		JPanel panel = new JPanel();
+		panel.setBounds(6, 0, 1855, 969);
+		home.add(panel);
+		panel.setLayout(null);
 		
-		JLabel bg_image = new JLabel("");
-		bg_image.setBounds(-3, 152, 1920, 1080);
-		bg_image.setMinimumSize(new Dimension(1920, 1080));
-		bg_image.setIcon(new ImageIcon("virus.jpeg"));
-		bg_image.setPreferredSize(new Dimension(1920, 1080));
-		bg_image.setMaximumSize(new Dimension(1920, 1080));
-		home.add(bg_image);
-		
-		JPanel logo = new JPanel();
-		logo.setBounds(460, 6, 134, 134);
-		home.add(logo);
-		logo.setLayout(null);
-		
-		JLabel logolabel = new JLabel("");
-		logolabel.setIcon(new ImageIcon("logo_drishti.png"));
-		logolabel.setBounds(6, 0, 146, 134);
-		logo.add(logolabel);
+		JLabel homepage_bg = new JLabel("");
+		homepage_bg.setBackground(new Color(224, 255, 255));
+		homepage_bg.setIcon(new ImageIcon("Homepage.jpg"));
+		homepage_bg.setBounds(0, 0, 1849, 942);
+		panel.add(homepage_bg);
 		
 		JPanel about = new JPanel();
 		about.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -950,7 +937,7 @@ public class MainWindow extends JFrame {
 		description_pane.setLayout(null);
 		
 		JLabel logo_donate = new JLabel("");
-		logo_donate.setIcon(new ImageIcon("/home/sahithi/Documents/4th Sem/OOP/Project/logo_drishti.png"));
+		logo_donate.setIcon(new ImageIcon("logo_drishti.png"));
 		logo_donate.setBounds(22, 193, 140, 150);
 		description_pane.add(logo_donate);
 		
