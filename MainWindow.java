@@ -1047,10 +1047,9 @@ public class MainWindow extends JFrame {
 		{
 			public void actionPerformed(ActionEvent event)
 			{
-				char ch[]=tf_password.getPassword();
-				char pass[]=new char[]{'d','r','i','_','4','3','9'};
+				
 
-				if(tf_username.getText().equals("Drishtiadmin@2020") && Arrays.equals(ch,pass))
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
 				{
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
 					
