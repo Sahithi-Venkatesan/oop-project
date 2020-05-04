@@ -716,6 +716,244 @@ public class MainWindow extends JFrame {
 		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
 		precautions.add(precaution_bg);
 		
+		JPanel donate = new JPanel();
+		donate.setBackground(new Color(204, 255, 204));
+		tabbedPane.addTab("Donate Now", null, donate, null);
+		donate.setLayout(null);
+		
+		JPanel description_pane = new JPanel();
+		description_pane.setBackground(new Color(204, 255, 204));
+		description_pane.setBounds(69, 101, 735, 733);
+		donate.add(description_pane);
+		description_pane.setLayout(null);
+		
+		JLabel logo_donate = new JLabel("");
+		logo_donate.setIcon(new ImageIcon("logo_drishti.png"));
+		logo_donate.setBounds(22, 193, 140, 150);
+		description_pane.add(logo_donate);
+		
+		JLabel info_label1 = new JLabel("We are proudly non-profit, non-corporate and  ");
+		info_label1.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label1.setBounds(174, 314, 574, 29);
+		description_pane.add(info_label1);
+		
+		JLabel info_label2 = new JLabel("non-compromised. Thousands of people like you are lending ");
+		info_label2.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label2.setBounds(22, 345, 690, 39);
+		description_pane.add(info_label2);
+		
+		JLabel info_label3 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
+		info_label3.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label3.setBounds(22, 381, 690, 29);
+		description_pane.add(info_label3);
+		
+		JLabel info_label4 = new JLabel("contribute our share to and help India fight this.  All your ");
+		info_label4.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label4.setBounds(22, 410, 690, 30);
+		description_pane.add(info_label4);
+		
+		JLabel info_label5 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
+		info_label5.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
+		info_label5.setBounds(6, 437, 723, 39);
+		description_pane.add(info_label5);
+		
+		JPanel form_pane = new JPanel();
+		form_pane.setBackground(new Color(204, 255, 204));
+		form_pane.setBounds(863, 101, 801, 791);
+		donate.add(form_pane);
+		form_pane.setLayout(null);
+		
+		JLabel header_donation = new JLabel("We can’t help everyone, but everyone can help someone. ");
+		header_donation.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		header_donation.setBounds(128, 127, 688, 57);
+		form_pane.add(header_donation);
+		
+		JLabel quote1 = new JLabel("Rebuilding lives for futures.");
+		quote1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		quote1.setBounds(295, 196, 310, 51);
+		form_pane.add(quote1);
+		
+		JLabel quote2 = new JLabel("Don’t delay,  give today! ");
+		quote2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
+		quote2.setBounds(305, 259, 277, 51);
+		form_pane.add(quote2);
+		
+		JButton quote3 = new JButton("Donate Now! ");
+		quote3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				openWebPage("https://pmnrf.gov.in/en/online-donation");
+			}
+		});
+		quote3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
+		quote3.setBounds(318, 385, 216, 76);
+		form_pane.add(quote3);
+		
+		JPanel more_info = new JPanel();
+		more_info.setBackground(new Color(255, 240, 245));
+		tabbedPane.addTab("More Info ", null, more_info, null);
+		more_info.setLayout(null);
+		
+		JPanel emergency_panel = new JPanel();
+		emergency_panel.setBackground(new Color(255, 0, 0));
+		emergency_panel.setBounds(194, 92, 497, 446);
+		more_info.add(emergency_panel);
+		emergency_panel.setLayout(null);
+		
+		JLabel heading_emergency = new JLabel("Emergency ");
+		heading_emergency.setForeground(new Color(255, 255, 255));
+		heading_emergency.setBackground(new Color(255, 255, 255));
+		heading_emergency.setFont(new Font("Bitstream Charter", Font.BOLD, 21));
+		heading_emergency.setBounds(29, 29, 127, 26);
+		emergency_panel.add(heading_emergency);
+		
+		JLabel dashedline = new JLabel("-----------------------------");
+		dashedline.setForeground(new Color(255, 255, 255));
+		dashedline.setFont(new Font("DejaVu Sans", Font.PLAIN, 14));
+		dashedline.setBounds(0, 53, 156, 15);
+		emergency_panel.add(dashedline);
+		
+		JLabel label_cov = new JLabel("Coronavirus disease ");
+		label_cov.setForeground(new Color(255, 255, 255));
+		label_cov.setFont(new Font("Century Schoolbook L", Font.BOLD, 21));
+		label_cov.setBounds(113, 106, 242, 32);
+		emergency_panel.add(label_cov);
+		
+		JLabel label_covid = new JLabel("COVID - 19 ");
+		label_covid.setForeground(new Color(255, 255, 255));
+		label_covid.setFont(new Font("Century Schoolbook L", Font.BOLD, 21));
+		label_covid.setBounds(164, 137, 179, 32);
+		emergency_panel.add(label_covid);
+		
+		JLabel label_pandemic = new JLabel("pandemic ");
+		label_pandemic.setForeground(new Color(255, 255, 255));
+		label_pandemic.setFont(new Font("Century Schoolbook L", Font.BOLD, 21));
+		label_pandemic.setBounds(164, 170, 152, 26);
+		emergency_panel.add(label_pandemic);
+		
+		JButton btnMoreInfoHere = new JButton("More Info Here --->");
+		btnMoreInfoHere.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				openWebPage("https://www.who.int/emergencies/diseases/novel-coronavirus-2019");
+			}
+		});
+		btnMoreInfoHere.setBackground(new Color(255, 255, 255));
+		btnMoreInfoHere.setForeground(new Color(255, 0, 0));
+		btnMoreInfoHere.setFont(new Font("DejaVu Sans", Font.BOLD, 21));
+		btnMoreInfoHere.setBounds(98, 247, 268, 55);
+		emergency_panel.add(btnMoreInfoHere);
+		
+		JLabel note_imp = new JLabel("*Important Note:  All the information provided has been taken from verified sources ");
+		note_imp.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 15));
+		note_imp.setBounds(665, 847, 710, 43);
+		more_info.add(note_imp);
+		
+		JLabel label_updates = new JLabel("Latest Updates !! ");
+		label_updates.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 39));
+		label_updates.setBounds(1114, 72, 452, 43);
+		more_info.add(label_updates);
+		
+		JLabel lblNewLabel_1 = new JLabel("Plasma therapy is no silver bullet - To recommend it without ");
+		lblNewLabel_1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1.setBounds(1048, 166, 489, 26);
+		more_info.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("undertaking a robust scientific study may cause more harm ");
+		lblNewLabel_2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_2.setBounds(1048, 193, 489, 26);
+		more_info.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("than good ");
+		lblNewLabel_3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3.setBounds(1048, 216, 199, 26);
+		more_info.add(lblNewLabel_3);
+		
+		JButton btnKnowMore = new JButton("Know More");
+		btnKnowMore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				openWebPage("https://www.icmr.gov.in/pdf/press_realease_files/TheHindu_DrBhargava_1May2020_V1.pdf");
+			}
+		});
+		btnKnowMore.setBackground(new Color(0, 0, 0));
+		btnKnowMore.setForeground(new Color(255, 228, 225));
+		btnKnowMore.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		btnKnowMore.setBounds(1169, 229, 188, 43);
+		more_info.add(btnKnowMore);
+		
+		JLabel lblNewLabel_4 = new JLabel("Find out the coronavirus disease (COVID - 19) situation ");
+		lblNewLabel_4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_4.setBounds(1048, 315, 489, 26);
+		more_info.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("dashboard. This interactive dashboard provides the latest ");
+		lblNewLabel_5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_5.setBounds(1048, 336, 489, 26);
+		more_info.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("global numbers and numbers by country of COVID-19 ");
+		lblNewLabel_6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_6.setBounds(1048, 360, 489, 19);
+		more_info.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("cases on a daily basis. ");
+		lblNewLabel_7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_7.setBounds(1048, 374, 188, 26);
+		more_info.add(lblNewLabel_7);
+		
+		JButton btnNewButton = new JButton("Find Here ");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				openWebPage("https://covid19.who.int/");
+			}
+		});
+		btnNewButton.setBackground(new Color(0, 0, 0));
+		btnNewButton.setForeground(new Color(255, 240, 245));
+		btnNewButton.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		btnNewButton.setBounds(1173, 412, 184, 43);
+		more_info.add(btnNewButton);
+		
+		JLabel lblNewLabel_8 = new JLabel("Here are a few very important Myth Busters for this pandemic ");
+		lblNewLabel_8.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_8.setBounds(1048, 514, 489, 24);
+		more_info.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("issued on public interest by the World Health Organisation . ");
+		lblNewLabel_9.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_9.setBounds(1048, 539, 489, 26);
+		more_info.add(lblNewLabel_9);
+		
+		JButton btnNewButton_1 = new JButton("Myth Busters ");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				openWebPage("https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters");
+			}
+		});
+		btnNewButton_1.setBackground(new Color(0, 0, 0));
+		btnNewButton_1.setForeground(new Color(255, 240, 245));
+		btnNewButton_1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		btnNewButton_1.setBounds(1137, 577, 284, 58);
+		more_info.add(btnNewButton_1);
+		
+		JLabel lblNewLabel_10 = new JLabel("Inorder to write to us, visit the Connect With Us page or  ");
+		lblNewLabel_10.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		lblNewLabel_10.setBounds(417, 736, 538, 26);
+		more_info.add(lblNewLabel_10);
+		
+		JButton btnNewButton_2 = new JButton("Click Here ");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				tabbedPane.setSelectedIndex(7);
+			}
+		});
+		btnNewButton_2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
+		btnNewButton_2.setForeground(new Color(255, 240, 245));
+		btnNewButton_2.setBackground(new Color(0, 0, 0));
+		btnNewButton_2.setBounds(954, 724, 228, 38);
+		more_info.add(btnNewButton_2);
+		
 		JPanel contact = new JPanel();
 		contact.setBackground(new Color(255, 228, 225));
 		tabbedPane.addTab("Connect With Us", null, contact, null);
@@ -838,12 +1076,12 @@ public class MainWindow extends JFrame {
 		chat_tf.setColumns(10);
 		
 		pb = new JProgressBar(1,100);    
-        pb.setValue(0); 
-        pb.setStringPainted(true); 
-        pb.setBounds(830,505,200,25);
-        pb.setVisible(false);
-        contact.add(pb); 
-        
+		pb.setValue(0); 
+		pb.setStringPainted(true); 
+		pb.setBounds(830,505,200,25);
+		pb.setVisible(false);
+		contact.add(pb); 
+		
   
 		
 		JButton discuss_submit = new JButton(" Post ");
@@ -875,134 +1113,62 @@ public class MainWindow extends JFrame {
 				
 			});
 		contact.add(discuss_submit);
-	
-		contact.add(chat_tf);
 		
-		JLabel createacc= new JLabel("Don't have an account?! ");
-		createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		createacc.setBounds(462, 646, 208, 37);
-		contact.add(createacc);
-		
-		
-		JButton create=new JButton("Create One ");			//new frame: Createaccount.java
-		create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		create.setBounds(682, 646, 184, 37);
-		create.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				
-				Createaccount ca=new Createaccount();
-				ca.setVisible(true);
-			}
-		});
-		contact.add(create);
-		
-		
-		JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
-		info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info1.setBounds(734, 37, 633, 27);
-		contact.add(info1);
-		
-		JLabel info2 = new JLabel("or related issues, please feel free to drop in.");
-		info2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info2.setBounds(734, 69, 633, 27);
-		contact.add(info2);
-		
-		JLabel info3 = new JLabel("All your concerns will be conveyed to the MHRD or the MoFHW and we will ");
-		info3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info3.setBounds(733, 108, 618, 20);
-		contact.add(info3);
-		
-		JLabel info4 = new JLabel("ensure that they respond quick. ");
-		info4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info4.setBounds(734, 136, 457, 37);
-		contact.add(info4);
-		
-		JLabel info5 = new JLabel("We're happy to help you anytime :)");
-		info5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 20));
-		info5.setBounds(734, 185, 633, 48);
-		contact.add(info5);
-		
-		JLabel info6 = new JLabel("Also, feel free to share your opinion with people around related to COVID-19 ");
-		info6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info6.setBounds(734, 245, 672, 27);
-		contact.add(info6);
-		
-		JLabel info7 = new JLabel("issues in the discussion forum below.");
-		info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		info7.setBounds(734, 274, 403, 27);
-		contact.add(info7);
-		
-		JPanel donate = new JPanel();
-		donate.setBackground(new Color(204, 255, 204));
-		tabbedPane.addTab("Donate Now", null, donate, null);
-		donate.setLayout(null);
-		
-		JPanel description_pane = new JPanel();
-		description_pane.setBackground(new Color(204, 255, 204));
-		description_pane.setBounds(69, 101, 735, 733);
-		donate.add(description_pane);
-		description_pane.setLayout(null);
-		
-		JLabel logo_donate = new JLabel("");
-		logo_donate.setIcon(new ImageIcon("logo_drishti.png"));
-		logo_donate.setBounds(22, 193, 140, 150);
-		description_pane.add(logo_donate);
-		
-		JLabel info_label1 = new JLabel("We are proudly non-profit, non-corporate and  ");
-		info_label1.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		info_label1.setBounds(174, 314, 574, 29);
-		description_pane.add(info_label1);
-		
-		JLabel info_label2 = new JLabel("non-compromised. Thousands of people like you are lending ");
-		info_label2.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		info_label2.setBounds(22, 345, 690, 39);
-		description_pane.add(info_label2);
-		
-		JLabel info_label3 = new JLabel("a helping hand to fight against the novel corona virus. Let’s  ");
-		info_label3.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		info_label3.setBounds(22, 381, 690, 29);
-		description_pane.add(info_label3);
-		
-		JLabel info_label4 = new JLabel("contribute our share to and help India fight this.  All your ");
-		info_label4.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		info_label4.setBounds(22, 410, 690, 30);
-		description_pane.add(info_label4);
-		
-		JLabel info_label5 = new JLabel("donations will be redirected to the Prime Minister’s Relief Fund. ");
-		info_label5.setFont(new Font("Dyuthi", Font.BOLD | Font.ITALIC, 25));
-		info_label5.setBounds(6, 437, 723, 39);
-		description_pane.add(info_label5);
-		
-		JPanel form_pane = new JPanel();
-		form_pane.setBackground(new Color(204, 255, 204));
-		form_pane.setBounds(863, 101, 801, 791);
-		donate.add(form_pane);
-		form_pane.setLayout(null);
-		
-		JLabel header_donation = new JLabel("We can’t help everyone, but everyone can help someone. ");
-		header_donation.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
-		header_donation.setBounds(128, 127, 688, 57);
-		form_pane.add(header_donation);
-		
-		JLabel quote1 = new JLabel("Rebuilding lives for futures.");
-		quote1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
-		quote1.setBounds(295, 196, 310, 51);
-		form_pane.add(quote1);
-		
-		JLabel quote2 = new JLabel("Don’t delay,  give today! ");
-		quote2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 21));
-		quote2.setBounds(305, 259, 277, 51);
-		form_pane.add(quote2);
-		
-		JButton quote3 = new JButton("Donate Now! ");
-		quote3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				openWebPage("https://pmnrf.gov.in/en/online-donation");
-			}
-		});
-		quote3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
-		quote3.setBounds(318, 385, 216, 76);
-		form_pane.add(quote3);
+			contact.add(chat_tf);
+			
+			JLabel createacc= new JLabel("Don't have an account?! ");
+			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			createacc.setBounds(462, 646, 208, 37);
+			contact.add(createacc);
+			
+			
+			JButton create=new JButton("Create One ");			//new frame: Createaccount.java
+			create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			create.setBounds(682, 646, 184, 37);
+			create.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent ae) {
+					
+					Createaccount ca=new Createaccount();
+					ca.setVisible(true);
+				}
+			});
+			contact.add(create);
+			
+			
+			JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
+			info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info1.setBounds(734, 37, 633, 27);
+			contact.add(info1);
+			
+			JLabel info2 = new JLabel("or related issues, please feel free to drop in.");
+			info2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info2.setBounds(734, 69, 633, 27);
+			contact.add(info2);
+			
+			JLabel info3 = new JLabel("All your concerns will be conveyed to the MHRD or the MoFHW and we will ");
+			info3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info3.setBounds(733, 108, 618, 20);
+			contact.add(info3);
+			
+			JLabel info4 = new JLabel("ensure that they respond quick. ");
+			info4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info4.setBounds(734, 136, 457, 37);
+			contact.add(info4);
+			
+			JLabel info5 = new JLabel("We're happy to help you anytime :)");
+			info5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 20));
+			info5.setBounds(734, 185, 633, 48);
+			contact.add(info5);
+			
+			JLabel info6 = new JLabel("Also, feel free to share your opinion with people around related to COVID-19 ");
+			info6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info6.setBounds(734, 245, 672, 27);
+			contact.add(info6);
+			
+			JLabel info7 = new JLabel("issues in the discussion forum below.");
+			info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info7.setBounds(734, 274, 403, 27);
+			contact.add(info7);
 		
 		JPanel admin = new JPanel();
 		admin.setBackground(new Color(255, 204, 204));
@@ -1087,6 +1253,17 @@ public class MainWindow extends JFrame {
 		logo_icon.setIcon(new ImageIcon("small_logo.png"));
 		logo_icon.setBounds(0, 0, 56, 46);
 		logo_panel.add(logo_icon);
+		
+		JPanel helpline_panel = new JPanel();
+		helpline_panel.setBackground(new Color(255, 182, 193));
+		helpline_panel.setBounds(1176, 6, 465, 61);
+		contentPane.add(helpline_panel);
+		helpline_panel.setLayout(null);
+		
+		JLabel label_helpline = new JLabel("Helpline for the corona virus: +91-11-23978046");
+		label_helpline.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		label_helpline.setBounds(6, 20, 533, 30);
+		helpline_panel.add(label_helpline);
 			
 	}
 }
