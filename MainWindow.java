@@ -1055,8 +1055,8 @@ public class MainWindow extends JFrame {
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
 					
 					 nameid=cname_tf.getText();
-					 mobileid=cmail_tf.getText();
-					 mailid	=cmobile_tf.getText();
+					 mobileid=cmobile_tf.getText();
+					 mailid	=cmail_tf.getText();
 				     concernid=cconcern_tf.getText();
 					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);
 					
