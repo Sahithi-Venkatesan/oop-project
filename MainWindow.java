@@ -730,7 +730,7 @@ public class MainWindow extends JFrame {
 		
 		JPanel description_pane = new JPanel();
 		description_pane.setBackground(new Color(204, 255, 204));
-		description_pane.setBounds(69, 101, 735, 733);
+		description_pane.setBounds(69, 420, 735, 547);
 		donate.add(description_pane);
 		description_pane.setLayout(null);
 		
@@ -766,7 +766,7 @@ public class MainWindow extends JFrame {
 		
 		JPanel form_pane = new JPanel();
 		form_pane.setBackground(new Color(204, 255, 204));
-		form_pane.setBounds(863, 101, 801, 791);
+		form_pane.setBounds(863, 420, 801, 472);
 		donate.add(form_pane);
 		form_pane.setLayout(null);
 		
@@ -794,6 +794,11 @@ public class MainWindow extends JFrame {
 		quote3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 24));
 		quote3.setBounds(318, 385, 216, 76);
 		form_pane.add(quote3);
+		
+		JLabel label_headerimage = new JLabel("");
+		label_headerimage.setIcon(new ImageIcon("gov.jpg"));
+		label_headerimage.setBounds(18, 6, 1837, 402);
+		donate.add(label_headerimage);
 		
 		JPanel more_info = new JPanel();
 		more_info.setBackground(new Color(255, 240, 245));
@@ -1021,7 +1026,7 @@ public class MainWindow extends JFrame {
 		contact.add(cconcern_tf);
 		cconcern_tf.setColumns(10);
 		
-		JButton connect_button = new JButton("Submit");
+		JButton connect_button = new JButton("Submit ");
 		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 		connect_button.setBounds(237, 389, 142, 37);
 		connect_button.addActionListener(new ActionListener()
@@ -1093,7 +1098,7 @@ public class MainWindow extends JFrame {
 		
 		JButton discuss_submit = new JButton(" Post ");
 		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_submit.setBounds(263, 646, 116, 37);
+		discuss_submit.setBounds(237, 646, 108, 37);
 		discuss_submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
@@ -1125,13 +1130,13 @@ public class MainWindow extends JFrame {
 			
 			JLabel createacc= new JLabel("Don't have an account?! ");
 			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			createacc.setBounds(462, 646, 208, 37);
+			createacc.setBounds(423, 646, 209, 37);
 			contact.add(createacc);
 			
 			
 			JButton create=new JButton("Create One ");			//new frame: Createaccount.java
 			create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			create.setBounds(682, 646, 184, 37);
+			create.setBounds(627, 646, 172, 37);
 			create.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent ae) {
 					
@@ -1176,19 +1181,35 @@ public class MainWindow extends JFrame {
 			info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 			info7.setBounds(734, 274, 403, 27);
 			contact.add(info7);
+			
+			JLabel lblForgotPassword = new JLabel("Forgot password? ");
+			lblForgotPassword.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			lblForgotPassword.setBounds(873, 646, 172, 37);
+			contact.add(lblForgotPassword);
+			
+			JButton btn_forgotpass = new JButton("Click Here ");
+			btn_forgotpass.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				}
+			});
+			btn_forgotpass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			btn_forgotpass.setBounds(1036, 646, 155, 37);
+			contact.add(btn_forgotpass);
 		
 		JPanel admin = new JPanel();
-		admin.setBackground(Color.WHITE);
+		admin.setBackground(new Color(224, 255, 255));
 		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
 		tabbedPane.addTab("Admin Login", null, admin, null);
 		admin.setLayout(null);
 		
 		JLabel admin_heading = new JLabel("Admin Login");
-		admin_heading.setFont(new Font("Segoe UI Emoji", Font.BOLD, 34));
-		admin_heading.setBounds(859, 31, 309, 47);
+		admin_heading.setBackground(new Color(0, 0, 0));
+		admin_heading.setForeground(new Color(0, 0, 0));
+		admin_heading.setFont(new Font("Dialog", Font.BOLD, 39));
+		admin_heading.setBounds(888, 6, 325, 93);
 		admin.add(admin_heading);
 		
-		JLabel admin_usr = new JLabel("Username");//Drishtiadmin@2020
+		JLabel admin_usr = new JLabel("Username: ");//Drishtiadmin@2020
 		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
 		admin_usr.setBounds(734, 311, 150, 47);
 		admin.add(admin_usr);
@@ -1199,10 +1220,11 @@ public class MainWindow extends JFrame {
 		admin.add(tf_username);
 		tf_username.setColumns(10);
 		
-		JLabel admin_pass = new JLabel("Password");//dri_439
+		JLabel admin_pass = new JLabel("Password: ");//dri_439
+		admin_pass.setBackground(new Color(224, 255, 255));
 		admin_pass.setDisplayedMnemonic('*');
 		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
-		admin_pass.setBounds(734, 385, 141, 39);
+		admin_pass.setBounds(742, 385, 142, 39);
 		admin.add(admin_pass);
 		
 		tf_password = new JPasswordField();
@@ -1299,40 +1321,6 @@ public class MainWindow extends JFrame {
 		});
 		
 		
-		JButton forgotpass = new JButton("Click here ");
-		forgotpass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 18));
-		forgotpass.setBounds(1284, 485, 150, 37);
-		forgotpass.addActionListener(new ActionListener()
-		{
-		
-		public void actionPerformed(ActionEvent event)
-		  {
-			
-			admin.add(dobf);
-			admin.add(namef);
-			admin.add(newpass);
-			admin.add(fullname);
-			admin.add(dob);
-			admin.add(filldetails);
-			admin.add(birplace);
-			admin.add(bplace);
-			admin.add(clgname);
-			admin.add(clgtf);
-			admin.add(mobilelabel);
-			admin.add(mobiletf);
-			
-			
-			
-			c=false;
-			
-			
-			
-		  }
-		});
-		  
-		admin.add(forgotpass);
-		
-		
 	
 		
 		
@@ -1392,7 +1380,7 @@ public class MainWindow extends JFrame {
 		});
 
 		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
-		admin_login.setBounds(936, 483, 141, 39);
+		admin_login.setBounds(954, 483, 187, 49);
 		admin.add(admin_login);
 		
 		JLabel adminicon = new JLabel("New label");
@@ -1400,10 +1388,10 @@ public class MainWindow extends JFrame {
 		adminicon.setBounds(899, 81, 200, 200);
 		admin.add(adminicon);
 		
-		JLabel forgotpasstxt = new JLabel("Forgot Password?");
-		forgotpasstxt.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
-		forgotpasstxt.setBounds(1126, 490, 150, 24);
-		admin.add(forgotpasstxt);
+		JLabel lblNewLabel_11 = new JLabel("");
+		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
+		lblNewLabel_11.setBounds(0, 0, 1920, 1080);
+		admin.add(lblNewLabel_11);
 		
 		
 		JPanel logo_panel = new JPanel();
@@ -1431,3 +1419,7 @@ public class MainWindow extends JFrame {
 }
  
  
+
+
+	
+		

@@ -29,6 +29,7 @@ public class Createaccount extends JFrame {
 	private JTextField fname;
 	private JTextField lname;
 	private JTextField mailtf;
+	private JTextField textField;
 	//ButtonGroup butgrp;
 	
 
@@ -60,14 +61,14 @@ public class Createaccount extends JFrame {
 		JLabel pass = new JLabel("Password: ");
 		pass.setDisplayedMnemonic('*');
 		pass.setFont(new Font("Create OneSegoe UI Emoji", Font.PLAIN, 18));
-		pass.setBounds(734, 716, 113, 39);
+		pass.setBounds(734, 789, 113, 39);
 		contentPane.add(pass);
 		
 		JPasswordField tf_pass = new JPasswordField();
 		tf_pass.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
 		tf_pass.setBackground(new Color(245, 245, 245));
 		tf_pass.setEchoChar('*');
-		tf_pass.setBounds(857, 712, 399, 49);
+		tf_pass.setBounds(857, 784, 399, 49);
 		contentPane.add(tf_pass);
 		
 		JLabel label_firstname = new JLabel("First Name: ");
@@ -95,7 +96,7 @@ public class Createaccount extends JFrame {
 		lname.setColumns(10);
 		
 		JLabel label_emailid = new JLabel("Email id: ");
-		label_emailid.setFont(new Font("Segoe UI Emoji", label_emailid.getFont().getStyle(), 18));
+		label_emailid.setFont(new Font("Dialog", Font.PLAIN, 18));
 		label_emailid.setBounds(734, 329, 101, 24);
 		contentPane.add(label_emailid);
 		
@@ -110,7 +111,7 @@ public class Createaccount extends JFrame {
 		JButton create_button = new JButton("Create Now");
 		create_button.setBackground(Color.WHITE);
 		create_button.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		create_button.setBounds(975, 777, 189, 47);
+		create_button.setBounds(975, 865, 189, 60);
 		create_button.addActionListener(new ActionListener()
 		{
 		  @SuppressWarnings("deprecation")
@@ -148,7 +149,7 @@ public class Createaccount extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 15));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Select", "15-19", "20-30", "31-40", "41-50", "51-60", "61-70", "71-80", "81-90"}));
-		comboBox.setBackground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(245, 245, 245));
 		comboBox.setToolTipText("Select");
 		comboBox.setBounds(857, 467, 101, 28);
 		contentPane.add(comboBox);
@@ -179,7 +180,7 @@ public class Createaccount extends JFrame {
 		
 		JLabel label_location = new JLabel("Location: ");
 		label_location.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
-		label_location.setBounds(713, 546, 101, 32);
+		label_location.setBounds(725, 546, 113, 32);
 		contentPane.add(label_location);
 		
 		JLabel lblNewLabel_7 = new JLabel(" *");
@@ -206,7 +207,7 @@ public class Createaccount extends JFrame {
 		
 		JLabel lblNewLabel_11 = new JLabel("  *");
 		lblNewLabel_11.setForeground(new Color(255, 0, 0));
-		lblNewLabel_11.setBounds(812, 723, 46, 14);
+		lblNewLabel_11.setBounds(812, 789, 35, 24);
 		contentPane.add(lblNewLabel_11);
 		
 		JComboBox comboBox_1 = new JComboBox();
@@ -220,6 +221,22 @@ public class Createaccount extends JFrame {
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Male","Female","Other"} ));
 		comboBox_2.setBounds(859, 413, 187, 25);
 		contentPane.add(comboBox_2);
+		
+		JLabel mobilenum_tf = new JLabel("Mobile Number:");
+		mobilenum_tf.setFont(new Font("Dialog", Font.PLAIN, 18));
+		mobilenum_tf.setBounds(692, 715, 143, 32);
+		contentPane.add(mobilenum_tf);
+		
+		JLabel lblNewLabel = new JLabel("* ");
+		lblNewLabel.setForeground(new Color(255, 0, 0));
+		lblNewLabel.setBounds(833, 715, 30, 14);
+		contentPane.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBackground(new Color(245, 245, 245));
+		textField.setBounds(859, 713, 397, 39);
+		contentPane.add(textField);
+		textField.setColumns(10);
 
 	}
 
