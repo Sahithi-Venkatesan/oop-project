@@ -1375,7 +1375,7 @@ public class MainWindow extends JFrame {
 						 mobileid=cmobile_tf.getText();
 						 mailid	=cmail_tf.getText();
 					     concernid=cconcern_tf.getText();
-						 adminlogin adlog=new adminlogin(nameid,mobileid,mailid,concernid);
+						 Adminlogin adlog = new Adminlogin(nameid,mobileid,mailid,concernid);
 						
 						adlog.setVisible(true);
 						
