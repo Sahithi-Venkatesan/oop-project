@@ -796,7 +796,7 @@ public class MainWindow extends JFrame {
 		form_pane.add(quote3);
 		
 		JLabel label_headerimage = new JLabel("");
-		label_headerimage.setIcon(new ImageIcon("gov.jpg"));
+		label_headerimage.setIcon(new ImageIcon("/home/sahithi/Downloads/gov.jpg"));
 		label_headerimage.setBounds(18, 6, 1837, 402);
 		donate.add(label_headerimage);
 		
@@ -965,6 +965,203 @@ public class MainWindow extends JFrame {
 		btnNewButton_2.setBackground(new Color(0, 0, 0));
 		btnNewButton_2.setBounds(954, 724, 228, 38);
 		more_info.add(btnNewButton_2);
+		
+		JPanel admin = new JPanel();
+		admin.setBackground(new Color(224, 255, 255));
+		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		tabbedPane.addTab("Admin Login", null, admin, null);
+		admin.setLayout(null);
+		
+		JLabel admin_heading = new JLabel("Admin Login");
+		admin_heading.setBackground(new Color(0, 0, 0));
+		admin_heading.setForeground(new Color(0, 0, 0));
+		admin_heading.setFont(new Font("Dialog", Font.BOLD, 39));
+		admin_heading.setBounds(888, 6, 325, 93);
+		admin.add(admin_heading);
+		
+		JLabel admin_usr = new JLabel("Username: ");//Drishtiadmin@2020
+		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
+		admin_usr.setBounds(734, 311, 150, 47);
+		admin.add(admin_usr);
+		
+		tf_username = new JTextField();
+		tf_username.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
+		tf_username.setBounds(883, 311, 393, 47);
+		admin.add(tf_username);
+		tf_username.setColumns(10);
+		
+		JLabel admin_pass = new JLabel("Password: ");//dri_439
+		admin_pass.setBackground(new Color(224, 255, 255));
+		admin_pass.setDisplayedMnemonic('*');
+		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
+		admin_pass.setBounds(742, 385, 142, 39);
+		admin.add(admin_pass);
+		
+		tf_password = new JPasswordField();
+		tf_password.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
+		tf_password.setEchoChar('*');
+		tf_password.setBounds(883, 380, 399, 49);
+		admin.add(tf_password);
+		
+		JLabel fullname = new JLabel("Name");
+		fullname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+		fullname.setBounds(1045, 595, 46, 17);
+		
+		
+		
+		namef = new JTextField();
+		namef.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		namef.setBounds(1199, 591, 174, 25);		
+		namef.setColumns(10);
+		
+		
+		JLabel dob = new JLabel("DOB");
+		dob.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+		dob.setBounds(1045, 668, 46, 17);
+	
+		
+		
+		dobf = new JTextField();
+		dobf.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		dobf.setBounds(1199, 663, 174, 25);
+		dobf.setColumns(10);
+		
+		
+		JLabel birplace = new JLabel("Birthplace");
+		birplace.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
+		birplace.setBounds(1045, 746, 122, 25);
+		
+		
+		bplace = new JTextField();
+		bplace.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		bplace.setBounds(1199, 735, 168, 25);
+		bplace.setColumns(10);
+		
+		JLabel clgname = new JLabel("College name");
+		clgname.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
+		clgname.setBounds(1045, 707, 111, 25);
+		
+		
+		clgtf = new JTextField();
+		clgtf.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		clgtf.setBounds(1199, 699, 168, 25);	
+		clgtf.setColumns(10);
+		
+		JLabel mobilelabel = new JLabel("Mobile no.");
+		mobilelabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+		mobilelabel.setBounds(1045, 629, 98, 25);
+	
+		
+		mobiletf = new JTextField();
+		mobiletf.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		mobiletf.setBounds(1199, 627, 168, 25);
+		mobiletf.setColumns(10);
+	
+		
+		
+		JLabel filldetails = new JLabel("Fill in these details to generate new password:");
+		filldetails.setForeground(Color.RED);
+		filldetails.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
+		filldetails.setBounds(1080, 548, 354, 21);
+		
+		
+		JButton newpass = new JButton("Generate ");
+		newpass.setBounds(1150, 800, 156, 29);
+		newpass.addActionListener(new ActionListener()
+		{
+			 
+			public void actionPerformed(ActionEvent event)
+			  {
+				if(namef.getText().equals("Shreya") && dobf.getText().equals("31/12/2000") &&  bplace.getText().equals("Hyderabad") && mobiletf.getText().equals("9121293060")&& clgtf.getText().equals("MEC")) {
+					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
+							 sb = new StringBuilder(); 
+
+							for (int i = 0; i < 6; i++) { 
+							int index = (int)(characters.length() * Math.random()); 								
+							 sb.append(characters.charAt(index));           
+							}
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+				
+ 
+				}
+				else
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid details","Error", JOptionPane.ERROR_MESSAGE);
+					
+			  }
+		});
+		
+		
+	
+		
+		
+		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
+		
+		admin_login.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent event)
+			{
+				
+				
+				
+				if(c) {
+				
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
+					 
+					 nameid=cname_tf.getText();
+					 mobileid=cmobile_tf.getText();
+					 mailid	=cmail_tf.getText();
+				     concernid=cconcern_tf.getText();
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);
+					
+					adlog.setVisible(true);
+					
+				}
+				else
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				}
+				}
+				
+				else {
+					if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals(sb.toString()))
+					{
+						JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
+						 
+						 nameid=cname_tf.getText();
+						 mobileid=cmobile_tf.getText();
+						 mailid	=cmail_tf.getText();
+					     concernid=cconcern_tf.getText();
+						 Adminlogin adlog = new Adminlogin(nameid,mobileid,mailid,concernid);
+						
+						adlog.setVisible(true);
+						
+					}
+					else
+					{
+						JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+					}
+					
+				}
+					
+				
+			}
+		});
+
+		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+		admin_login.setBounds(954, 483, 187, 49);
+		admin.add(admin_login);
+		
+		JLabel adminicon = new JLabel("New label");
+		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
+		adminicon.setBounds(899, 81, 200, 200);
+		admin.add(adminicon);
+		
+		JLabel lblNewLabel_11 = new JLabel("");
+		lblNewLabel_11.setIcon(new ImageIcon("/home/sahithi/Downloads/bg_1.jpg"));
+		lblNewLabel_11.setBounds(0, 0, 1920, 1080);
+		admin.add(lblNewLabel_11);
 		
 		JPanel contact = new JPanel();
 		contact.setBackground(new Color(255, 228, 225));
@@ -1184,214 +1381,39 @@ public class MainWindow extends JFrame {
 			
 			JLabel lblForgotPassword = new JLabel("Forgot password? ");
 			lblForgotPassword.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			lblForgotPassword.setBounds(873, 646, 172, 37);
+			lblForgotPassword.setBounds(1199, 502, 172, 37);
 			contact.add(lblForgotPassword);
 			
 			JButton btn_forgotpass = new JButton("Click Here ");
 			btn_forgotpass.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					
+					JLabel phone = new JLabel("Mobile Number: ");
+					phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+					phone.setBounds(1199,553,108,20);
+					contact.add(phone);
+					
+					JTextField phone_tf = new JTextField();
+					phone_tf.setBounds(1301,558,216,27);
+					contact.add(phone_tf);
+					
+					JButton generate_pass = new JButton("Generate Password");
+					generate_pass.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent ae)
+						{
+							
+						}
+					});
+					generate_pass.setBounds(1260, 613, 165, 37);
+					generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+					contact.add(generate_pass);
+					
+					
 				}
 			});
 			btn_forgotpass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			btn_forgotpass.setBounds(1036, 646, 155, 37);
+			btn_forgotpass.setBounds(1362, 502, 155, 37);
 			contact.add(btn_forgotpass);
-		
-		JPanel admin = new JPanel();
-		admin.setBackground(new Color(224, 255, 255));
-		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		tabbedPane.addTab("Admin Login", null, admin, null);
-		admin.setLayout(null);
-		
-		JLabel admin_heading = new JLabel("Admin Login");
-		admin_heading.setBackground(new Color(0, 0, 0));
-		admin_heading.setForeground(new Color(0, 0, 0));
-		admin_heading.setFont(new Font("Dialog", Font.BOLD, 39));
-		admin_heading.setBounds(888, 6, 325, 93);
-		admin.add(admin_heading);
-		
-		JLabel admin_usr = new JLabel("Username: ");//Drishtiadmin@2020
-		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
-		admin_usr.setBounds(734, 311, 150, 47);
-		admin.add(admin_usr);
-		
-		tf_username = new JTextField();
-		tf_username.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
-		tf_username.setBounds(883, 311, 393, 47);
-		admin.add(tf_username);
-		tf_username.setColumns(10);
-		
-		JLabel admin_pass = new JLabel("Password: ");//dri_439
-		admin_pass.setBackground(new Color(224, 255, 255));
-		admin_pass.setDisplayedMnemonic('*');
-		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
-		admin_pass.setBounds(742, 385, 142, 39);
-		admin.add(admin_pass);
-		
-		tf_password = new JPasswordField();
-		tf_password.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
-		tf_password.setEchoChar('*');
-		tf_password.setBounds(883, 380, 399, 49);
-		admin.add(tf_password);
-		
-		JLabel fullname = new JLabel("Name");
-		fullname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		fullname.setBounds(1045, 595, 46, 17);
-		
-		
-		
-		namef = new JTextField();
-		namef.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		namef.setBounds(1199, 591, 174, 25);		
-		namef.setColumns(10);
-		
-		
-		JLabel dob = new JLabel("DOB");
-		dob.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		dob.setBounds(1045, 668, 46, 17);
-	
-		
-		
-		dobf = new JTextField();
-		dobf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		dobf.setBounds(1199, 663, 174, 25);
-		dobf.setColumns(10);
-		
-		
-		JLabel birplace = new JLabel("Birthplace");
-		birplace.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
-		birplace.setBounds(1045, 746, 122, 25);
-		
-		
-		bplace = new JTextField();
-		bplace.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		bplace.setBounds(1199, 735, 168, 25);
-		bplace.setColumns(10);
-		
-		JLabel clgname = new JLabel("College name");
-		clgname.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
-		clgname.setBounds(1045, 707, 111, 25);
-		
-		
-		clgtf = new JTextField();
-		clgtf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		clgtf.setBounds(1199, 699, 168, 25);	
-		clgtf.setColumns(10);
-		
-		JLabel mobilelabel = new JLabel("Mobile no.");
-		mobilelabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		mobilelabel.setBounds(1045, 629, 98, 25);
-	
-		
-		mobiletf = new JTextField();
-		mobiletf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		mobiletf.setBounds(1199, 627, 168, 25);
-		mobiletf.setColumns(10);
-	
-		
-		
-		JLabel filldetails = new JLabel("Fill in these details to generate new password:");
-		filldetails.setForeground(Color.RED);
-		filldetails.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
-		filldetails.setBounds(1080, 548, 354, 21);
-		
-		
-		JButton newpass = new JButton("Generate ");
-		newpass.setBounds(1150, 800, 156, 29);
-		newpass.addActionListener(new ActionListener()
-		{
-			 
-			public void actionPerformed(ActionEvent event)
-			  {
-				if(namef.getText().equals("Shreya") && dobf.getText().equals("31/12/2000") &&  bplace.getText().equals("Hyderabad") && mobiletf.getText().equals("9121293060")&& clgtf.getText().equals("MEC")) {
-					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
-							 sb = new StringBuilder(); 
-
-							for (int i = 0; i < 6; i++) { 
-							int index = (int)(characters.length() * Math.random()); 								
-							 sb.append(characters.charAt(index));           
-							}
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
-				
- 
-				}
-				else
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid details","Error", JOptionPane.ERROR_MESSAGE);
-					
-			  }
-		});
-		
-		
-	
-		
-		
-		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
-		
-		admin_login.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent event)
-			{
-				
-				
-				
-				if(c) {
-				
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-					 
-					 nameid=cname_tf.getText();
-					 mobileid=cmobile_tf.getText();
-					 mailid	=cmail_tf.getText();
-				     concernid=cconcern_tf.getText();
-					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);
-					
-					adlog.setVisible(true);
-					
-				}
-				else
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-				}
-				}
-				
-				else {
-					if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals(sb.toString()))
-					{
-						JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-						 
-						 nameid=cname_tf.getText();
-						 mobileid=cmobile_tf.getText();
-						 mailid	=cmail_tf.getText();
-					     concernid=cconcern_tf.getText();
-						 Adminlogin adlog = new Adminlogin(nameid,mobileid,mailid,concernid);
-						
-						adlog.setVisible(true);
-						
-					}
-					else
-					{
-						JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-					}
-					
-				}
-					
-				
-			}
-		});
-
-		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
-		admin_login.setBounds(954, 483, 187, 49);
-		admin.add(admin_login);
-		
-		JLabel adminicon = new JLabel("New label");
-		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
-		adminicon.setBounds(899, 81, 200, 200);
-		admin.add(adminicon);
-		
-		JLabel lblNewLabel_11 = new JLabel("");
-		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
-		lblNewLabel_11.setBounds(0, 0, 1920, 1080);
-		admin.add(lblNewLabel_11);
 		
 		
 		JPanel logo_panel = new JPanel();
