@@ -1,4 +1,5 @@
 
+
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
@@ -48,7 +49,7 @@ public class MainWindow extends JFrame {
 	String nameid,mobileid,mailid,concernid;
 	private JProgressBar pb;
 	StringBuilder sb;
-	boolean c=true;
+	int c=0;
 	private JTextField namef;
 	private JTextField dobf;
 	private JTextField bplace;
@@ -1243,68 +1244,75 @@ public class MainWindow extends JFrame {
 			lblForgotPassword.setBounds(1199, 502, 172, 37);
 			contact.add(lblForgotPassword);
 			
+			txt = new JLabel("Fill in these details to generate new password ");
+			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			txt.setBounds(1199,453,408,20);
+			
+			fname = new JLabel("First Name: ");
+			fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			fname.setBounds(1199,553,108,20);
+			
+			fname_tf = new JTextField();
+			fname_tf.setBounds(1301,558,216,27);
+			
+			lname = new JLabel("Last Name: ");
+			lname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			lname.setBounds(1199,653,108,20);
+			
+			lname_tf = new JTextField();
+		    lname_tf.setBounds(1401,558,216,27);
+		    
+		    phone = new JLabel("Mobile no.: ");
+			phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			phone.setBounds(1199,753,108,20);
+			
+
+			phone_tf = new JTextField();
+			phone_tf.setBounds(1501,558,216,27);
+			
+			generate_pass = new JButton("Generate Password");
+			generate_pass.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent ae)
+				{
+					if(fname_tf.getText().equals("") || lname_tf.getText().equals("") || phone_tf.getText().equals("")) {
+						JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+					}
+					else if(phone_tf.getText().length()!=10)
+						JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+					else {
+					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
+					 sb = new StringBuilder(); 
+
+					for (int i = 0; i < 6; i++) { 
+					int index = (int)(characters.length() * Math.random()); 								
+					 sb.append(characters.charAt(index));           
+					}
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+					}
+				}
+			});
+			generate_pass.setBounds(1260, 613, 165, 37);
+			generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			
 			btn_forgotpass = new JButton("Click Here ");
 			btn_forgotpass.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					c=false;
-
-					txt = new JLabel("Fill in these details to generate new password ");
-					txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-					txt.setBounds(1199,453,408,20);
+					c=1;
+				
 					contact.add(txt);
 					
-					fname = new JLabel("First Name: ");
-					fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-					fname.setBounds(1199,553,108,20);
 					contact.add(fname);
 					
-					fname_tf = new JTextField();
-					fname_tf.setBounds(1301,558,216,27);
 					contact.add(fname_tf);
 					
-					lname = new JLabel("Last Name: ");
-					lname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-					lname.setBounds(1199,653,108,20);
 					contact.add(lname);
 					
-					lname_tf = new JTextField();
-				    lname_tf.setBounds(1401,558,216,27);
 					contact.add(lname_tf);
 					
-					phone = new JLabel("Mobile no.: ");
-					phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-					phone.setBounds(1199,753,108,20);
 					contact.add(phone);
 					
-					phone_tf = new JTextField();
-					phone_tf.setBounds(1501,558,216,27);
 					contact.add(phone_tf);
-					
-					
-					
-					generate_pass = new JButton("Generate Password");
-					generate_pass.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent ae)
-						{
-							if(fname_tf.getText().equals("") || lname_tf.getText().equals("") || phone_tf.getText().equals("")) {
-								JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-							}
-							else if(phone_tf.getText().length()!=10)
-								JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
-							else {
-							String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
-							 sb = new StringBuilder(); 
-
-							for (int i = 0; i < 6; i++) { 
-							int index = (int)(characters.length() * Math.random()); 								
-							 sb.append(characters.charAt(index));           
-							}
-							JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
-							}
-						}
-					});
-					generate_pass.setBounds(1260, 613, 165, 37);
-					generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+										
 					contact.add(generate_pass);
 					
 					
@@ -1325,7 +1333,7 @@ public class MainWindow extends JFrame {
 					if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
 						JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
 					}
-					else if(c) {
+					else if(c==0) {
 					int i = 0; 
 					pb.setVisible(true);
 			        try { 
@@ -1343,9 +1351,9 @@ public class MainWindow extends JFrame {
 					chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
 					}
 					else {
-						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
+						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) 
 							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-						}
+						
 						else if(pa_tf.getText().equals(sb.toString())) {
 							int j=0;
 							pb.setVisible(true);
@@ -1363,9 +1371,9 @@ public class MainWindow extends JFrame {
 					        } 
 							chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
 							}
-						else {
+						else 
 							JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Password","Error", JOptionPane.ERROR_MESSAGE);
-						}
+						
 						}
 											
 					}					
@@ -1397,4 +1405,3 @@ public class MainWindow extends JFrame {
 			
 	}
 }
- 
