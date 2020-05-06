@@ -1,3 +1,4 @@
+
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
@@ -6,25 +7,17 @@ import java .awt.event.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
 
 import java.awt.FlowLayout;
 import java.awt.Dimension;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Desktop;
-
-import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Rectangle;
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
@@ -35,7 +28,7 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JTable;
+
 import java.util.Arrays;
 
  @SuppressWarnings("serial")
@@ -1003,95 +996,39 @@ public class MainWindow extends JFrame {
 		tf_password.setBounds(883, 380, 399, 49);
 		admin.add(tf_password);
 		
-		JLabel fullname = new JLabel("Name");
-		fullname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		fullname.setBounds(1045, 595, 46, 17);
-		
-		
-		
-		namef = new JTextField();
-		namef.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		namef.setBounds(1199, 591, 174, 25);		
-		namef.setColumns(10);
-		
-		
-		JLabel dob = new JLabel("DOB");
-		dob.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		dob.setBounds(1045, 668, 46, 17);
-	
-		
-		
-		dobf = new JTextField();
-		dobf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		dobf.setBounds(1199, 663, 174, 25);
-		dobf.setColumns(10);
-		
-		
-		JLabel birplace = new JLabel("Birthplace");
-		birplace.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
-		birplace.setBounds(1045, 746, 122, 25);
-		
-		
-		bplace = new JTextField();
-		bplace.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		bplace.setBounds(1199, 735, 168, 25);
-		bplace.setColumns(10);
-		
-		JLabel clgname = new JLabel("College name");
-		clgname.setFont(new Font("Segoe UI Emoji", Font.BOLD, 17));
-		clgname.setBounds(1045, 707, 111, 25);
-		
-		
-		clgtf = new JTextField();
-		clgtf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		clgtf.setBounds(1199, 699, 168, 25);	
-		clgtf.setColumns(10);
-		
-		JLabel mobilelabel = new JLabel("Mobile no.");
-		mobilelabel.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		mobilelabel.setBounds(1045, 629, 98, 25);
-	
-		
-		mobiletf = new JTextField();
-		mobiletf.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		mobiletf.setBounds(1199, 627, 168, 25);
-		mobiletf.setColumns(10);
-	
-		
-		
-		JLabel filldetails = new JLabel("Fill in these details to generate new password:");
-		filldetails.setForeground(Color.RED);
-		filldetails.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
-		filldetails.setBounds(1080, 548, 354, 21);
-		
-		
-		JButton newpass = new JButton("Generate ");
-		newpass.setBounds(1150, 800, 156, 29);
-		newpass.addActionListener(new ActionListener()
-		{
-			 
-			public void actionPerformed(ActionEvent event)
-			  {
-				if(namef.getText().equals("Shreya") && dobf.getText().equals("31/12/2000") &&  bplace.getText().equals("Hyderabad") && mobiletf.getText().equals("9121293060")&& clgtf.getText().equals("MEC")) {
-					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
-							 sb = new StringBuilder(); 
 
-							for (int i = 0; i < 6; i++) { 
-							int index = (int)(characters.length() * Math.random()); 								
-							 sb.append(characters.charAt(index));           
-							}
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
-				
- 
-				}
-				else
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid details","Error", JOptionPane.ERROR_MESSAGE);
-					
-			  }
+		
+		
+		JPanel contact = new JPanel();
+		contact.setBackground(new Color(255, 228, 225));
+		tabbedPane.addTab("Connect With Us", null, contact, null);
+		contact.setLayout(null);
+		
+		JButton connect_button = new JButton("Submit ");
+		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		connect_button.setBounds(237, 389, 142, 37);
+		connect_button.addActionListener(new ActionListener()
+		{
+		  public void actionPerformed(ActionEvent event)
+		  {
+			  
+			    nameid=cname_tf.getText();
+				 mobileid=cmobile_tf.getText();
+				 mailid	=cmail_tf.getText();
+			     concernid=cconcern_tf.getText();
+		    
+		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
+		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+			  
+		    else if(cmobile_tf.getText().length()!=10)
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+			  
+		    else
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+                       		    
+		  }
 		});
-		
-		
-	
+		contact.add(connect_button);
 		
 		
 		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
@@ -1099,52 +1036,18 @@ public class MainWindow extends JFrame {
 		admin_login.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent event)
-			{
-				
-				
-				
-				if(c) {
+			{								
 				
 				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
 				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-					 
-					 nameid=cname_tf.getText();
-					 mobileid=cmobile_tf.getText();
-					 mailid	=cmail_tf.getText();
-				     concernid=cconcern_tf.getText();
-					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);
-					
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
 					adlog.setVisible(true);
-					
-				}
+									}
 				else
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-				}
-				}
 				
-				else {
-					if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals(sb.toString()))
-					{
-						JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);
-						 
-						 nameid=cname_tf.getText();
-						 mobileid=cmobile_tf.getText();
-						 mailid	=cmail_tf.getText();
-					     concernid=cconcern_tf.getText();
-						 Adminlogin adlog = new Adminlogin(nameid,mobileid,mailid,concernid);
-						
-						adlog.setVisible(true);
-						
-					}
-					else
-					{
-						JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-					}
-					
-				}
-					
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+			
 				
 			}
 		});
@@ -1163,10 +1066,7 @@ public class MainWindow extends JFrame {
 		lblNewLabel_11.setBounds(0, 0, 1920, 1080);
 		admin.add(lblNewLabel_11);
 		
-		JPanel contact = new JPanel();
-		contact.setBackground(new Color(255, 228, 225));
-		tabbedPane.addTab("Connect With Us", null, contact, null);
-		contact.setLayout(null);
+		
 		
 		JLabel connect_heading = new JLabel("Connect With Us");
 		connect_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
@@ -1223,26 +1123,7 @@ public class MainWindow extends JFrame {
 		contact.add(cconcern_tf);
 		cconcern_tf.setColumns(10);
 		
-		JButton connect_button = new JButton("Submit ");
-		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		connect_button.setBounds(237, 389, 142, 37);
-		connect_button.addActionListener(new ActionListener()
-		{
-		  public void actionPerformed(ActionEvent event)
-		  {
-		    
-		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
-		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-			  
-		    else if(cmobile_tf.getText().length()!=10)
-		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
-			  
-		    else
-		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
-                       		    
-		  }
-		});
-		contact.add(connect_button);
+		
 		
 		JLabel discuss_name = new JLabel("Username: ");
 		discuss_name.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -1281,7 +1162,7 @@ public class MainWindow extends JFrame {
 		
 		chat_tf = new JTextArea();
 		chat_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		chat_tf.setBounds(6, 717, 1789, 211);
+		chat_tf.setBounds(6, 717, 1000, 211);
 		chat_tf.setColumns(10);
 		
 		pb = new JProgressBar(1,100);    
@@ -1293,37 +1174,7 @@ public class MainWindow extends JFrame {
 		
   
 		
-		JButton discuss_submit = new JButton(" Post ");
-		discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_submit.setBounds(237, 646, 108, 37);
-		discuss_submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-				}
-				else {
-				int i = 0; 
-				pb.setVisible(true);
-		        try { 
-		            while (i <= 100) { 		              
-		                pb.setString("posting"); 		                
-		                Thread.sleep(100); 
-		                pb.paintImmediately(0,0,200,25);
-		                pb.setValue(i);
-		                i=i+10; 
-		            } 
-		            pb.setVisible(false);
-		        } 
-		        catch (Exception e) { 
-		        } 
-				chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
-				}
-			}
-				
-			});
-		contact.add(discuss_submit);
 		
-			contact.add(chat_tf);
 			
 			JLabel createacc= new JLabel("Don't have an account?! ");
 			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -1387,21 +1238,61 @@ public class MainWindow extends JFrame {
 			JButton btn_forgotpass = new JButton("Click Here ");
 			btn_forgotpass.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					c=false;
 					
-					JLabel phone = new JLabel("Mobile Number: ");
+					JLabel txt = new JLabel("Fill in these details to generate new password ");
+					txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+					txt.setBounds(1199,453,408,20);
+					contact.add(txt);
+					
+					JLabel fname = new JLabel("First Name: ");
+					fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+					fname.setBounds(1199,553,108,20);
+					contact.add(fname);
+					
+					JTextField fname_tf = new JTextField();
+					fname_tf.setBounds(1301,558,216,27);
+					contact.add(fname_tf);
+					
+					JLabel lname = new JLabel("Last Name: ");
+					lname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+					lname.setBounds(1199,653,108,20);
+					contact.add(lname);
+					
+					JTextField lname_tf = new JTextField();
+				    lname_tf.setBounds(1401,558,216,27);
+					contact.add(lname_tf);
+					
+					JLabel phone = new JLabel("Mobile no.: ");
 					phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-					phone.setBounds(1199,553,108,20);
+					phone.setBounds(1199,753,108,20);
 					contact.add(phone);
 					
 					JTextField phone_tf = new JTextField();
-					phone_tf.setBounds(1301,558,216,27);
+					phone_tf.setBounds(1501,558,216,27);
 					contact.add(phone_tf);
+					
+					
 					
 					JButton generate_pass = new JButton("Generate Password");
 					generate_pass.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent ae)
 						{
-							
+							if(fname_tf.getText().equals("") || lname_tf.getText().equals("") || phone_tf.getText().equals("")) {
+								JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+							}
+							else if(phone_tf.getText().length()!=10)
+								JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+							else {
+							String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
+							 sb = new StringBuilder(); 
+
+							for (int i = 0; i < 6; i++) { 
+							int index = (int)(characters.length() * Math.random()); 								
+							 sb.append(characters.charAt(index));           
+							}
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+							}
 						}
 					});
 					generate_pass.setBounds(1260, 613, 165, 37);
@@ -1411,10 +1302,69 @@ public class MainWindow extends JFrame {
 					
 				}
 			});
+			
 			btn_forgotpass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 			btn_forgotpass.setBounds(1362, 502, 155, 37);
 			contact.add(btn_forgotpass);
 		
+			
+			
+			JButton discuss_submit = new JButton(" Post ");
+			discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			discuss_submit.setBounds(237, 646, 108, 37);
+			discuss_submit.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
+						JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+					}
+					else if(c) {
+					int i = 0; 
+					pb.setVisible(true);
+			        try { 
+			            while (i <= 100) { 		              
+			                pb.setString("posting"); 		                
+			                Thread.sleep(100); 
+			                pb.paintImmediately(0,0,200,25);
+			                pb.setValue(i);
+			                i=i+10; 
+			            } 
+			            pb.setVisible(false);
+			        } 
+			        catch (Exception e) { 
+			        } 
+					chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
+					}
+					else {
+						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
+							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+						}
+						else if(pa_tf.getText().equals(sb.toString())) {
+							int j=0;
+							pb.setVisible(true);
+					        try { 
+					            while (j <= 100) { 		              
+					                pb.setString("posting"); 		                
+					                Thread.sleep(100); 
+					                pb.paintImmediately(0,0,200,25);
+					                pb.setValue(j);
+					                j=j+10; 
+					            } 
+					            pb.setVisible(false);
+					        } 
+					        catch (Exception e) { 
+					        } 
+							chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
+							}
+						else {
+							JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Password","Error", JOptionPane.ERROR_MESSAGE);
+						}
+						}
+											
+					}					
+				});
+			contact.add(discuss_submit);
+			
+				contact.add(chat_tf);
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
@@ -1440,8 +1390,3 @@ public class MainWindow extends JFrame {
 	}
 }
  
- 
-
-
-	
-		
