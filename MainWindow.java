@@ -54,7 +54,15 @@ public class MainWindow extends JFrame {
 	private JTextField bplace;
 	private JTextField clgtf;
 	private JTextField mobiletf;
-
+	JLabel txt;
+	JLabel fname;
+	JTextField fname_tf;
+	JLabel lname;
+	JTextField lname_tf;
+	JLabel phone;
+	JTextField phone_tf;
+	JButton generate_pass;
+	JButton btn_forgotpass;
 	/**
 	 * Launch the application.
 	 */
@@ -1235,46 +1243,46 @@ public class MainWindow extends JFrame {
 			lblForgotPassword.setBounds(1199, 502, 172, 37);
 			contact.add(lblForgotPassword);
 			
-			JButton btn_forgotpass = new JButton("Click Here ");
+			btn_forgotpass = new JButton("Click Here ");
 			btn_forgotpass.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					c=false;
-					
-					JLabel txt = new JLabel("Fill in these details to generate new password ");
+
+					txt = new JLabel("Fill in these details to generate new password ");
 					txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
 					txt.setBounds(1199,453,408,20);
 					contact.add(txt);
 					
-					JLabel fname = new JLabel("First Name: ");
+					fname = new JLabel("First Name: ");
 					fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
 					fname.setBounds(1199,553,108,20);
 					contact.add(fname);
 					
-					JTextField fname_tf = new JTextField();
+					fname_tf = new JTextField();
 					fname_tf.setBounds(1301,558,216,27);
 					contact.add(fname_tf);
 					
-					JLabel lname = new JLabel("Last Name: ");
+					lname = new JLabel("Last Name: ");
 					lname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
 					lname.setBounds(1199,653,108,20);
 					contact.add(lname);
 					
-					JTextField lname_tf = new JTextField();
+					lname_tf = new JTextField();
 				    lname_tf.setBounds(1401,558,216,27);
 					contact.add(lname_tf);
 					
-					JLabel phone = new JLabel("Mobile no.: ");
+					phone = new JLabel("Mobile no.: ");
 					phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
 					phone.setBounds(1199,753,108,20);
 					contact.add(phone);
 					
-					JTextField phone_tf = new JTextField();
+					phone_tf = new JTextField();
 					phone_tf.setBounds(1501,558,216,27);
 					contact.add(phone_tf);
 					
 					
 					
-					JButton generate_pass = new JButton("Generate Password");
+					generate_pass = new JButton("Generate Password");
 					generate_pass.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent ae)
 						{
@@ -1291,7 +1299,7 @@ public class MainWindow extends JFrame {
 							int index = (int)(characters.length() * Math.random()); 								
 							 sb.append(characters.charAt(index));           
 							}
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
 							}
 						}
 					});
