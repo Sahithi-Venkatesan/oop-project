@@ -42,7 +42,7 @@ public class Createaccount extends JFrame {
 	//ButtonGroup butgrp;
 	
 
-	public createaccount ()  {
+	public Createaccount ()  {
 		
 		getContentPane().setLayout(null);
 		setBounds(100, 100, 450, 300);		
