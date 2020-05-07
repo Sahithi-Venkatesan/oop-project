@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.awt.*;
 import javax.swing.*;
@@ -19,7 +20,6 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Rectangle;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.event.AdjustmentListener;
 import java.awt.font.TextAttribute;
@@ -34,6 +34,7 @@ import javax.swing.table.DefaultTableModel;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Scanner;
 
  @SuppressWarnings("serial")
 public class MainWindow extends JFrame {
@@ -70,7 +71,18 @@ public class MainWindow extends JFrame {
 	String fileName = "data.csv"; 
     File myCSVFile = new File("/home/sahithi/Desktop/oop-project/data.csv");
     Timer time;
-    int k=1;
+  
+    private JTextField vnametf;
+	private JTextField vmailtf;
+	private JTextField vmobtf;
+	private JTextField vagetf;
+	private JTextField vproftf;
+	private JTextField vloctf;
+	
+	Timer tm;
+	 int i = 1;
+	 int k;
+	 String fileContents;
 	/**
 	 * Launch the application.
 	 */
@@ -103,8 +115,9 @@ public class MainWindow extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws FileNotFoundException 
 	 */
-	public MainWindow() {
+	public MainWindow() throws FileNotFoundException {
 		setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 30));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -1294,43 +1307,68 @@ public class MainWindow extends JFrame {
 			
 			JLabel lblForgotPassword = new JLabel("Forgot password? ");
 			lblForgotPassword.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			lblForgotPassword.setBounds(1199, 502, 172, 37);
+			lblForgotPassword.setBounds(1116, 412, 172, 37);
 			contact.add(lblForgotPassword);
 			
-			btn_forgotpass = new JButton("Click Here ");
-			btn_forgotpass.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+			txt = new JLabel("Fill in these details to generate new password ");
+			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			txt.setBounds(1116,460,408,20);
+			contact.add(txt);
+			
+			fname = new JLabel("Name: ");
+			fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			fname.setBounds(1116,513,108,20);
+			contact.add(fname);
+			
+			fname_tf = new JTextField();
+			fname_tf.setBounds(1216,503,216,27);
+			contact.add(fname_tf);
+			
+			
+		    
+		    phone = new JLabel("Mobile no.: ");
+			phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			phone.setBounds(1116,561,108,20);
+			contact.add(phone);
+			
+
+			phone_tf = new JTextField();
+			phone_tf.setBounds(1216,558,216,27);
+			contact.add(phone_tf);
+			
+			generate_pass = new JButton("Generate Password");
+			generate_pass.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent ae)
+				{
 					c=1;
-				
-					contact.add(txt);
-					
-					contact.add(fname);
-					
-					contact.add(fname_tf);
-					
-					contact.add(lname);
-					
-					contact.add(lname_tf);
-					
-					contact.add(phone);
-					
-					contact.add(phone_tf);
-										
-					contact.add(generate_pass);
-					
-					
+					if(fname_tf.getText().equals("")  || phone_tf.getText().equals("")) {
+						JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+					}
+					else if(phone_tf.getText().length()!=10)
+						JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+					else {
+					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
+					 sb = new StringBuilder(); 
+
+					for (int i = 0; i < 6; i++) { 
+					int index = (int)(characters.length() * Math.random()); 								
+					 sb.append(characters.charAt(index));           
+					}
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+					}
 				}
 			});
+			generate_pass.setBounds(1174, 619, 181, 37);
+			generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			contact.add(generate_pass);
 			
-			btn_forgotpass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			btn_forgotpass.setBounds(1362, 502, 155, 37);
-			contact.add(btn_forgotpass);
+			
 			
 				
 				
 				JButton discuss_submit = new JButton(" Post ");
 				discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-				discuss_submit.setBounds(237, 646, 108, 37);
+				discuss_submit.setBounds(271, 645, 108, 37);
 				discuss_submit.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent event) {
 						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
@@ -1568,55 +1606,230 @@ public class MainWindow extends JFrame {
 			}
 		});
 						
-			txt = new JLabel("Fill in these details to generate new password ");
-			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			txt.setBounds(1199,453,408,20);
 			
-			fname = new JLabel("First Name: ");
-			fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			fname.setBounds(1199,553,108,20);
 			
-			fname_tf = new JTextField();
-			fname_tf.setBounds(1301,558,216,27);
+			JPanel vol = new JPanel();
+			vol.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			vol.setPreferredSize(new Dimension(320, 50));
+			tabbedPane.addTab("Volunteer", null, vol, "");
+			tabbedPane.setBackgroundAt(9, Color.WHITE);
+			vol.setLayout(null);
 			
-			lname = new JLabel("Last Name: ");
-			lname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			lname.setBounds(1199,653,108,20);
+			JLabel l11 = new JLabel("Become a proud volunteer");
+			l11.setForeground(Color.WHITE);
+			l11.setFont(new Font("Segoe UI Emoji", Font.BOLD, 37));
+			l11.setBounds(141, 104, 512, 84);
+			vol.add(l11);
 			
-			lname_tf = new JTextField();
-		    lname_tf.setBounds(1401,558,216,27);
-		    
-		    phone = new JLabel("Mobile no.: ");
-			phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			phone.setBounds(1199,753,108,20);
+			JLabel volname = new JLabel("Name");
+			volname.setForeground(Color.WHITE);
+			volname.setFont(new Font("Segoe UI Emoji", Font.BOLD, 19));
+			volname.setBounds(146, 299, 122, 32);
+			vol.add(volname);
 			
-
-			phone_tf = new JTextField();
-			phone_tf.setBounds(1501,558,216,27);
+			vnametf = new JTextField();
+			vnametf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vnametf.setBounds(265, 295, 218, 41);
+			vol.add(vnametf);
+			vnametf.setColumns(10);
 			
-			generate_pass = new JButton("Generate Password");
-			generate_pass.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent ae)
+			JLabel vmail = new JLabel("Email");
+			vmail.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+			vmail.setForeground(Color.WHITE);
+			vmail.setBounds(146, 379, 63, 44);
+			vol.add(vmail);
+			
+			vmailtf = new JTextField();
+			vmailtf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vmailtf.setBounds(265, 381, 218, 41);
+			vol.add(vmailtf);
+			vmailtf.setColumns(10);
+			
+			JLabel vmobile = new JLabel("Mobile");
+			vmobile.setForeground(Color.WHITE);
+			vmobile.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+			vmobile.setBounds(619, 304, 112, 23);
+			vol.add(vmobile);
+			
+			vmobtf = new JTextField();
+			vmobtf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vmobtf.setBounds(741, 295, 218, 41);
+			vol.add(vmobtf);
+			vmobtf.setColumns(10);
+			
+			JLabel l12 = new JLabel("Age");
+			l12.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+			l12.setForeground(Color.WHITE);
+			l12.setBounds(619, 393, 63, 23);
+			vol.add(l12);
+			
+			vagetf = new JTextField();
+			vagetf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vagetf.setBounds(741, 378, 218, 44);
+			vol.add(vagetf);
+			vagetf.setColumns(10);
+			
+			JLabel vprof = new JLabel("Profession");
+			vprof.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+			vprof.setForeground(Color.WHITE);
+			vprof.setBounds(141, 461, 108, 32);
+			vol.add(vprof);
+			
+			vproftf = new JTextField();
+			vproftf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vproftf.setBounds(265, 461, 218, 41);
+			vol.add(vproftf);
+			vproftf.setColumns(10);
+			
+			JLabel vlov = new JLabel("Location");
+			vlov.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
+			vlov.setForeground(Color.WHITE);
+			vlov.setBounds(619, 470, 95, 23);
+			vol.add(vlov);
+			
+			vloctf = new JTextField();
+			vloctf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+			vloctf.setBounds(741, 461, 218, 41);
+			vol.add(vloctf);
+			vloctf.setColumns(10);
+			
+			JButton joinbtn = new JButton("Join Now!");
+			joinbtn.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));		
+			joinbtn.setBackground(new Color(100, 149, 237));
+			joinbtn.setForeground(Color.WHITE);
+			joinbtn.setBounds(511, 587, 142, 41);
+			joinbtn.addActionListener(new ActionListener() 
+			{
+				public void actionPerformed(ActionEvent event)
 				{
-					if(fname_tf.getText().equals("") || lname_tf.getText().equals("") || phone_tf.getText().equals("")) {
-						JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+					if(vnametf.getText().equals("")||vmobtf.getText().equals("")||vagetf.getText().equals("")||vmailtf.getText().equals("")||vproftf.getText().equals("")||vloctf.getText().equals("")) {
+						JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the details","Error", JOptionPane.ERROR_MESSAGE);
 					}
-					else if(phone_tf.getText().length()!=10)
-						JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+					else if(vmobtf.getText().length()!=10) {
+						JOptionPane.showMessageDialog((Component)event.getSource(),"Please enter a valid phone number","Error", JOptionPane.ERROR_MESSAGE);
+					}
 					else {
-					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
-					 sb = new StringBuilder(); 
-
-					for (int i = 0; i < 6; i++) { 
-					int index = (int)(characters.length() * Math.random()); 								
-					 sb.append(characters.charAt(index));           
-					}
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+					
+					JOptionPane.showMessageDialog((Component)event.getSource(),"You are now a volunteer","Congrats!", JOptionPane.INFORMATION_MESSAGE);
+					tm.start();
 					}
 				}
 			});
-			generate_pass.setBounds(1260, 613, 165, 37);
-			generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			
+			vol.add(joinbtn);
+			JLabel textvol = new JLabel("Volunteers are the backbone of  any organisation, helping to run successful ");
+			textvol.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			textvol.setForeground(Color.WHITE);
+			textvol.setBounds(1143, 299, 700, 42);
+			vol.add(textvol);
+			
+			JLabel l13 = new JLabel(" programmes and assisting many vulnerable people in need.");
+			l13.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			l13.setForeground(Color.WHITE);
+			l13.setBounds(1143, 352, 700, 51);
+			vol.add(l13);
+			
+			JLabel l14 = new JLabel("Drishti recruits volunteers irrespective of their race, ethnicity, sex,");
+			l14.setFont(new Font("Segoe UI Historic", Font.BOLD, 20));
+			l14.setForeground(Color.WHITE);
+			l14.setBounds(1143, 416, 700, 32);
+			vol.add(l14);
+			
+			JLabel lblNewLabel_15 = new JLabel("religious belief, age, and disability.");
+			lblNewLabel_15.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			lblNewLabel_15.setForeground(Color.WHITE);
+			lblNewLabel_15.setBounds(1143, 487, 700, 23);
+			vol.add(lblNewLabel_15);
+			
+			JLabel lblNewLabel_16 = new JLabel("\"What is the essence of life?");
+			lblNewLabel_16.setFont(new Font("Felix Titling", Font.BOLD, 30));
+			lblNewLabel_16.setForeground(Color.WHITE);
+			lblNewLabel_16.setBounds(1183, 557, 600, 44);
+			vol.add(lblNewLabel_16);
+			
+			JLabel lblNewLabel_17 = new JLabel("to serve others and to do good.\"");
+			lblNewLabel_17.setFont(new Font("Felix Titling", Font.BOLD, 30));
+			lblNewLabel_17.setForeground(Color.WHITE);
+			lblNewLabel_17.setBounds(1183, 612, 700, 32);
+			vol.add(lblNewLabel_17);
+			
+			JLabel lblNewLabel_18 = new JLabel("-ARISTOTLE");
+			lblNewLabel_18.setFont(new Font("Segoe UI Emoji", Font.BOLD, 22));
+			lblNewLabel_18.setForeground(Color.WHITE);
+			lblNewLabel_18.setBounds(1793, 755, 128, 32);
+			vol.add(lblNewLabel_18);
+			
+			
+			
+
+			  Scanner sc = new Scanner(new File("C:\\Users\\RAJENDRA REDDY\\sample.txt"));
+			  
+			  StringBuilder sb = new StringBuilder();
+			  
+			  while (sc.hasNextLine()) {
+			     sb.append(sc.nextLine());
+			  }
+			   fileContents = sb.toString();
+			  int j=Integer.parseInt(fileContents);
+			  sc.close();
+			
+			JLabel label = new JLabel(fileContents);
+			label.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 29));
+			label.setForeground(Color.WHITE);
+			label.setBounds(741, 195, 112, 36);
+			vol.add(label);
+			
+			tm = new Timer(50, new ActionListener() {
+				   
+				   @Override
+				   public void actionPerformed(ActionEvent e) {
+				    
+				    label.setText(Integer.toString(i));
+				    i++;
+					if(i==j+2)
+					tm.stop();	
+					k=j+1;
+					String newLine = Integer.toString(k);
+				    
+				    fileContents = fileContents.replaceAll(fileContents, newLine);
+				   
+				    FileWriter writer;
+					try {
+						writer = new FileWriter("C:\\Users\\RAJENDRA REDDY\\sample.txt",false);
+						 writer.write(fileContents);
+						    writer.flush();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				   
+				    
+				   
+				    
+				   }
+				  });
+				  
+			
+			JLabel volimg = new JLabel("");
+			volimg.setIcon(new ImageIcon("C:\\Users\\RAJENDRA REDDY\\volicon.png"));
+			volimg.setBounds(728, 57, 154, 116);
+			vol.add(volimg);
+			
+			
+			
+			JLabel voltxt = new JLabel("Volunteers reached");
+			voltxt.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			voltxt.setForeground(Color.WHITE);
+			voltxt.setBounds(741, 242, 218, 23);
+			vol.add(voltxt);
+			
+			JLabel lblNewLabel_19 = new JLabel("");
+			lblNewLabel_19.setIcon(new ImageIcon("C:\\Users\\RAJENDRA REDDY\\volunteer.jpg"));
+			lblNewLabel_19.setBounds(-119, 22, 1920, 1080);
+			vol.add(lblNewLabel_19);
+			
+			
+			
 		
 		JPanel logo_panel = new JPanel();
 		logo_panel.setBounds(50, 0, 162, 46);
@@ -1641,4 +1854,3 @@ public class MainWindow extends JFrame {
 			
 	}
 }
-
