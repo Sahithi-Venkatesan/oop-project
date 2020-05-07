@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.awt.*;
 import javax.swing.*;
@@ -1618,12 +1617,12 @@ public class MainWindow extends JFrame {
 			JLabel l11 = new JLabel("Become a proud volunteer");
 			l11.setForeground(Color.WHITE);
 			l11.setFont(new Font("Segoe UI Emoji", Font.BOLD, 37));
-			l11.setBounds(141, 104, 512, 84);
+			l11.setBounds(84, 104, 569, 84);
 			vol.add(l11);
 			
 			JLabel volname = new JLabel("Name");
 			volname.setForeground(Color.WHITE);
-			volname.setFont(new Font("Segoe UI Emoji", Font.BOLD, 19));
+			volname.setFont(new Font("Dialog", Font.BOLD, 20));
 			volname.setBounds(146, 299, 122, 32);
 			vol.add(volname);
 			
@@ -1636,7 +1635,7 @@ public class MainWindow extends JFrame {
 			JLabel vmail = new JLabel("Email");
 			vmail.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
 			vmail.setForeground(Color.WHITE);
-			vmail.setBounds(146, 379, 63, 44);
+			vmail.setBounds(133, 379, 76, 44);
 			vol.add(vmail);
 			
 			vmailtf = new JTextField();
@@ -1672,7 +1671,7 @@ public class MainWindow extends JFrame {
 			JLabel vprof = new JLabel("Profession");
 			vprof.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
 			vprof.setForeground(Color.WHITE);
-			vprof.setBounds(141, 461, 108, 32);
+			vprof.setBounds(107, 461, 142, 32);
 			vol.add(vprof);
 			
 			vproftf = new JTextField();
@@ -1684,7 +1683,7 @@ public class MainWindow extends JFrame {
 			JLabel vlov = new JLabel("Location");
 			vlov.setFont(new Font("Segoe UI Emoji", Font.BOLD, 21));
 			vlov.setForeground(Color.WHITE);
-			vlov.setBounds(619, 470, 95, 23);
+			vlov.setBounds(577, 470, 137, 23);
 			vol.add(vlov);
 			
 			vloctf = new JTextField();
@@ -1718,51 +1717,51 @@ public class MainWindow extends JFrame {
 			
 			vol.add(joinbtn);
 			JLabel textvol = new JLabel("Volunteers are the backbone of  any organisation, helping to run successful ");
-			textvol.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			textvol.setFont(new Font("Dialog", Font.BOLD, 18));
 			textvol.setForeground(Color.WHITE);
-			textvol.setBounds(1143, 299, 700, 42);
+			textvol.setBounds(1014, 299, 829, 42);
 			vol.add(textvol);
 			
 			JLabel l13 = new JLabel(" programmes and assisting many vulnerable people in need.");
-			l13.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			l13.setFont(new Font("Dialog", Font.BOLD, 18));
 			l13.setForeground(Color.WHITE);
-			l13.setBounds(1143, 352, 700, 51);
+			l13.setBounds(1014, 327, 700, 51);
 			vol.add(l13);
 			
 			JLabel l14 = new JLabel("Drishti recruits volunteers irrespective of their race, ethnicity, sex,");
-			l14.setFont(new Font("Segoe UI Historic", Font.BOLD, 20));
+			l14.setFont(new Font("Dialog", Font.BOLD, 18));
 			l14.setForeground(Color.WHITE);
-			l14.setBounds(1143, 416, 700, 32);
+			l14.setBounds(1024, 416, 819, 32);
 			vol.add(l14);
 			
 			JLabel lblNewLabel_15 = new JLabel("religious belief, age, and disability.");
-			lblNewLabel_15.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+			lblNewLabel_15.setFont(new Font("Dialog", Font.BOLD, 18));
 			lblNewLabel_15.setForeground(Color.WHITE);
-			lblNewLabel_15.setBounds(1143, 487, 700, 23);
+			lblNewLabel_15.setBounds(1024, 444, 819, 23);
 			vol.add(lblNewLabel_15);
 			
 			JLabel lblNewLabel_16 = new JLabel("\"What is the essence of life?");
 			lblNewLabel_16.setFont(new Font("Felix Titling", Font.BOLD, 30));
 			lblNewLabel_16.setForeground(Color.WHITE);
-			lblNewLabel_16.setBounds(1183, 557, 600, 44);
+			lblNewLabel_16.setBounds(1014, 556, 600, 44);
 			vol.add(lblNewLabel_16);
 			
 			JLabel lblNewLabel_17 = new JLabel("to serve others and to do good.\"");
 			lblNewLabel_17.setFont(new Font("Felix Titling", Font.BOLD, 30));
 			lblNewLabel_17.setForeground(Color.WHITE);
-			lblNewLabel_17.setBounds(1183, 612, 700, 32);
+			lblNewLabel_17.setBounds(1024, 612, 700, 32);
 			vol.add(lblNewLabel_17);
 			
 			JLabel lblNewLabel_18 = new JLabel("-ARISTOTLE");
 			lblNewLabel_18.setFont(new Font("Segoe UI Emoji", Font.BOLD, 22));
 			lblNewLabel_18.setForeground(Color.WHITE);
-			lblNewLabel_18.setBounds(1793, 755, 128, 32);
+			lblNewLabel_18.setBounds(1185, 697, 201, 32);
 			vol.add(lblNewLabel_18);
 			
 			
 			
-
-			  Scanner sc = new Scanner(new File("C:\\Users\\RAJENDRA REDDY\\sample.txt"));
+			
+			  Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
 			  
 			  StringBuilder sb = new StringBuilder();
 			  
@@ -1795,7 +1794,7 @@ public class MainWindow extends JFrame {
 				   
 				    FileWriter writer;
 					try {
-						writer = new FileWriter("C:\\Users\\RAJENDRA REDDY\\sample.txt",false);
+						writer = new FileWriter("/home/sahithi/Desktop/oop-project/sample.txt",false);
 						 writer.write(fileContents);
 						    writer.flush();
 					} catch (IOException e1) {
@@ -1811,8 +1810,8 @@ public class MainWindow extends JFrame {
 				  
 			
 			JLabel volimg = new JLabel("");
-			volimg.setIcon(new ImageIcon("C:\\Users\\RAJENDRA REDDY\\volicon.png"));
-			volimg.setBounds(728, 57, 154, 116);
+			volimg.setIcon(new ImageIcon("volicon.png"));
+			volimg.setBounds(675, 67, 154, 116);
 			vol.add(volimg);
 			
 			
@@ -1820,12 +1819,13 @@ public class MainWindow extends JFrame {
 			JLabel voltxt = new JLabel("Volunteers reached");
 			voltxt.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
 			voltxt.setForeground(Color.WHITE);
-			voltxt.setBounds(741, 242, 218, 23);
+			voltxt.setBounds(686, 242, 273, 23);
 			vol.add(voltxt);
 			
 			JLabel lblNewLabel_19 = new JLabel("");
-			lblNewLabel_19.setIcon(new ImageIcon("C:\\Users\\RAJENDRA REDDY\\volunteer.jpg"));
-			lblNewLabel_19.setBounds(-119, 22, 1920, 1080);
+			lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel_19.setIcon(new ImageIcon("volunteer.jpg"));
+			lblNewLabel_19.setBounds(-119, 0, 1973, 1102);
 			vol.add(lblNewLabel_19);
 			
 			
