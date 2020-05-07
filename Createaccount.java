@@ -1,3 +1,5 @@
+
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -22,6 +24,12 @@ import javax.swing.JEditorPane;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Createaccount extends JFrame {
 
@@ -30,12 +38,11 @@ public class Createaccount extends JFrame {
 	private JTextField lname;
 	private JTextField mailtf;
 	private JTextField textField;
-	private JTextField otp_tf;
 	int OTP;
 	//ButtonGroup butgrp;
 	
 
-	public Createaccount() {
+	public createaccount ()  {
 		
 		getContentPane().setLayout(null);
 		setBounds(100, 100, 450, 300);		
@@ -113,12 +120,30 @@ public class Createaccount extends JFrame {
 		JButton create_button = new JButton("Create Now");
 		create_button.setBackground(Color.WHITE);
 		create_button.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-		create_button.setBounds(887, 865, 233, 60);
+		create_button.setBounds(932, 636, 233, 60);
 		create_button.addActionListener(new ActionListener()
 		{
 		  @SuppressWarnings("deprecation")
 		public void actionPerformed(ActionEvent event)
 		  {
+			
+			  File file =new File("C:\\Users\\RAJENDRA REDDY\\samp2.txt");
+	    	  
+	    	  FileWriter fw;
+			try {
+				fw = new FileWriter(file,true);
+				
+		         fw.write(tf_username.getText());
+		    	 fw.write(tf_pass.getText());
+		    	 fw.flush();
+		    	 
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	 
+		      
 			  
 			  if(tf_username.getText().equals("") || tf_pass.getText().trim().isEmpty() || lname.getText().equals("")|| fname.getText().equals("") || mailtf.getText().equals(""))
 				  JOptionPane.showMessageDialog((Component)event.getSource(), "Please fill all the fields","Error",JOptionPane.ERROR_MESSAGE);
@@ -240,24 +265,7 @@ public class Createaccount extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnGenerateOtp = new JButton("Generate OTP");
-		btnGenerateOtp.setBounds(880, 642, 216, 39);
-		contentPane.add(btnGenerateOtp);
 		
-		JLabel lblNewLabel_1 = new JLabel("Enter OTP: ");
-		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(722, 730, 125, 24);
-		contentPane.add(lblNewLabel_1);
-		
-		otp_tf = new JTextField();
-		otp_tf.setBackground(new Color(245, 245, 245));
-		otp_tf.setBounds(857, 734, 399, 32);
-		contentPane.add(otp_tf);
-		otp_tf.setColumns(10);
-		
-		JButton btn_verify = new JButton("Verify OTP ");
-		btn_verify.setBounds(880, 789, 223, 39);
-		contentPane.add(btn_verify);
 
 	}
 
@@ -265,4 +273,3 @@ public class Createaccount extends JFrame {
 		new Createaccount();
 	}
 }
-
