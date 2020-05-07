@@ -70,6 +70,9 @@ public class MainWindow extends JFrame {
 	String fileName = "data.csv"; 
     File myCSVFile = new File("/home/sahithi/Desktop/oop-project/data.csv");
     Timer time;
+    String file_discussion = "discussion.csv";
+    //public static final String delimiter = "\n";
+    //String csvFile = "/home/sahithi/Desktop/Csv/discussion.csv";
   
     private JTextField vnametf;
 	private JTextField vmailtf;
@@ -1369,7 +1372,8 @@ public class MainWindow extends JFrame {
 				discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 				discuss_submit.setBounds(271, 645, 108, 37);
 				discuss_submit.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent event) {
+					public void actionPerformed(ActionEvent event) 
+					{
 						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
 							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
 						}
@@ -1408,15 +1412,60 @@ public class MainWindow extends JFrame {
 						            pb.setVisible(false);
 						        } 
 						        catch (Exception e) { 
-						        } 
-								chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
+						        }
+						        
+						        
+								//chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");
+
 								}
 							else 
 								JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Password","Error", JOptionPane.ERROR_MESSAGE);
 							
+
 							}
-												
-						}					
+
+					try 
+					{
+                        
+                        FileWriter fw = new FileWriter(file_discussion,true);
+                        BufferedWriter br = new BufferedWriter(fw);
+                        StringBuilder sb = new StringBuilder();
+    					for (int i=0; i < 1; i++) 
+    					{
+							sb.append(dname_tf.getText()+":"+dopinion_tf.getText()+"\n");
+						}
+					br.write(sb.toString());
+    				br.close();	
+                    }
+                    catch(IOException ex) 
+                    {
+                        System.out.println(
+                            "Error writing to file '"+ file_discussion + "'");
+                    }
+
+                    
+                	dopinion_tf.setText("");
+                	String fileResult = "";                 
+                	try 
+                	{
+                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
+                		String line = null;
+                		while ((line = csvReader.readLine()) != null) 
+                		{
+   
+                    		fileResult = fileResult+"\n"+line;
+                		}
+                	}
+                	catch(FileNotFoundException ex) 
+                	{
+                    	System.err.println("File was not found");
+                	}
+                	catch(IOException ioe) 
+                	{
+                    	System.err.println("There was an error while reading the file");
+                	}
+                	chat_tf.setText(fileResult);							
+				}					
 					});
 				contact.add(discuss_submit);
 				
