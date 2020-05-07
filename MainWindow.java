@@ -22,14 +22,18 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.event.AdjustmentListener;
+import java.awt.font.TextAttribute;
 import java.awt.event.AdjustmentEvent;
 
 import javax.swing.border.SoftBevelBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.border.BevelBorder;
 
 import javax.swing.table.DefaultTableModel;
 
 import java.util.Arrays;
+import java.util.Map;
 
  @SuppressWarnings("serial")
 public class MainWindow extends JFrame {
@@ -65,6 +69,8 @@ public class MainWindow extends JFrame {
 	JButton btn_forgotpass;
 	String fileName = "data.csv"; 
     File myCSVFile = new File("/home/sahithi/Desktop/oop-project/data.csv");
+    Timer time;
+    int k=1;
 	/**
 	 * Launch the application.
 	 */
@@ -799,7 +805,7 @@ public class MainWindow extends JFrame {
 		form_pane.add(quote3);
 		
 		JLabel label_headerimage = new JLabel("");
-		label_headerimage.setIcon(new ImageIcon("/home/sahithi/Downloads/gov.jpg"));
+		label_headerimage.setIcon(new ImageIcon("gov.jpg"));
 		label_headerimage.setBounds(18, 6, 1837, 402);
 		donate.add(label_headerimage);
 		
@@ -968,6 +974,70 @@ public class MainWindow extends JFrame {
 		btnNewButton_2.setBackground(new Color(0, 0, 0));
 		btnNewButton_2.setBounds(954, 724, 228, 38);
 		more_info.add(btnNewButton_2);
+		
+		JPanel stats = new JPanel();
+		tabbedPane.addTab("Statistics", null, stats, null);
+		stats.setLayout(null);
+		
+		JLabel stat_display = new JLabel("0 ");
+		stat_display.setFont(new Font("Century Schoolbook L", Font.BOLD, 99));
+		stat_display.setForeground(Color.WHITE);
+		stat_display.setHorizontalAlignment(SwingConstants.CENTER);
+		stat_display.setBounds(262, 128, 1061, 294);
+		stats.add(stat_display);
+		
+		JLabel lblTotalCasesWorldwide = new JLabel("Total Cases Worldwide");
+		lblTotalCasesWorldwide.setForeground(Color.WHITE);
+		lblTotalCasesWorldwide.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 40));
+		lblTotalCasesWorldwide.setBounds(485, 40, 523, 89);
+		stats.add(lblTotalCasesWorldwide);
+		
+		JLabel lblNewLabel_13 = new JLabel("Apart from this, we also made a creative interface to display ");
+		lblNewLabel_13.setForeground(Color.WHITE);
+		lblNewLabel_13.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 39));
+		lblNewLabel_13.setBounds(24, 468, 1368, 79);
+		stats.add(lblNewLabel_13);
+		
+		JLabel lblNewLabel_14 = new JLabel("the active cases Worldwide, in India and in Telangana.");
+		lblNewLabel_14.setForeground(Color.WHITE);
+		lblNewLabel_14.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 39));
+		lblNewLabel_14.setBounds(34, 549, 1289, 57);
+		stats.add(lblNewLabel_14);
+		
+		JPanel panel_htmllink = new JPanel();
+		panel_htmllink.setBackground(Color.BLACK);
+		panel_htmllink.setBounds(670, 689, 352, 89);
+		stats.add(panel_htmllink);
+		panel_htmllink.setLayout(null);
+		
+		JLabel label_html = new JLabel("Have a look :) ");
+		label_html.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try 
+				{
+                    File file = new java.io.File("files/index.html").getAbsoluteFile();
+                    Desktop.getDesktop().open(file);                    
+                } 
+				catch (Exception e1) 
+				{
+                    e1.printStackTrace();
+                }
+			}
+		});
+		
+		label_html.setHorizontalAlignment(SwingConstants.CENTER);
+		label_html.setBounds(0, 0, 346, 83);
+		panel_htmllink.add(label_html);
+		label_html.setBackground(Color.BLACK);
+		label_html.setForeground(Color.WHITE);
+		label_html.setFont(new Font("Century Schoolbook L", Font.BOLD, 39));
+		
+		JLabel lblNewLabel_12 = new JLabel("");
+		lblNewLabel_12.setIcon(new ImageIcon("bg_2.jpg"));
+		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_12.setBounds(0, 0, 1848, 935);
+		stats.add(lblNewLabel_12);
 		
 
 		
@@ -1417,7 +1487,32 @@ public class MainWindow extends JFrame {
 		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
 		lblNewLabel_11.setBounds(0, 0, 1860, 954);
 		admin.add(lblNewLabel_11);
-			
+		
+		tabbedPane.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent ce)
+			{
+				int index = tabbedPane.getSelectedIndex();
+				if(index == 7)
+				{
+					time.start();
+				}
+			}
+		});
+		
+
+		time = new Timer(1, new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent ae)
+			{
+				stat_display.setText(Integer.toString(k));
+				k++;
+				if(k == 3821499)
+				{
+					time.stop();
+				}
+			}
+		});
+						
 			txt = new JLabel("Fill in these details to generate new password ");
 			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
 			txt.setBounds(1199,453,408,20);
@@ -1491,3 +1586,4 @@ public class MainWindow extends JFrame {
 			
 	}
 }
+

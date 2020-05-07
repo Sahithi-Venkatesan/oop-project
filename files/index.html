@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS Number Counter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+  	src="https://code.jquery.com/jquery-1.12.4.min.js">
+  	</script>	
+</head>
+<body>
+	<div class="container counter-section">
+	<div class="row text-center">
+		<div class="col-md-3 counter-box">
+			<div class="icon-box"><i class="fa fa-ambulance"></i></div>
+			<p class="counter">2236099</p>
+			<p>Active Cases Worldwide</p>
+		</div>
+		<div></div><div></div>
+		<div>
+			<p>		</p>
+		</div>
+		<div class="col-md-3 counter-box">
+			<div class="icon-box"><i class="fa fa-ambulance"></i></div>
+			<p class="counter">33558</p>
+			<p>Active Cases in India</p>
+		</div>
+		<div></div><div></div>
+		<div class="col-md-3 counter-box">
+			<div class="icon-box"><i class="fa fa-ambulance"></i></div>
+			<p class="counter">439</p>
+			<p>Active Cases in Telangana</p>
+		</div>
+	</div>
+	</div>
+	<!--Counter-->
+	<script src="jquery.counterup.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<script>
+		jQuery(document).ready(function($)
+		{
+			$('.counter').counterUp({
+    		delay: 10,
+    		time: 1000
+			});
+		});
+	</script>
+
+</body>
+</html>
