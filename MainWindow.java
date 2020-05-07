@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.awt.*;
 import javax.swing.*;
@@ -1239,7 +1240,7 @@ public class MainWindow extends JFrame {
 		
 		chat_tf = new JTextArea();
 		chat_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		chat_tf.setBounds(6, 717, 1000, 211);
+		chat_tf.setBounds(37, 701, 722, 109);
 		chat_tf.setColumns(10);
 		
 		pb = new JProgressBar(1,100);    
@@ -1255,13 +1256,13 @@ public class MainWindow extends JFrame {
 			
 			JLabel createacc= new JLabel("Don't have an account?! ");
 			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			createacc.setBounds(423, 646, 209, 37);
+			createacc.setBounds(426, 640, 209, 37);
 			contact.add(createacc);
 			
 			
 			JButton create=new JButton("Create One ");			//new frame: Createaccount.java
 			create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			create.setBounds(627, 646, 172, 37);
+			create.setBounds(642, 645, 172, 37);
 			create.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent ae) {
 					
@@ -1365,8 +1366,8 @@ public class MainWindow extends JFrame {
 			contact.add(generate_pass);
 			
 			
-			
-				
+			File file = new File("C:\\Users\\RAJENDRA REDDY\\samp2.txt"); 
+			BufferedReader br2 = new BufferedReader(new FileReader(file)); 
 				
 				JButton discuss_submit = new JButton(" Post ");
 				discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
@@ -1377,24 +1378,8 @@ public class MainWindow extends JFrame {
 						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
 							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
 						}
-						else if(c==0) {
-						int i = 0; 
-						pb.setVisible(true);
-				        try { 
-				            while (i <= 100) { 		              
-				                pb.setString("posting"); 		                
-				                Thread.sleep(100); 
-				                pb.paintImmediately(0,0,200,25);
-				                pb.setValue(i);
-				                i=i+10; 
-				            } 
-				            pb.setVisible(false);
-				        } 
-				        catch (Exception e) { 
-				        } 
-						chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
-						}
-						else {
+						
+						else if(c==1) {
 							if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) 
 								JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
 							
@@ -1423,48 +1408,73 @@ public class MainWindow extends JFrame {
 							
 
 							}
+						String st=null;
+						String st2="";
+						
+						try {
+							while ((st = br2.readLine()) != null){
+								 st2=st2+st+"\n";					
+								  }
+								
+								br2.close(); 
+								
+										
+							if(st2.contains(dname_tf.getText()) ){
+							
+									try 
+									{
+				                        
+				                        FileWriter fw = new FileWriter(file_discussion,true);
+				                        BufferedWriter br = new BufferedWriter(fw);
+				                        StringBuilder sb = new StringBuilder();
+				    					for (int i=0; i < 1; i++) 
+				    					{
+											sb.append(dname_tf.getText()+":"+dopinion_tf.getText()+"\n");
+										}
+									br.write(sb.toString());
+				    				br.close();	
+				                    }
+				                    catch(IOException ex) 
+				                    {
+				                        System.out.println(
+				                            "Error writing to file '"+ file_discussion + "'");
+				                    }
 
-					try 
-					{
-                        
-                        FileWriter fw = new FileWriter(file_discussion,true);
-                        BufferedWriter br = new BufferedWriter(fw);
-                        StringBuilder sb = new StringBuilder();
-    					for (int i=0; i < 1; i++) 
-    					{
-							sb.append(dname_tf.getText()+":"+dopinion_tf.getText()+"\n");
+				                    
+				                	dopinion_tf.setText("");
+				                	String fileResult = "";                 
+				                	try 
+				                	{
+				                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
+				                		String line = null;
+				                		while ((line = csvReader.readLine()) != null) 
+				                		{
+				   
+				                    		fileResult = fileResult+"\n"+line;
+				                		}
+				                		csvReader.close();
+				                	}
+				                	catch(FileNotFoundException ex) 
+				                	{
+				                    	System.err.println("File was not found");
+				                	}
+				                	catch(IOException ioe) 
+				                	{
+				                    	System.err.println("There was an error while reading the file");
+				                	}
+				                	chat_tf.setText(fileResult);
+								}
+							else
+								
+								JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Userid or Password","Error", JOptionPane.ERROR_MESSAGE);	
+						        
+							  }
+						 catch (IOException e1) {
+							 System.err.println("There was an error while reading the file");
 						}
-					br.write(sb.toString());
-    				br.close();	
-                    }
-                    catch(IOException ex) 
-                    {
-                        System.out.println(
-                            "Error writing to file '"+ file_discussion + "'");
-                    }
-
-                    
-                	dopinion_tf.setText("");
-                	String fileResult = "";                 
-                	try 
-                	{
-                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
-                		String line = null;
-                		while ((line = csvReader.readLine()) != null) 
-                		{
-   
-                    		fileResult = fileResult+"\n"+line;
-                		}
-                	}
-                	catch(FileNotFoundException ex) 
-                	{
-                    	System.err.println("File was not found");
-                	}
-                	catch(IOException ioe) 
-                	{
-                    	System.err.println("There was an error while reading the file");
-                	}
-                	chat_tf.setText(fileResult);							
+						
+						
+												
 				}					
 					});
 				contact.add(discuss_submit);
@@ -1810,7 +1820,7 @@ public class MainWindow extends JFrame {
 			
 			
 			
-			  Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
+			  Scanner sc = new Scanner(new File("C:\\Users\\RAJENDRA REDDY\\sample.txt"));
 			  
 			  StringBuilder sb = new StringBuilder();
 			  
@@ -1843,7 +1853,7 @@ public class MainWindow extends JFrame {
 				   
 				    FileWriter writer;
 					try {
-						writer = new FileWriter("/home/sahithi/Desktop/oop-project/sample.txt",false);
+						writer = new FileWriter("C:\\Users\\RAJENDRA REDDY\\sample.txt",false);
 						 writer.write(fileContents);
 						    writer.flush();
 					} catch (IOException e1) {
