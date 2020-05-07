@@ -208,6 +208,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(l8);
 		
 		JButton g1 = new JButton("Directions");
+		g1.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g1.setBackground(Color.BLACK);
+		g1.setForeground(Color.WHITE);
 		g1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -226,6 +229,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g1);
 		
 		JButton g2 = new JButton("Directions");
+		g2.setBackground(Color.BLACK);
+		g2.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g2.setForeground(Color.WHITE);
 		g2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -244,6 +250,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g2);
 		
 		JButton g3 = new JButton("Directions");
+		g3.setForeground(Color.WHITE);
+		g3.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g3.setBackground(Color.BLACK);
 		g3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -262,6 +271,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g3);
 		
 		JButton g4 = new JButton("Directions");
+		g4.setForeground(Color.WHITE);
+		g4.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g4.setBackground(Color.BLACK);
 		g4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -280,6 +292,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g4);
 		
 		JButton g5 = new JButton("Directions");
+		g5.setForeground(Color.WHITE);
+		g5.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g5.setBackground(Color.BLACK);
 		g5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -298,6 +313,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g5);
 		
 		JButton g6 = new JButton("Directions");
+		g6.setForeground(Color.WHITE);
+		g6.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g6.setBackground(Color.BLACK);
 		g6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -316,6 +334,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g6);
 		
 		JButton g7 = new JButton("Directions");
+		g7.setForeground(Color.WHITE);
+		g7.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g7.setBackground(Color.BLACK);
 		g7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -334,6 +355,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(g7);
 		
 		JButton g8 = new JButton("Directions");
+		g8.setForeground(Color.WHITE);
+		g8.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		g8.setBackground(Color.BLACK);
 		g8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -407,6 +431,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(p11);
 		
 		JButton b1 = new JButton("Directions");
+		b1.setForeground(Color.WHITE);
+		b1.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b1.setBackground(Color.BLACK);
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -425,6 +452,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b1);
 		
 		JButton b2 = new JButton("Directions");
+		b2.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b2.setForeground(Color.WHITE);
+		b2.setBackground(Color.BLACK);
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -443,6 +473,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b2);
 		
 		JButton b3 = new JButton("Directions");
+		b3.setForeground(Color.WHITE);
+		b3.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b3.setBackground(Color.BLACK);
 		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -461,6 +494,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b3);
 		
 		JButton b4 = new JButton("Directions");
+		b4.setForeground(Color.WHITE);
+		b4.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b4.setBackground(Color.BLACK);
 		b4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -479,6 +515,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b4);
 		
 		JButton b5 = new JButton("Directions");
+		b5.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b5.setForeground(Color.WHITE);
+		b5.setBackground(Color.BLACK);
 		b5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
@@ -497,6 +536,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b5);
 		
 		JButton b6 = new JButton("Directions");
+		b6.setForeground(Color.WHITE);
+		b6.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b6.setBackground(Color.BLACK);
 		b6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -515,6 +557,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b6);
 		
 		JButton b7 = new JButton("Directions");
+		b7.setForeground(Color.WHITE);
+		b7.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b7.setBackground(Color.BLACK);
 		b7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -533,6 +578,8 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b7);
 		
 		JButton b8 = new JButton("Directions");
+		b8.setForeground(Color.WHITE);
+		b8.setBackground(Color.BLACK);
 		b8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -551,6 +598,8 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b8);
 		
 		JButton b9 = new JButton("Directions");
+		b9.setForeground(Color.WHITE);
+		b9.setBackground(Color.BLACK);
 		b9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -569,6 +618,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b9);
 		
 		JButton b10 = new JButton("Directions");
+		b10.setBackground(Color.BLACK);
+		b10.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b10.setForeground(Color.WHITE);
 		b10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -587,6 +639,9 @@ public class MainWindow extends JFrame {
 		testing_centres.add(b10);
 		
 		JButton b11 = new JButton("Directions");
+		b11.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		b11.setBackground(Color.BLACK);
+		b11.setForeground(Color.WHITE);
 		b11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0)
 			{
@@ -613,6 +668,11 @@ public class MainWindow extends JFrame {
 		note_label.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 14));
 		note_label.setBounds(780, 820, 481, 16);
 		testing_centres.add(note_label);
+		
+		JLabel background_img = new JLabel("");
+		background_img.setIcon(new ImageIcon("location2.jpg"));
+		background_img.setBounds(0, 0, 1860, 940);
+		testing_centres.add(background_img);
 		
 		JPanel faqs = new JPanel();
 		faqs.setBackground(new Color(255, 255, 204));
@@ -725,20 +785,13 @@ public class MainWindow extends JFrame {
 		note_label2.setBounds(785, 752, 454, 27);
 		faqs.add(note_label2);
 		
-		JPanel precautions = new JPanel();
-		tabbedPane.addTab("    Precautions     ", null, precautions, null);
-		
-		JLabel precaution_bg = new JLabel("");
-		precaution_bg.setIcon(new ImageIcon("precautions.jpg"));
-		precautions.add(precaution_bg);
-		
 		JPanel donate = new JPanel();
-		donate.setBackground(new Color(204, 255, 204));
+		donate.setBackground(new Color(240, 255, 255));
 		tabbedPane.addTab("Donate Now", null, donate, null);
 		donate.setLayout(null);
 		
 		JPanel description_pane = new JPanel();
-		description_pane.setBackground(new Color(204, 255, 204));
+		description_pane.setBackground(new Color(240, 255, 255));
 		description_pane.setBounds(69, 420, 735, 547);
 		donate.add(description_pane);
 		description_pane.setLayout(null);
@@ -774,7 +827,7 @@ public class MainWindow extends JFrame {
 		description_pane.add(info_label5);
 		
 		JPanel form_pane = new JPanel();
-		form_pane.setBackground(new Color(204, 255, 204));
+		form_pane.setBackground(new Color(240, 255, 255));
 		form_pane.setBounds(863, 420, 801, 472);
 		donate.add(form_pane);
 		form_pane.setLayout(null);
@@ -795,6 +848,8 @@ public class MainWindow extends JFrame {
 		form_pane.add(quote2);
 		
 		JButton quote3 = new JButton("Donate Now! ");
+		quote3.setForeground(new Color(255, 250, 250));
+		quote3.setBackground(new Color(0, 0, 0));
 		quote3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				openWebPage("https://pmnrf.gov.in/en/online-donation");
@@ -992,13 +1047,13 @@ public class MainWindow extends JFrame {
 		lblTotalCasesWorldwide.setBounds(485, 40, 523, 89);
 		stats.add(lblTotalCasesWorldwide);
 		
-		JLabel lblNewLabel_13 = new JLabel("Apart from this, we also made a creative interface to display ");
+		JLabel lblNewLabel_13 = new JLabel("Apart from this, you can also view the total number");
 		lblNewLabel_13.setForeground(Color.WHITE);
 		lblNewLabel_13.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 39));
-		lblNewLabel_13.setBounds(24, 468, 1368, 79);
+		lblNewLabel_13.setBounds(39, 468, 1353, 79);
 		stats.add(lblNewLabel_13);
 		
-		JLabel lblNewLabel_14 = new JLabel("the active cases Worldwide, in India and in Telangana.");
+		JLabel lblNewLabel_14 = new JLabel("of active cases Worldwide, in India and in Telangana.");
 		lblNewLabel_14.setForeground(Color.WHITE);
 		lblNewLabel_14.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 39));
 		lblNewLabel_14.setBounds(34, 549, 1289, 57);
@@ -1492,7 +1547,7 @@ public class MainWindow extends JFrame {
 			public void stateChanged(ChangeEvent ce)
 			{
 				int index = tabbedPane.getSelectedIndex();
-				if(index == 7)
+				if(index == 6)
 				{
 					time.start();
 				}
