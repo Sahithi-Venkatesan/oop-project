@@ -1834,16 +1834,6 @@ public class MainWindow extends JFrame {
 				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
 				{
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
-					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
-					adlog.setVisible(true);
-				}
-				else
-				
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-				
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
 					
 									
 					//File myCSVFile; 
@@ -1865,6 +1855,17 @@ public class MainWindow extends JFrame {
 				}
 
 
+				
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
+					adlog.setVisible(true);
+				}
+				else
+				
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				
 			}
 		});
 
