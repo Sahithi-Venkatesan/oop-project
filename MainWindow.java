@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.awt.*;
 import javax.swing.*;
@@ -161,12 +160,12 @@ public class MainWindow extends JFrame {
 		tabbedPane.addTab("About Us", null, about, null);
 		about.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBackground(Color.BLACK);
-		lblNewLabel.setIcon(new ImageIcon("about.png"));
-		lblNewLabel.setBounds(0, 0, 1853, 939);
-		about.add(lblNewLabel);
+		JLabel about_image = new JLabel("");
+		about_image.setForeground(Color.WHITE);
+		about_image.setBackground(Color.BLACK);
+		about_image.setIcon(new ImageIcon("about.png"));
+		about_image.setBounds(0, 0, 1853, 939);
+		about.add(about_image);
 		
 		JPanel testing_centres = new JPanel();
 		testing_centres.setBackground(new Color(255, 228, 225));
@@ -1110,567 +1109,13 @@ public class MainWindow extends JFrame {
 		lblNewLabel_12.setBounds(0, 0, 1848, 935);
 		stats.add(lblNewLabel_12);
 		
-
-		
-		
-		JPanel contact = new JPanel();
-		contact.setBackground(new Color(255, 228, 225));
-		tabbedPane.addTab("Connect With Us", null, contact, null);
-		contact.setLayout(null);
-		
-		JButton connect_button = new JButton("Submit ");
-		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		connect_button.setBounds(237, 389, 142, 37);
-		connect_button.addActionListener(new ActionListener()
-		{
-		  public void actionPerformed(ActionEvent event)
-		  {
-			  
-			     nameid=cname_tf.getText();
-				 mobileid=cmobile_tf.getText();
-				 mailid	=cmail_tf.getText();
-			     concernid=cconcern_tf.getText();
-		    
-		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
-		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-			  
-		    else if(cmobile_tf.getText().length()!=10)
-		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
-			  
-		    else
-		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
-                       		    
-		  }
-		});
-		contact.add(connect_button);
-		
-		
-		
-		JLabel connect_heading = new JLabel("Connect With Us");
-		connect_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
-		connect_heading.setBounds(73, 6, 231, 37);
-		contact.add(connect_heading);
-		
-		JLabel discussion_heading = new JLabel("Discussion Forum");
-		discussion_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
-		discussion_heading.setBounds(73, 462, 247, 37);
-		contact.add(discussion_heading);
-		
-		
-		JLabel name_connect = new JLabel("Name:");
-		name_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		name_connect.setBounds(83, 55, 80, 19);
-		contact.add(name_connect);
-		
-		JLabel mobile_connect = new JLabel("Mobile No:");
-		mobile_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		mobile_connect.setBounds(83, 108, 101, 20);
-		contact.add(mobile_connect);
-		
-		JLabel email_connect = new JLabel("Email (Optional):");
-		email_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		email_connect.setBounds(83, 161, 153, 20);
-		contact.add(email_connect);
-		
-		cname_tf = new JTextField();
-		cname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cname_tf.setBounds(263, 49, 239, 27);
-		contact.add(cname_tf);
-		cname_tf.setColumns(10);
-		
-		cmobile_tf = new JTextField();
-		cmobile_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cmobile_tf.setBounds(263, 103, 239, 27);
-		contact.add(cmobile_tf);
-		cmobile_tf.setColumns(10);
-		
-		cmail_tf = new JTextField();
-		cmail_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cmail_tf.setBounds(263, 156, 239, 27);
-		contact.add(cmail_tf);
-		cmail_tf.setColumns(10);
-		
-		JLabel concern_heading = new JLabel("Your Concern:");
-		concern_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		concern_heading.setBounds(83, 193, 133, 19);
-		contact.add(concern_heading);
-		
-		cconcern_tf = new JTextArea();
-		cconcern_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		cconcern_tf.setBounds(73, 211, 429, 156);
-		contact.add(cconcern_tf);
-		cconcern_tf.setColumns(10);
-		
-		
-		
-		JLabel discuss_name = new JLabel("Username: ");
-		discuss_name.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_name.setBounds(83, 511, 116, 19);
-		contact.add(discuss_name);
-		
-		JLabel discuss_location = new JLabel("Password:");
-		discuss_location.setDisplayedMnemonic('*');
-		discuss_location.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_location.setBounds(83, 542, 101, 27);
-		contact.add(discuss_location);
-		
-		dname_tf = new JTextField();		
-		dname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		dname_tf.setBounds(237, 505, 281, 27);
-		contact.add(dname_tf);
-		dname_tf.setColumns(10);
-		
-		pa_tf = new JPasswordField();		
-		pa_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		pa_tf.setBounds(237, 540, 281, 27);
-		pa_tf.setColumns(10);
-		contact.add(pa_tf);
-		
-		
-		JLabel discuss_opinion = new JLabel("Your Opinion:");
-		discuss_opinion.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-		discuss_opinion.setBounds(83, 581, 133, 27);
-		contact.add(discuss_opinion);
-		
-		dopinion_tf = new JTextArea();
-		dopinion_tf.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		dopinion_tf.setBounds(237, 579, 591, 55);
-		contact.add(dopinion_tf);		
-		dopinion_tf.setColumns(10);
-		
-		chat_tf = new JTextArea();
-		chat_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		chat_tf.setBounds(37, 701, 722, 109);
-		chat_tf.setColumns(10);
-		
-		pb = new JProgressBar(1,100);    
-		pb.setValue(0); 
-		pb.setStringPainted(true); 
-		pb.setBounds(830,505,200,25);
-		pb.setVisible(false);
-		contact.add(pb); 
-		
-  
-		
-		
-			
-			JLabel createacc= new JLabel("Don't have an account?! ");
-			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			createacc.setBounds(426, 640, 209, 37);
-			contact.add(createacc);
-			
-			
-			JButton create=new JButton("Create One ");			//new frame: Createaccount.java
-			create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			create.setBounds(642, 645, 172, 37);
-			create.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent ae) {
-					
-					Createaccount ca=new Createaccount();
-					ca.setVisible(true);
-				}
-			});
-			contact.add(create);
-			
-			
-			JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
-			info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info1.setBounds(734, 37, 633, 27);
-			contact.add(info1);
-			
-			JLabel info2 = new JLabel("or related issues, please feel free to drop in.");
-			info2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info2.setBounds(734, 69, 633, 27);
-			contact.add(info2);
-			
-			JLabel info3 = new JLabel("All your concerns will be conveyed to the MHRD or the MoFHW and we will ");
-			info3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info3.setBounds(733, 108, 618, 20);
-			contact.add(info3);
-			
-			JLabel info4 = new JLabel("ensure that they respond quick. ");
-			info4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info4.setBounds(734, 136, 457, 37);
-			contact.add(info4);
-			
-			JLabel info5 = new JLabel("We're happy to help you anytime :)");
-			info5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 20));
-			info5.setBounds(734, 185, 633, 48);
-			contact.add(info5);
-			
-			JLabel info6 = new JLabel("Also, feel free to share your opinion with people around related to COVID-19 ");
-			info6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info6.setBounds(734, 245, 672, 27);
-			contact.add(info6);
-			
-			JLabel info7 = new JLabel("issues in the discussion forum below.");
-			info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			info7.setBounds(734, 274, 403, 27);
-			contact.add(info7);
-			
-			JLabel lblForgotPassword = new JLabel("Forgot password? ");
-			lblForgotPassword.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			lblForgotPassword.setBounds(1116, 412, 172, 37);
-			contact.add(lblForgotPassword);
-			
-			txt = new JLabel("Fill in these details to generate new password ");
-			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			txt.setBounds(1116,460,408,20);
-			contact.add(txt);
-			
-			fname = new JLabel("Name: ");
-			fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			fname.setBounds(1116,513,108,20);
-			contact.add(fname);
-			
-			fname_tf = new JTextField();
-			fname_tf.setBounds(1216,503,216,27);
-			contact.add(fname_tf);
-			
-			
-		    
-		    phone = new JLabel("Mobile no.: ");
-			phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
-			phone.setBounds(1116,561,108,20);
-			contact.add(phone);
-			
-
-			phone_tf = new JTextField();
-			phone_tf.setBounds(1216,558,216,27);
-			contact.add(phone_tf);
-			
-			generate_pass = new JButton("Generate Password");
-			generate_pass.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent ae)
-				{
-					c=1;
-					if(fname_tf.getText().equals("")  || phone_tf.getText().equals("")) {
-						JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-					}
-					else if(phone_tf.getText().length()!=10)
-						JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
-					else {
-					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
-					 sb = new StringBuilder(); 
-
-					for (int i = 0; i < 6; i++) { 
-					int index = (int)(characters.length() * Math.random()); 								
-					 sb.append(characters.charAt(index));           
-					}
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
-					}
-				}
-			});
-			generate_pass.setBounds(1174, 619, 181, 37);
-			generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-			contact.add(generate_pass);
-			
-			
-			File file = new File("C:\\Users\\RAJENDRA REDDY\\samp2.txt"); 
-			BufferedReader br2 = new BufferedReader(new FileReader(file)); 
-				
-				JButton discuss_submit = new JButton(" Post ");
-				discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
-				discuss_submit.setBounds(271, 645, 108, 37);
-				discuss_submit.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent event) 
-					{
-						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
-							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-						}
-						
-						else if(c==1) {
-							if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) 
-								JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-							
-							else if(pa_tf.getText().equals(sb.toString())) {
-								int j=0;
-								pb.setVisible(true);
-						        try { 
-						            while (j <= 100) { 		              
-						                pb.setString("posting"); 		                
-						                Thread.sleep(100); 
-						                pb.paintImmediately(0,0,200,25);
-						                pb.setValue(j);
-						                j=j+10; 
-						            } 
-						            pb.setVisible(false);
-						        } 
-						        catch (Exception e) { 
-						        }
-						        
-						        
-								//chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");
-
-								}
-							else 
-								JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Password","Error", JOptionPane.ERROR_MESSAGE);
-							
-
-							}
-						String st=null;
-						String st2="";
-						
-						try {
-							while ((st = br2.readLine()) != null){
-								 st2=st2+st+"\n";					
-								  }
-								
-								br2.close(); 
-								
-										
-							if(st2.contains(dname_tf.getText()) ){
-							
-									try 
-									{
-				                        
-				                        FileWriter fw = new FileWriter(file_discussion,true);
-				                        BufferedWriter br = new BufferedWriter(fw);
-				                        StringBuilder sb = new StringBuilder();
-				    					for (int i=0; i < 1; i++) 
-				    					{
-											sb.append(dname_tf.getText()+":"+dopinion_tf.getText()+"\n");
-										}
-									br.write(sb.toString());
-				    				br.close();	
-				                    }
-				                    catch(IOException ex) 
-				                    {
-				                        System.out.println(
-				                            "Error writing to file '"+ file_discussion + "'");
-				                    }
-
-				                    
-				                	dopinion_tf.setText("");
-				                	String fileResult = "";                 
-				                	try 
-				                	{
-				                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
-				                		String line = null;
-				                		while ((line = csvReader.readLine()) != null) 
-				                		{
-				   
-				                    		fileResult = fileResult+"\n"+line;
-				                		}
-				                		csvReader.close();
-				                	}
-				                	catch(FileNotFoundException ex) 
-				                	{
-				                    	System.err.println("File was not found");
-				                	}
-				                	catch(IOException ioe) 
-				                	{
-				                    	System.err.println("There was an error while reading the file");
-				                	}
-				                	chat_tf.setText(fileResult);
-								}
-							else
-								
-								JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Userid or Password","Error", JOptionPane.ERROR_MESSAGE);	
-						        
-							  }
-						 catch (IOException e1) {
-							 System.err.println("There was an error while reading the file");
-						}
-						
-						
-												
-				}					
-					});
-				contact.add(discuss_submit);
-				
-					contact.add(chat_tf);
-					
-					JButton save_csv = new JButton("Save to Csv");
-					save_csv.addActionListener(new ActionListener() {
-						@Override  
-					public void actionPerformed(ActionEvent ae) 
-					{
-						nameid=cname_tf.getText();
-				 		mobileid=cmobile_tf.getText();
-				 		mailid	=cmail_tf.getText();
-			     		concernid=cconcern_tf.getText();
-		    
-		    			if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
-		    				JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
-			  
-		    			else if(cmobile_tf.getText().length()!=10)
-		    				JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
-			  
-		    			else
-		    			{
-		    				
-                    		try 
-                    		{
-                       
-                        		FileWriter fw = new FileWriter(fileName,true);
-								BufferedWriter br = new BufferedWriter(fw);
-								StringBuilder sb = new StringBuilder();
-								for(int i=0; i<1; i++)
-								{
-									sb.append("\"Name\","+"\""+cname_tf.getText()+"\"");
-									sb.append("\"Mobile\","+"\""+cmobile_tf.getText()+"\"");
-									sb.append("\"Email\","+"\""+cmail_tf.getText()+"\"");
-									sb.append("\"Concern\","+"\""+cconcern_tf.getText()+"\"");
-								}
-								br.write(sb.toString());
-    							br.close();
-                        
-                    		}
-                    		catch(IOException ex) 
-                    		{
-                        	System.out.println("Error writing to file '"+ fileName + "'");
-                        
-                    		}
-
-                    		JOptionPane.showMessageDialog((Component)ae.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
-   
-                    	}
-						}
-						});
-					save_csv.setFont(new Font("DejaVu Sans", Font.BOLD | Font.ITALIC, 16));
-					save_csv.setBounds(439, 392, 142, 34);
-					contact.add(save_csv);
-		
-		JPanel admin = new JPanel();
-		admin.setBackground(new Color(224, 255, 255));
-		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
-		tabbedPane.addTab("Admin Login", null, admin, null);
-		admin.setLayout(null);
-		
-		JLabel admin_heading = new JLabel("Admin Login");
-		admin_heading.setBackground(new Color(0, 0, 0));
-		admin_heading.setForeground(new Color(0, 0, 0));
-		admin_heading.setFont(new Font("Dialog", Font.BOLD, 39));
-		admin_heading.setBounds(888, 6, 325, 93);
-		admin.add(admin_heading);
-		
-		JLabel admin_usr = new JLabel("Username: ");//Drishtiadmin@2020
-		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
-		admin_usr.setBounds(734, 311, 150, 47);
-		admin.add(admin_usr);
-		
-		tf_username = new JTextField();
-		tf_username.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
-		tf_username.setBounds(883, 311, 393, 47);
-		admin.add(tf_username);
-		tf_username.setColumns(10);
-		
-		JLabel admin_pass = new JLabel("Password: ");//dri_439
-		admin_pass.setBackground(new Color(224, 255, 255));
-		admin_pass.setDisplayedMnemonic('*');
-		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
-		admin_pass.setBounds(742, 385, 142, 39);
-		admin.add(admin_pass);
-		
-		tf_password = new JPasswordField();
-		tf_password.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
-		tf_password.setEchoChar('*');
-		tf_password.setBounds(883, 380, 399, 49);
-		admin.add(tf_password);
-		
-		
-		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
-		
-		admin_login.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent event)
-			{								
-				
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
-					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
-					adlog.setVisible(true);
-									}
-				else
-				
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-			
-				
-			}
-		});
-
-		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
-		admin_login.setBounds(954, 483, 187, 49);
-		admin.add(admin_login);
-		
-		JLabel adminicon = new JLabel("New label");
-		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
-		adminicon.setBounds(899, 81, 200, 200);
-		admin.add(adminicon);
-		
-		JButton btn_csv = new JButton("Login to View");
-		btn_csv.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent ae) 
-			{
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
-					
-									
-					//File myCSVFile; 
-					//Change the path of the file above or if you wanna open with some other application 
-					String execString = "gedit " + myCSVFile.getAbsolutePath();
-					Runtime run = Runtime.getRuntime();
-					try 
-					{
-    					Process pp = run.exec(execString);
-					} 
-					catch(Exception e) 
-					{
-    					e.printStackTrace();
-					}
-				}
-				else
-				{
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-				}
-
-            }
-		});
-		btn_csv.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
-		btn_csv.setBounds(954, 580, 187, 47);
-		admin.add(btn_csv);
-		
-		JLabel lblNewLabel_11 = new JLabel("");
-		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
-		lblNewLabel_11.setBounds(0, 0, 1860, 954);
-		admin.add(lblNewLabel_11);
-		
-		tabbedPane.addChangeListener(new ChangeListener(){
-			public void stateChanged(ChangeEvent ce)
-			{
-				int index = tabbedPane.getSelectedIndex();
-				if(index == 6)
-				{
-					time.start();
-				}
-			}
-		});
-		
-
-		time = new Timer(1, new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent ae)
-			{
-				stat_display.setText(Integer.toString(k));
-				k++;
-				if(k == 3821499)
-				{
-					time.stop();
-				}
-			}
-		});
-						
 			
 			
 			JPanel vol = new JPanel();
 			vol.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
 			vol.setPreferredSize(new Dimension(320, 50));
 			tabbedPane.addTab("Volunteer", null, vol, "");
-			tabbedPane.setBackgroundAt(9, Color.WHITE);
+			tabbedPane.setBackgroundAt(7, Color.WHITE);
 			vol.setLayout(null);
 			
 			JLabel l11 = new JLabel("Become a proud volunteer");
@@ -1817,56 +1262,12 @@ public class MainWindow extends JFrame {
 			lblNewLabel_18.setBounds(1185, 697, 201, 32);
 			vol.add(lblNewLabel_18);
 			
-			
-			
-			
-			  Scanner sc = new Scanner(new File("C:\\Users\\RAJENDRA REDDY\\sample.txt"));
-			  
-			  StringBuilder sb = new StringBuilder();
-			  
-			  while (sc.hasNextLine()) {
-			     sb.append(sc.nextLine());
-			  }
-			   fileContents = sb.toString();
-			  int j=Integer.parseInt(fileContents);
-			  sc.close();
-			
 			JLabel label = new JLabel(fileContents);
 			label.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 29));
 			label.setForeground(Color.WHITE);
 			label.setBounds(741, 195, 112, 36);
 			vol.add(label);
 			
-			tm = new Timer(50, new ActionListener() {
-				   
-				   @Override
-				   public void actionPerformed(ActionEvent e) {
-				    
-				    label.setText(Integer.toString(i));
-				    i++;
-					if(i==j+2)
-					tm.stop();	
-					k=j+1;
-					String newLine = Integer.toString(k);
-				    
-				    fileContents = fileContents.replaceAll(fileContents, newLine);
-				   
-				    FileWriter writer;
-					try {
-						writer = new FileWriter("C:\\Users\\RAJENDRA REDDY\\sample.txt",false);
-						 writer.write(fileContents);
-						    writer.flush();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				   
-				    
-				   
-				    
-				   }
-				  });
-				  
 			
 			JLabel volimg = new JLabel("");
 			volimg.setIcon(new ImageIcon("volicon.png"));
@@ -1886,6 +1287,691 @@ public class MainWindow extends JFrame {
 			lblNewLabel_19.setIcon(new ImageIcon("volunteer.jpg"));
 			lblNewLabel_19.setBounds(-119, 0, 1973, 1102);
 			vol.add(lblNewLabel_19);
+		
+
+		
+		
+		JPanel contact = new JPanel();
+		contact.setBackground(new Color(255, 228, 225));
+		tabbedPane.addTab("Connect With Us", null, contact, null);
+		contact.setLayout(null);
+
+		tabbedPane.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent ce)
+			{
+				int index = tabbedPane.getSelectedIndex();
+				if(index == 8)
+				{
+					cname_tf.setText("");
+					cmobile_tf.setText("");
+					cmail_tf.setText("");
+					cconcern_tf.setText("");
+					dopinion_tf.setText("");
+                	String fileResult = "";                 
+                	try 
+                	{
+                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
+                		String line = null;
+                		while ((line = csvReader.readLine()) != null) 
+                		{
+   
+                    		fileResult = fileResult+"\n"+line;
+                		}
+                	}
+                	catch(FileNotFoundException ex) 
+                	{
+                    	System.err.println("File was not found");
+                	}
+                	catch(IOException ioe) 
+                	{
+                    	System.err.println("There was an error while reading the file");
+                	}
+                	chat_tf.setText(fileResult);	
+				}
+			}
+		});
+		
+		JButton connect_button = new JButton("Submit ");
+		connect_button.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		connect_button.setBounds(237, 389, 142, 37);
+		connect_button.addActionListener(new ActionListener()
+		{
+		  public void actionPerformed(ActionEvent event)
+		  {
+			  
+			     nameid=cname_tf.getText();
+				 mobileid=cmobile_tf.getText();
+				 mailid	=cmail_tf.getText();
+			     concernid=cconcern_tf.getText();
+		    
+		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
+		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+			  
+		    else if(cmobile_tf.getText().length()!=10)
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+			  
+		    else
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+
+		    
+		    if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
+		    	JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+			  
+		    else if(cmobile_tf.getText().length()!=10)
+		    	JOptionPane.showMessageDialog((Component)event.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+			  
+		    else
+		    {
+		    				
+                try 
+                {
+                       
+                    FileWriter fw = new FileWriter(fileName,true);
+					BufferedWriter br = new BufferedWriter(fw);
+					StringBuilder sb = new StringBuilder();
+					for(int i=0; i<1; i++)
+					{
+						sb.append("\"Name\","+"\""+cname_tf.getText()+"\"");
+						sb.append("\"Mobile\","+"\""+cmobile_tf.getText()+"\"");
+						sb.append("\"Email\","+"\""+cmail_tf.getText()+"\"");
+						sb.append("\"Concern\","+"\""+cconcern_tf.getText()+"\""+"\n");
+					}
+					br.write(sb.toString());
+    				br.close();
+                        
+                }
+                catch(IOException ex) 
+                {
+                    System.out.println("Error writing to file '"+ fileName + "'");
+                        
+                }
+
+                JOptionPane.showMessageDialog((Component)event.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+                cname_tf.setText("");
+                cmobile_tf.setText("");
+                cmail_tf.setText("");
+                cconcern_tf.setText("");
+
+		  }}
+		});
+		contact.add(connect_button);
+		
+		
+		
+		JLabel connect_heading = new JLabel("Connect With Us");
+		connect_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
+		connect_heading.setBounds(73, 6, 231, 37);
+		contact.add(connect_heading);
+		
+		JLabel discussion_heading = new JLabel("Discussion Forum");
+		discussion_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 24));
+		discussion_heading.setBounds(73, 462, 247, 37);
+		contact.add(discussion_heading);
+		
+		
+		JLabel name_connect = new JLabel("Name:");
+		name_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		name_connect.setBounds(83, 55, 80, 19);
+		contact.add(name_connect);
+		
+		JLabel mobile_connect = new JLabel("Mobile No:");
+		mobile_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		mobile_connect.setBounds(83, 108, 101, 20);
+		contact.add(mobile_connect);
+		
+		JLabel email_connect = new JLabel("Email (Optional):");
+		email_connect.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		email_connect.setBounds(83, 161, 153, 20);
+		contact.add(email_connect);
+		
+		cname_tf = new JTextField();
+		cname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cname_tf.setBounds(263, 49, 239, 27);
+		contact.add(cname_tf);
+		cname_tf.setColumns(10);
+		
+		cmobile_tf = new JTextField();
+		cmobile_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cmobile_tf.setBounds(263, 103, 239, 27);
+		contact.add(cmobile_tf);
+		cmobile_tf.setColumns(10);
+		
+		cmail_tf = new JTextField();
+		cmail_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cmail_tf.setBounds(263, 156, 239, 27);
+		contact.add(cmail_tf);
+		cmail_tf.setColumns(10);
+		
+		JLabel concern_heading = new JLabel("Your Concern:");
+		concern_heading.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		concern_heading.setBounds(83, 193, 133, 19);
+		contact.add(concern_heading);
+		
+		cconcern_tf = new JTextArea();
+		cconcern_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		cconcern_tf.setBounds(73, 211, 429, 156);
+		contact.add(cconcern_tf);
+		cconcern_tf.setColumns(10);
+		
+		
+		
+		JLabel discuss_name = new JLabel("Username: ");
+		discuss_name.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_name.setBounds(83, 511, 116, 19);
+		contact.add(discuss_name);
+		
+		JLabel discuss_location = new JLabel("Password:");
+		discuss_location.setDisplayedMnemonic('*');
+		discuss_location.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_location.setBounds(83, 542, 101, 27);
+		contact.add(discuss_location);
+		
+		dname_tf = new JTextField();		
+		dname_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		dname_tf.setBounds(237, 505, 281, 27);
+		contact.add(dname_tf);
+		dname_tf.setColumns(10);
+		
+		pa_tf = new JPasswordField();		
+		pa_tf.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		pa_tf.setBounds(237, 540, 281, 27);
+		pa_tf.setColumns(10);
+		contact.add(pa_tf);
+		
+		
+		JLabel discuss_opinion = new JLabel("Your Opinion:");
+		discuss_opinion.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+		discuss_opinion.setBounds(83, 581, 133, 27);
+		contact.add(discuss_opinion);
+		
+		dopinion_tf = new JTextArea();
+		dopinion_tf.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		dopinion_tf.setBounds(237, 579, 591, 55);
+		contact.add(dopinion_tf);		
+		dopinion_tf.setColumns(10);
+		
+		chat_tf = new JTextArea();
+		chat_tf.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		chat_tf.setBounds(6, 695, 1110, 233);
+		chat_tf.setColumns(10);
+		
+		pb = new JProgressBar(1,100);    
+		pb.setValue(0); 
+		pb.setStringPainted(true); 
+		pb.setBounds(830,505,200,25);
+		pb.setVisible(false);
+		contact.add(pb); 
+		
+  
+		
+		
+			
+			JLabel createacc= new JLabel("Don't have an account?! ");
+			createacc.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			createacc.setBounds(423, 646, 209, 37);
+			contact.add(createacc);
+			
+			
+			JButton create=new JButton("Create One ");			//new frame: Createaccount.java
+			create.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			create.setBounds(627, 646, 172, 37);
+			create.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent ae) {
+					
+					Createaccount ca=new Createaccount();
+					ca.setVisible(true);
+				}
+			});
+			contact.add(create);
+			
+			
+			JLabel info1 = new JLabel("If you have any queries or have any problems relayed to COVID-19 lockdown");
+			info1.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info1.setBounds(734, 37, 633, 27);
+			contact.add(info1);
+			
+			JLabel info2 = new JLabel("or related issues, please feel free to drop in.");
+			info2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info2.setBounds(734, 69, 633, 27);
+			contact.add(info2);
+			
+			JLabel info3 = new JLabel("All your concerns will be conveyed to the MHRD or the MoFHW and we will ");
+			info3.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info3.setBounds(733, 108, 618, 20);
+			contact.add(info3);
+			
+			JLabel info4 = new JLabel("ensure that they respond quick. ");
+			info4.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info4.setBounds(734, 136, 457, 37);
+			contact.add(info4);
+			
+			JLabel info5 = new JLabel("We're happy to help you anytime :)");
+			info5.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 20));
+			info5.setBounds(734, 185, 633, 48);
+			contact.add(info5);
+			
+			JLabel info6 = new JLabel("Also, feel free to share your opinion with people around related to COVID-19 ");
+			info6.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info6.setBounds(734, 245, 672, 27);
+			contact.add(info6);
+			
+			JLabel info7 = new JLabel("issues in the discussion forum below.");
+			info7.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			info7.setBounds(734, 274, 403, 27);
+			contact.add(info7);
+			
+			JLabel lblForgotPassword = new JLabel("Forgot password? ");
+			lblForgotPassword.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			lblForgotPassword.setBounds(1116, 412, 172, 37);
+			contact.add(lblForgotPassword);
+			
+			txt = new JLabel("Fill in these details to generate new password ");
+			txt.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			txt.setBounds(1116,460,408,20);
+			contact.add(txt);
+			
+			fname = new JLabel("Name: ");
+			fname.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			fname.setBounds(1116,513,108,20);
+			contact.add(fname);
+			
+			fname_tf = new JTextField();
+			fname_tf.setBounds(1216,503,216,27);
+			contact.add(fname_tf);
+			
+			
+		    
+		    phone = new JLabel("Mobile no.: ");
+			phone.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 17));
+			phone.setBounds(1116,561,108,20);
+			contact.add(phone);
+			
+
+			phone_tf = new JTextField();
+			phone_tf.setBounds(1216,558,216,27);
+			contact.add(phone_tf);
+			
+			generate_pass = new JButton("Generate Password");
+			generate_pass.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent ae)
+				{
+					c=1;
+					if(fname_tf.getText().equals("")  || phone_tf.getText().equals("")) {
+						JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+					}
+					else if(phone_tf.getText().length()!=10)
+						JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+					else {
+					String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";                
+					 sb = new StringBuilder(); 
+
+					for (int i = 0; i < 6; i++) { 
+					int index = (int)(characters.length() * Math.random()); 								
+					 sb.append(characters.charAt(index));           
+					}
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+					}
+				}
+			});
+			generate_pass.setBounds(1146, 619, 209, 37);
+			generate_pass.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+			contact.add(generate_pass);
+			
+			
+			
+				
+				
+				JButton discuss_submit = new JButton(" Post ");
+				discuss_submit.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 16));
+				discuss_submit.setBounds(271, 645, 108, 37);
+				discuss_submit.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent event) 
+					{
+						if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) {
+							JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+						}
+						else if(c==0) {
+						int i = 0; 
+						pb.setVisible(true);
+				        try { 
+				            while (i <= 100) { 		              
+				                pb.setString("posting"); 		                
+				                Thread.sleep(100); 
+				                pb.paintImmediately(0,0,200,25);
+				                pb.setValue(i);
+				                i=i+10; 
+				            } 
+				            pb.setVisible(false);
+				        } 
+				        catch (Exception e) { 
+				        } 
+						chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");		
+						}
+						else {
+							if(dname_tf.getText().equals("") || dopinion_tf.getText().equals("") || pa_tf.getText().trim().isEmpty()) 
+								JOptionPane.showMessageDialog((Component)event.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+							
+							else if(pa_tf.getText().equals(sb.toString())) {
+								int j=0;
+								pb.setVisible(true);
+						        try { 
+						            while (j <= 100) { 		              
+						                pb.setString("posting"); 		                
+						                Thread.sleep(100); 
+						                pb.paintImmediately(0,0,200,25);
+						                pb.setValue(j);
+						                j=j+10; 
+						            } 
+						            pb.setVisible(false);
+						        } 
+						        catch (Exception e) { 
+						        }
+						        
+						        
+								//chat_tf.append(dname_tf.getText()+" : "+dopinion_tf.getText()+"\n");
+
+								}
+							else 
+								JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid Password","Error", JOptionPane.ERROR_MESSAGE);
+							
+
+							}
+
+					try 
+					{
+                        
+                        FileWriter fw = new FileWriter(file_discussion,true);
+                        BufferedWriter br = new BufferedWriter(fw);
+                        StringBuilder sb = new StringBuilder();
+    					for (int i=0; i < 1; i++) 
+    					{
+							sb.append(dname_tf.getText()+":"+dopinion_tf.getText()+"\n");
+						}
+					br.write(sb.toString());
+    				br.close();	
+                    }
+                    catch(IOException ex) 
+                    {
+                        System.out.println(
+                            "Error writing to file '"+ file_discussion + "'");
+                    }
+
+                    
+                	dopinion_tf.setText("");
+                	String fileResult = "";                 
+                	try 
+                	{
+                		BufferedReader csvReader = new BufferedReader(new FileReader("discussion.csv"));
+                		String line = null;
+                		while ((line = csvReader.readLine()) != null) 
+                		{
+   
+                    		fileResult = fileResult+"\n"+line;
+                		}
+                	}
+                	catch(FileNotFoundException ex) 
+                	{
+                    	System.err.println("File was not found");
+                	}
+                	catch(IOException ioe) 
+                	{
+                    	System.err.println("There was an error while reading the file");
+                	}
+                	chat_tf.setText(fileResult);							
+				}					
+					});
+				contact.add(discuss_submit);
+				
+				contact.add(chat_tf);
+					/*
+					JButton save_csv = new JButton("Save to Csv");
+					save_csv.addActionListener(new ActionListener() {
+						@Override  
+					public void actionPerformed(ActionEvent ae) 
+					{
+						nameid=cname_tf.getText();
+				 		mobileid=cmobile_tf.getText();
+				 		mailid	=cmail_tf.getText();
+			     		concernid=cconcern_tf.getText();
+		    
+		    			if(cname_tf.getText().equals("")||cmobile_tf.getText().equals("")||cconcern_tf.getText().equals("")) 
+		    				JOptionPane.showMessageDialog((Component)ae.getSource(),"Please fill all the fields","Error", JOptionPane.ERROR_MESSAGE);
+			  
+		    			else if(cmobile_tf.getText().length()!=10)
+		    				JOptionPane.showMessageDialog((Component)ae.getSource(), "Please enter a valid phone number","Error",JOptionPane.ERROR_MESSAGE);    
+			  
+		    			else
+		    			{
+		    				
+                    		try 
+                    		{
+                       
+                        		FileWriter fw = new FileWriter(fileName,true);
+								BufferedWriter br = new BufferedWriter(fw);
+								StringBuilder sb = new StringBuilder();
+								for(int i=0; i<1; i++)
+								{
+									sb.append("\"Name\","+"\""+cname_tf.getText()+"\"");
+									sb.append("\"Mobile\","+"\""+cmobile_tf.getText()+"\"");
+									sb.append("\"Email\","+"\""+cmail_tf.getText()+"\"");
+									sb.append("\"Concern\","+"\""+cconcern_tf.getText()+"\"");
+								}
+								br.write(sb.toString());
+    							br.close();
+                        
+                    		}
+                    		catch(IOException ex) 
+                    		{
+                        	System.out.println("Error writing to file '"+ fileName + "'");
+                        
+                    		}
+
+                    		JOptionPane.showMessageDialog((Component)ae.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+   
+                    	}
+						}
+						});
+					save_csv.setFont(new Font("DejaVu Sans", Font.BOLD | Font.ITALIC, 16));
+					save_csv.setBounds(439, 392, 142, 34);
+					contact.add(save_csv);*/
+		
+		JPanel admin = new JPanel();
+		admin.setBackground(new Color(224, 255, 255));
+		admin.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD, 18));
+		tabbedPane.addTab("Admin Login", null, admin, null);
+		admin.setLayout(null);
+		
+		JLabel admin_heading = new JLabel("Admin Login");
+		admin_heading.setBackground(new Color(0, 0, 0));
+		admin_heading.setForeground(new Color(0, 0, 0));
+		admin_heading.setFont(new Font("Dialog", Font.BOLD, 39));
+		admin_heading.setBounds(888, 6, 325, 93);
+		admin.add(admin_heading);
+		
+		JLabel admin_usr = new JLabel("Username: ");//Drishtiadmin@2020
+		admin_usr.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
+		admin_usr.setBounds(734, 311, 150, 47);
+		admin.add(admin_usr);
+		
+		tf_username = new JTextField();
+		tf_username.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
+		tf_username.setBounds(883, 311, 393, 47);
+		admin.add(tf_username);
+		tf_username.setColumns(10);
+		
+		JLabel admin_pass = new JLabel("Password: ");//dri_439
+		admin_pass.setBackground(new Color(224, 255, 255));
+		admin_pass.setDisplayedMnemonic('*');
+		admin_pass.setFont(new Font("Segoe UI Emoji", Font.BOLD, 23));
+		admin_pass.setBounds(742, 385, 142, 39);
+		admin.add(admin_pass);
+		
+		tf_password = new JPasswordField();
+		tf_password.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 20));
+		tf_password.setEchoChar('*');
+		tf_password.setBounds(883, 380, 399, 49);
+		admin.add(tf_password);
+		
+		
+		JButton admin_login = new JButton("Login ");			//new frame:Adminlogin.java
+		
+		admin_login.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent event)
+			{								
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					
+									
+					//File myCSVFile; 
+					//Change the path of the file above or if you wanna open with some other application 
+					String execString = "gedit " + myCSVFile.getAbsolutePath();
+					Runtime run = Runtime.getRuntime();
+					try 
+					{
+    					Process pp = run.exec(execString);
+					} 
+					catch(Exception e) 
+					{
+    					e.printStackTrace();
+					}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
+					adlog.setVisible(true);
+				}
+				else
+				
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+			
+
+			}
+		});
+
+		admin_login.setFont(new Font("Segoe UI Emoji", Font.BOLD, 20));
+		admin_login.setBounds(954, 483, 187, 49);
+		admin.add(admin_login);
+		
+		JLabel adminicon = new JLabel("New label");
+		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
+		adminicon.setBounds(899, 81, 200, 200);
+		admin.add(adminicon);
+		/*
+		JButton btn_csv = new JButton("Login to View");
+		btn_csv.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent ae) 
+			{
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					
+									
+					//File myCSVFile; 
+					//Change the path of the file above or if you wanna open with some other application 
+					String execString = "gedit " + myCSVFile.getAbsolutePath();
+					Runtime run = Runtime.getRuntime();
+					try 
+					{
+    					Process pp = run.exec(execString);
+					} 
+					catch(Exception e) 
+					{
+    					e.printStackTrace();
+					}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog((Component)ae.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				}
+
+            }
+		});
+		btn_csv.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
+		btn_csv.setBounds(954, 580, 187, 47);
+		admin.add(btn_csv);*/
+		
+		JLabel lblNewLabel_11 = new JLabel("");
+		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
+		lblNewLabel_11.setBounds(0, 0, 1860, 954);
+		admin.add(lblNewLabel_11);
+		
+		tabbedPane.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent ce)
+			{
+				int index = tabbedPane.getSelectedIndex();
+				if(index == 6)
+				{
+					time.start();
+				}
+			}
+		});
+		
+
+		time = new Timer(1, new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent ae)
+			{
+				stat_display.setText(Integer.toString(k));
+				k++;
+				if(k == 3821499)
+				{
+					time.stop();
+				}
+			}
+		});
+			
+			
+			
+			
+			  Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
+			  
+			  StringBuilder sb = new StringBuilder();
+			  
+			  while (sc.hasNextLine()) {
+			     sb.append(sc.nextLine());
+			  }
+			   fileContents = sb.toString();
+			  int j=Integer.parseInt(fileContents);
+			  sc.close();
+			
+			tm = new Timer(50, new ActionListener() {
+				   
+				   @Override
+				   public void actionPerformed(ActionEvent e) {
+				    
+				    label.setText(Integer.toString(i));
+				    i++;
+					if(i==j+2)
+					tm.stop();	
+					k=j+1;
+					String newLine = Integer.toString(k);
+				    
+				    fileContents = fileContents.replaceAll(fileContents, newLine);
+				   
+				    FileWriter writer;
+					try {
+						writer = new FileWriter("/home/sahithi/Desktop/oop-project/sample.txt",false);
+						 writer.write(fileContents);
+						    writer.flush();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				   
+				    
+				   
+				    
+				   }
+				  });
 			
 			
 			
@@ -1913,3 +1999,4 @@ public class MainWindow extends JFrame {
 			
 	}
 }
+
