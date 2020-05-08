@@ -1036,7 +1036,7 @@ public class MainWindow extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				tabbedPane.setSelectedIndex(7);
+				tabbedPane.setSelectedIndex(8);
 			}
 		});
 		btnNewButton_2.setFont(new Font("DejaVu Math TeX Gyre", Font.BOLD | Font.ITALIC, 15));
