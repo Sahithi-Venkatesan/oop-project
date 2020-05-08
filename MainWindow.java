@@ -51,7 +51,7 @@ public class MainWindow extends JFrame {
 	private JPasswordField tf_password;
 	String nameid,mobileid,mailid,concernid;
 	private JProgressBar pb;
-	StringBuilder sb;
+	StringBuilder sb,sb2;
 	int c=0;
 	private JTextField namef;
 	private JTextField dobf;
@@ -962,7 +962,7 @@ public class MainWindow extends JFrame {
 		JButton btnKnowMore = new JButton("Know More");
 		btnKnowMore.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				openWebPage("https://www.icmr.gov.in/pdf/press_realease_files/TheHindu_DrBhargava_1May2020_V1.pdf");
+				openWebPage("https://aspirantworld.in/editorial-analysis-plasma-therapy-is-no-silver-bullet/");
 			}
 		});
 		btnKnowMore.setBackground(new Color(0, 0, 0));
@@ -1261,6 +1261,17 @@ public class MainWindow extends JFrame {
 			lblNewLabel_18.setForeground(Color.WHITE);
 			lblNewLabel_18.setBounds(1185, 697, 201, 32);
 			vol.add(lblNewLabel_18);
+
+			Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
+			  
+			  StringBuilder sb2 = new StringBuilder();
+			  
+			  while (sc.hasNextLine()) {
+			     sb2.append(sc.nextLine());
+			  }
+			   fileContents = sb2.toString();
+			  int j=Integer.parseInt(fileContents);
+			  sc.close();
 			
 			JLabel label = new JLabel(fileContents);
 			label.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 29));
@@ -1819,6 +1830,17 @@ public class MainWindow extends JFrame {
 		{
 			public void actionPerformed(ActionEvent event)
 			{								
+				
+				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
+				{
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
+					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
+					adlog.setVisible(true);
+				}
+				else
+				
+					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
+				
 				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
 				{
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
@@ -1842,16 +1864,6 @@ public class MainWindow extends JFrame {
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
 				}
 
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
-					 Adminlogin adlog=new Adminlogin(nameid,mobileid,mailid,concernid);					
-					adlog.setVisible(true);
-				}
-				else
-				
-					JOptionPane.showMessageDialog((Component)event.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-			
 
 			}
 		});
@@ -1922,7 +1934,7 @@ public class MainWindow extends JFrame {
 			{
 				stat_display.setText(Integer.toString(k));
 				k++;
-				if(k == 3821499)
+				if(k == 3932656)
 				{
 					time.stop();
 				}
@@ -1932,7 +1944,7 @@ public class MainWindow extends JFrame {
 			
 			
 			
-			  Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
+/*			  Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
 			  
 			  StringBuilder sb = new StringBuilder();
 			  
@@ -1941,7 +1953,7 @@ public class MainWindow extends JFrame {
 			  }
 			   fileContents = sb.toString();
 			  int j=Integer.parseInt(fileContents);
-			  sc.close();
+			  sc.close();*/
 			
 			tm = new Timer(50, new ActionListener() {
 				   
@@ -1966,10 +1978,6 @@ public class MainWindow extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-				   
-				    
-				   
-				    
 				   }
 				  });
 			
