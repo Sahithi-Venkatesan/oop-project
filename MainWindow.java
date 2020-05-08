@@ -2,7 +2,7 @@ import java.io.*;
 import java.awt.*;
 import javax.swing.*;
 import java.io.*;
-import java .awt.event.*;
+import java.awt.event.*;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -32,10 +32,9 @@ import javax.swing.border.BevelBorder;
 import javax.swing.table.DefaultTableModel;
 
 import java.util.Arrays;
-import java.util.Map;
+//import java.util.Map;
 import java.util.Scanner;
 
- @SuppressWarnings("serial")
 public class MainWindow extends JFrame {
 
 	private JPanel contentPane;
@@ -1855,7 +1854,7 @@ public class MainWindow extends JFrame {
 				}
 
 
-				
+
 				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
 				{
 					JOptionPane.showMessageDialog((Component)event.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
@@ -1877,40 +1876,7 @@ public class MainWindow extends JFrame {
 		adminicon.setIcon(new ImageIcon("loginpageadmin.png"));
 		adminicon.setBounds(899, 81, 200, 200);
 		admin.add(adminicon);
-		/*
-		JButton btn_csv = new JButton("Login to View");
-		btn_csv.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent ae) 
-			{
-				if(tf_username.getText().equals("Drishtiadmin@2020") && tf_password.getText().equals("dri_439"))
-				{
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Successfully signed in!","Log in", JOptionPane.INFORMATION_MESSAGE);					 					 
-					
-									
-					//File myCSVFile; 
-					//Change the path of the file above or if you wanna open with some other application 
-					String execString = "gedit " + myCSVFile.getAbsolutePath();
-					Runtime run = Runtime.getRuntime();
-					try 
-					{
-    					Process pp = run.exec(execString);
-					} 
-					catch(Exception e) 
-					{
-    					e.printStackTrace();
-					}
-				}
-				else
-				{
-					JOptionPane.showMessageDialog((Component)ae.getSource(),"Invalid user id or password","Error", JOptionPane.ERROR_MESSAGE);
-				}
-
-            }
-		});
-		btn_csv.setFont(new Font("DejaVu Sans", Font.BOLD, 12));
-		btn_csv.setBounds(954, 580, 187, 47);
-		admin.add(btn_csv);*/
+		
 		
 		JLabel lblNewLabel_11 = new JLabel("");
 		lblNewLabel_11.setIcon(new ImageIcon("bg_1.jpg"));
