@@ -68,6 +68,7 @@ public class MainWindow extends JFrame {
 	JButton btn_forgotpass;
 	String fileName = "data.csv"; 
     File myCSVFile = new File("/home/sahithi/Desktop/oop-project/data.csv");
+    File volFile = new File("/home/sahithi/Desktop/oop-project/volunteer.txt");
     Timer time;
     String file_discussion = "discussion.csv";
     //public static final String delimiter = "\n";
@@ -1214,7 +1215,22 @@ public class MainWindow extends JFrame {
 					
 					JOptionPane.showMessageDialog((Component)event.getSource(),"You are now a volunteer","Congrats!", JOptionPane.INFORMATION_MESSAGE);
 					tm.start();
+					try{
+					FileWriter volwrite=new FileWriter("volunteer.txt",true);
+					BufferedWriter volbuf=new BufferedWriter(volwrite);
+					volbuf.write(vnametf.getText()+"  "+vmobtf.getText()+"  "+vagetf.getText()+"  "+vmailtf.getText()+"  "+vproftf.getText()+"  "+vloctf.getText()+"\n");
+					volbuf.close();
+					volwrite.close();
 					}
+					catch(IOException e1){
+					}
+					}
+					vnametf.setText("");
+					vmobtf.setText("");
+					vagetf.setText("");
+					vmailtf.setText("");
+					vproftf.setText("");
+					vloctf.setText("");
 				}
 			});
 			
@@ -1381,7 +1397,7 @@ public class MainWindow extends JFrame {
 					StringBuilder sb = new StringBuilder();
 					for(int i=0; i<1; i++)
 					{
-						sb.append("\"Name\","+"\""+cname_tf.getText()+"\"");
+						sb.append("\"Name\""+cname_tf.getText()+"\"");
 						sb.append("\"Mobile\","+"\""+cmobile_tf.getText()+"\"");
 						sb.append("\"Email\","+"\""+cmail_tf.getText()+"\"");
 						sb.append("\"Concern\","+"\""+cconcern_tf.getText()+"\""+"\n");
@@ -1620,6 +1636,8 @@ public class MainWindow extends JFrame {
 					 sb.append(characters.charAt(index));           
 					}
 					JOptionPane.showMessageDialog((Component)ae.getSource(),"Your new password :"+sb.toString(),"Reset", JOptionPane.INFORMATION_MESSAGE);
+					fname_tf.setText("");
+					phone_tf.setText("");
 					}
 				}
 			});
@@ -1716,7 +1734,7 @@ public class MainWindow extends JFrame {
                 		while ((line = csvReader.readLine()) != null) 
                 		{
    
-                    		fileResult = fileResult+"\n"+line;
+                    		fileResult = fileResult+line+"\n";
                 		}
                 	}
                 	catch(FileNotFoundException ex) 
@@ -1727,8 +1745,12 @@ public class MainWindow extends JFrame {
                 	{
                     	System.err.println("There was an error while reading the file");
                 	}
-                	chat_tf.setText(fileResult);							
-				}					
+                	chat_tf.setText(fileResult);
+                	dname_tf.setText("");
+                	pa_tf.setText("");
+                	dopinion_tf.setText("");							
+				}
+
 					});
 				contact.add(discuss_submit);
 				
@@ -1838,10 +1860,12 @@ public class MainWindow extends JFrame {
 					//File myCSVFile; 
 					//Change the path of the file above or if you wanna open with some other application 
 					String execString = "gedit " + myCSVFile.getAbsolutePath();
+					String vol_execute = "gedit " + volFile.getAbsolutePath();
 					Runtime run = Runtime.getRuntime();
 					try 
 					{
     					Process pp = run.exec(execString);
+    					Process pv = run.exec(vol_execute);
 					} 
 					catch(Exception e) 
 					{

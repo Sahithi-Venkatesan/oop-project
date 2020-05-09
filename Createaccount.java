@@ -143,12 +143,17 @@ public class Createaccount extends JFrame {
 				e.printStackTrace();
 			}
 	    	 
-		      
-			  
-			  if(tf_username.getText().equals("") || tf_pass.getText().trim().isEmpty() || lname.getText().equals("")|| fname.getText().equals("") || mailtf.getText().equals(""))
-				  JOptionPane.showMessageDialog((Component)event.getSource(), "Please fill all the fields","Error",JOptionPane.ERROR_MESSAGE);
-			  else	  
-				  JOptionPane.showMessageDialog((Component)event.getSource(), "Your account has been created","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+		        
+			if(tf_username.getText().equals("") || tf_pass.getText().trim().isEmpty() || lname.getText().equals("")|| fname.getText().equals("") || mailtf.getText().equals(""))
+			{
+				JOptionPane.showMessageDialog((Component)event.getSource(), "Please fill all the fields","Error",JOptionPane.ERROR_MESSAGE);
+				setVisible(true);
+			}
+			else
+			{	  
+				JOptionPane.showMessageDialog((Component)event.getSource(), "Your account has been created","Confirmation",JOptionPane.INFORMATION_MESSAGE);
+				setVisible(false);
+			}
 		  
 		  }
 		});
@@ -181,29 +186,6 @@ public class Createaccount extends JFrame {
 		comboBox.setBounds(857, 318, 101, 28);
 		contentPane.add(comboBox);
 
-		/*
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Male");
-		rdbtnNewRadioButton.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
-		rdbtnNewRadioButton.setBackground(new Color(255, 255, 255));
-		rdbtnNewRadioButton.setBounds(859, 414, 62, 23);
-		contentPane.add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Female");
-		rdbtnNewRadioButton_1.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
-		rdbtnNewRadioButton_1.setBackground(new Color(255, 255, 255));
-		rdbtnNewRadioButton_1.setBounds(923, 414, 80, 23);
-		contentPane.add(rdbtnNewRadioButton_1);
-		
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Other");
-		rdbtnNewRadioButton_2.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
-		rdbtnNewRadioButton_2.setBackground(new Color(255, 255, 255));
-		rdbtnNewRadioButton_2.setBounds(1005, 414, 80, 23);
-		contentPane.add(rdbtnNewRadioButton_2);
-		
-		butgrp.add(rdbtnNewRadioButton);
-		butgrp.add(rdbtnNewRadioButton_1);
-		butgrp.add(rdbtnNewRadioButton_2);
-		*/
 		
 		JLabel label_location = new JLabel("Location: ");
 		label_location.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
