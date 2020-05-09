@@ -1277,7 +1277,7 @@ public class MainWindow extends JFrame {
 			lblNewLabel_18.setBounds(1185, 697, 201, 32);
 			vol.add(lblNewLabel_18);
 
-			Scanner sc = new Scanner(new File("/home/sahithi/Desktop/oop-project/sample.txt"));
+			Scanner sc = new Scanner(new File("sample.txt"));
 			  
 			  StringBuilder sb2 = new StringBuilder();
 			  
@@ -1397,10 +1397,11 @@ public class MainWindow extends JFrame {
 					StringBuilder sb = new StringBuilder();
 					for(int i=0; i<1; i++)
 					{
-						sb.append("\"Name\""+cname_tf.getText()+"\"");
-						sb.append("\"Mobile\","+"\""+cmobile_tf.getText()+"\"");
-						sb.append("\"Email\","+"\""+cmail_tf.getText()+"\"");
-						sb.append("\"Concern\","+"\""+cconcern_tf.getText()+"\""+"\n");
+						sb.append(cname_tf.getText()+",");
+
+						sb.append(cmobile_tf.getText()+",");
+						sb.append(cmail_tf.getText()+",");
+						sb.append(cconcern_tf.getText()+"\n");
 					}
 					br.write(sb.toString());
     				br.close();
@@ -1797,7 +1798,6 @@ public class MainWindow extends JFrame {
                         	System.out.println("Error writing to file '"+ fileName + "'");
                         
                     		}
-
                     		JOptionPane.showMessageDialog((Component)ae.getSource(), "Your concern has been submitted","Confirmation",JOptionPane.INFORMATION_MESSAGE);
    
                     	}
@@ -1962,7 +1962,7 @@ public class MainWindow extends JFrame {
 				   
 				    FileWriter writer;
 					try {
-						writer = new FileWriter("/home/sahithi/Desktop/oop-project/sample.txt",false);
+						writer = new FileWriter("sample.txt",false);
 						 writer.write(fileContents);
 						    writer.flush();
 					} catch (IOException e1) {
@@ -1998,4 +1998,3 @@ public class MainWindow extends JFrame {
 			
 	}
 }
-
