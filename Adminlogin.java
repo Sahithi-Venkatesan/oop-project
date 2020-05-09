@@ -30,10 +30,14 @@ import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
 public class Adminlogin extends JFrame {
 
 	private JPanel contentPane;
-
+	private	JTable table;
 	
 	public Adminlogin(String st1,String st2,String st3,String st4) {
 		getContentPane().setLayout(null);
@@ -54,32 +58,45 @@ public class Adminlogin extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		
-		JTable table = new JTable();		
-		
-		DefaultTableModel model = (DefaultTableModel)table.getModel();
-		model.addColumn("Name");
-		model.addColumn("Contact");
-		model.addColumn("Email id");
-		model.addColumn("Concern");
-      
-		table.getColumnModel().getColumn(0).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(1).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(2).setPreferredWidth(1000);
-		table.getColumnModel().getColumn(3).setPreferredWidth(4000);
-		table.setModel(model);
-		
-		Object [] row = new Object[10];
 		
 			
-			row[0]=st1;
-			row[1]=st2;
-			row[2]=st3;
-			row[3]=st4;
-	    
-			model.addRow(row);
-			JScrollPane scrollPane = new JScrollPane(table);
-			scrollPane.setBounds(297, 430, 964, 415);
-			contentPane.add(scrollPane);
+			JButton view = new JButton("View");
+			view.setBounds(680, 348, 200, 50);
+			view.addActionListener(new ActionListener()
+		{
+		  @SuppressWarnings("deprecation")
+		public void actionPerformed(ActionEvent event)
+		  {
+			   try {
+			 table = new JTable();
+	            BufferedReader br = new BufferedReader(new FileReader("data.csv"));
+	            
+	            String firstLine = br.readLine().trim();
+	            String[] columnsName = firstLine.split(" ");
+	            DefaultTableModel model = (DefaultTableModel)table.getModel();
+	            model.setColumnIdentifiers(columnsName);
+	           
+	            Object[] row = br.lines().toArray();
+	            
+	            for(int i = 0; i < row.length; i++)
+	            {
+	                String line = row[i].toString().trim();
+	                String[] data = line.split(",");
+	                model.addRow(data);
+	            }
+	            JScrollPane scrollPane = new JScrollPane(table);
+	    		scrollPane.setBounds(297, 430, 964, 415);
+	    		contentPane.add(scrollPane);
+	    		
+	            
+	            
+	        } catch (Exception ex) {
+	           
+	        }
+			  
+		  }
+		});
+			contentPane.add(view);
 			
 			JLabel lblNewLabel_1 = new JLabel("Details and concerns of individuals are as follows...");
 			lblNewLabel_1.setFont(new Font("Perpetua Titling MT", Font.BOLD, 18));
@@ -99,4 +116,3 @@ public class Adminlogin extends JFrame {
 	}
 
 }
-
